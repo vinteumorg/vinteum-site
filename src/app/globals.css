@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+/* SK Concretica — custom font */
+@font-face {
+  font-family: "SK Concretica";
+  src: url("/fonts/sk-concretica.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ========================================
+   VINTEUM - DARK THEME COLOR PALETTE
+   ======================================== */
+
+:root {
+  /* === Background Colors === */
+  --background: #0E0F0E;              /* Primary background - preto */
+  --background-secondary: #1D211D;    /* Secondary background - quase preto esverdeado */
+  --background-sheet: #172719;        /* Bottom sheet background */
+  --background-overlay: rgba(23, 39, 25, 0.3);  /* Overlay - 30% opacity */
+  --background-surface: rgba(49, 66, 45, 0.17); /* Surface - verde escuro 17% */
+  
+  /* === Text Colors === */
+  --foreground: #FFFFFF;              /* Primary text - branco 100% */
+  --foreground-secondary: rgba(255, 255, 255, 0.8);  /* Secondary text - branco 80% */
+  --text-highlight: #3CAE66;          /* Highlighted text - verde médio */
+  
+  /* === Brand & Accent Colors === */
+  --primary: #91FFAE;                 /* Primary brand color - verde claro */
+  --primary-hover: #59D279;           /* Primary hover state - verde */
+  --accent-green: #50FF47;            /* Accent green - verde neon */
+  --accent-dark: #31422D;             /* Accent dark - verde escuro */
+  
+  /* === Button Colors === */
+  --btn-primary-bg: #91FFAE;          /* Primary button background */
+  --btn-primary-text: #172719;        /* Primary button text */
+  --btn-primary-hover: #59D279;       /* Primary button hover */
+  --btn-secondary-bg: #293C2F;        /* Secondary button background - verde escuro */
+  --btn-secondary-text: #FFFFFF;      /* Secondary button text */
+  
+  /* === Badge Colors === */
+  --badge-bg: rgba(145, 255, 174, 0.14);  /* Badge background - 14% opacity */
+  --badge-text: #91FFAE;              /* Badge text */
+  
+  /* === Border Colors === */
+  --border: rgba(145, 255, 174, 0.2); /* Border color */
+  --border-subtle: rgba(255, 255, 255, 0.1); /* Subtle border */
+
+  /* === Hero Colors === */
+  --hero-moon: #FFAE00;               /* Hero golden sun/moon */
+  --cta-btn-bg: #91FFAE;              /* CTA button outer bg */
+  --cta-btn-text: #172719;            /* CTA button text */
+  --cta-btn-icon-bg: #59D279;         /* CTA button inner icon container */
+  --cta-btn-icon: #172719;            /* CTA button icon arrow */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-rethink: var(--font-rethink-sans);
+  --font-poppins: var(--font-poppins);
+  --font-inter: var(--font-inter);
+  
+  /* Extending Tailwind with custom colors */
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-accent-green: var(--accent-green);
+  --color-accent-dark: var(--accent-dark);
+  --color-text-highlight: var(--text-highlight);
+  --color-background-secondary: var(--background-secondary);
+  --color-background-sheet: var(--background-sheet);
+  --color-foreground-secondary: var(--foreground-secondary);
+  --color-background-surface: var(--background-surface);
+  --color-badge-bg: var(--badge-bg);
+  --color-border: var(--border);
+  --color-btn-secondary-bg: var(--btn-secondary-bg);
+  --color-btn-primary-text: var(--btn-primary-text);
+  --color-border-subtle: var(--border-subtle);
+  --color-cta-btn-bg: var(--cta-btn-bg);
+  --color-cta-btn-text: var(--cta-btn-text);
+  --color-cta-btn-icon-bg: var(--cta-btn-icon-bg);
+  --color-hero-moon: var(--hero-moon);
+  --font-space-mono: var(--font-space-mono);
+  --font-sk-concretica: "SK Concretica", sans-serif;
+  --font-barlow-condensed: var(--font-barlow-condensed);
+
+  /* Custom blur values */
+  --blur-xsm: 6px;
+}
+
+/* === Global Styles === */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans, Arial, Helvetica, sans-serif);
+}
+
+/* === Utility Classes === */
+.bg-gradient-dark {
+  background: linear-gradient(135deg, var(--background) 0%, var(--background-secondary) 100%);
+}
+
+.text-gradient-green {
+  background: linear-gradient(90deg, var(--primary) 0%, var(--accent-green) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-primary {
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--btn-primary-hover);
+  transform: translateY(-1px);
+}
+
+.badge {
+  background-color: var(--badge-bg);
+  color: var(--badge-text);
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Launchpad about section spacing below hero */
+.launchpad-about-pt {
+  padding-top: 300px;
+}
+
+/* Hide scrollbar for carousel */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Alumni cards fade-slide animation */
+@keyframes alumni-enter-right {
+  from { opacity: 0; transform: translateX(32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes alumni-enter-left {
+  from { opacity: 0; transform: translateX(-32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.alumni-enter-right {
+  animation: alumni-enter-right 0.35s ease forwards;
+}
+.alumni-enter-left {
+  animation: alumni-enter-left 0.35s ease forwards;
+}
+
+/* Infinite scroll — disable smooth scroll during teleport */
+.scroll-instant {
+  scroll-behavior: auto;
+}
+
+/* Testimonials gradient blur */
+.testimonials-blur {
+  background: linear-gradient(90deg, #FFAE00 0%, #3CAE66 50%, #009086 100%);
+}
+
+/* Decorative gradient blur for FeatureShowcase */
+.gradient-blur-decorative {
+  background: linear-gradient(135deg, #009086 0%, #3CAE66 50%, #FFAE00 100%);
+}
+
+/* Vertical green-to-amber blur for bottom section decorations */
+.gradient-blur-vertical {
+  background: linear-gradient(to bottom, #00C060 10%, #00C060 40%, #FFAE00 100%);
+}
+
+/* ProgramsSection desktop/tablet: lateral slide positions (index 0‒4) */
+.programs-slide-0 { transform: translateX(calc(50vw - 210px)); }
+.programs-slide-1 { transform: translateX(calc(50vw - 210px - 444px)); }
+.programs-slide-2 { transform: translateX(calc(50vw - 210px - 888px)); }
+.programs-slide-3 { transform: translateX(calc(50vw - 210px - 1332px)); }
+.programs-slide-4 { transform: translateX(calc(50vw - 210px - 1776px)); }
