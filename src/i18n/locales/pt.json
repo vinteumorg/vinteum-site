@@ -1,0 +1,781 @@
+{
+    "nav": {
+        "menu": "Menu",
+        "contact": "Contato",
+        "support": "Apoie",
+        "openMenu": "Abrir menu",
+        "closeMenu": "Fechar menu"
+    },
+    "hero": {
+        "title": "Um centro de P&D em Bitcoin no Brasil",
+        "subtitle": "Formamos, orientamos e financiamos desenvolvedores e pesquisadores open-source de Bitcoin.",
+        "cta": "Sobre nós"
+    },
+    "subhero": {
+        "text": "A Vinteum existe para ajudar a tornar essa visão uma realidade. Somos um centro sem fins lucrativos de pesquisa e desenvolvimento em Bitcoin, focado em apoiar desenvolvedores no Brasil. Treinamos, mentoramos e financiamos colaboradores para trabalharem no Bitcoin Core, na Lightning Network e em outras infraestruturas críticas — fortalecendo uma comunidade de desenvolvedores de Bitcoin desde a base e criando um pipeline sustentável de contribuidores open-source para o futuro."
+    },
+    "menu": {
+        "close": "fechar",
+        "home": "Home",
+        "about": "Sobre",
+        "supporters": "Apoiadores",
+        "programs": "Programas",
+        "community": "Comunidade",
+        "blog": "Blog",
+        "contact": "Contato",
+        "donate": "Apoie",
+        "programsItems": {
+            "mastering": "Mastering Seminars",
+            "launchpad": "Bitcoin Dev Launchpad",
+            "fellowship": "Fellowship Program",
+            "grants": "Grants Program",
+            "contact": "Contato",
+            "support": "Apoie"
+        },
+        "communityItems": {
+            "discord": "Nosso Discord",
+            "meetups": "Meetups Bitdevs",
+            "hackerhouse": "Casa21 hackhouse",
+            "grants": "Grants Program",
+            "contact": "Contato"
+        }
+    },
+    "footer": {
+        "newsletter": {
+            "title": "Se inscreva na\nnossa newsletter",
+            "placeholder": "email@email.com",
+            "submit": "Enviar",
+            "success": "Inscrição realizada! Obrigado.",
+            "duplicate": "Este e-mail já está inscrito.",
+            "error": "Algo deu errado. Tente novamente."
+        },
+        "contact": "Entre em contato",
+        "brandkit": "Brandkit download",
+        "scrollTop": "Voltar ao topo",
+        "home": {
+            "title": "Home",
+            "about": "Sobre",
+            "supporters": "Apoiadores",
+            "support": "Apoie"
+        },
+        "programs": {
+            "title": "PROGRAMAS",
+            "mastering": "Mastering Seminars",
+            "launchpad": "Bitcoin Dev Launchpad",
+            "fellowship": "Fellowship Program",
+            "grants": "Grants Program"
+        }
+    },
+    "updates": {
+        "badge": "Últimas atualizações",
+        "title": "Vinteum Updates",
+        "prev": "Anterior",
+        "next": "Próximo"
+    },
+    "supports": {
+        "badge": "Sobre",
+        "title": "Quem Apoia\na Vinteum",
+        "cta": "Entre em contato",
+        "readMore": "Saiba mais",
+        "mediaCard": {
+            "imageAlt": "Equipe Vinteum",
+            "title": "Nossas Origens\n& Missão",
+            "desc1": "Fundada em 2022 por Lucas Ferreira e André Neves, com o generoso apoio filantrópico de Wences Casares, John Pfeffer, Sebastian Serrano, OKX e a Human Rights Foundation. A ideia era simples: apoiar desenvolvedores open-source no Brasil e construir uma rampa sustentável para novos contribuidores entrarem no ecossistema Bitcoin.",
+            "desc2": "Graças ao apoio contínuo do Xapo Bank desde 2024, os custos operacionais da Vinteum foram totalmente cobertos — permitindo que todas as doações adicionais sejam direcionadas diretamente para nossos grants e programas educacionais."
+        },
+        "textCard": {
+            "title": "O Que Fazemos",
+            "desc1": "Apoiamos desenvolvedores interessados ou ativos no desenvolvimento open-source de bitcoin em todas as etapas de sua jornada, de aprendizes curiosos a contribuidores experientes. Isso acontece por meio de uma combinação de educação, mentoria e financiamento. Nosso trabalho se concentra em viabilizar contribuições para o Bitcoin Core, a Lightning Network e outros projetos de infraestrutura crítica que mantêm o Bitcoin seguro, descentralizado e utilizável.",
+            "desc2": "Acreditamos que o sucesso de longo prazo do Bitcoin depende de uma rede global e diversa de contribuidores, não concentrada em um punhado de países ou empresas, mas emergindo de todo o mundo, incluindo a América Latina. No Brasil, vemos enorme talento técnico e interesse em Bitcoin, mas poucos caminhos para o trabalho open-source. A Vinteum existe para mudar isso.",
+            "desc3": "Nosso objetivo é plantar raízes profundas para o desenvolvimento de Bitcoin no Brasil — criando um pipeline de longo prazo e sustentável de desenvolvedores que ajudarão a moldar o futuro do Bitcoin, mantendo-se fiéis aos seus valores de abertura, neutralidade e resiliência.",
+            "desc4": "De meetups e seminários a programas de aceleração, fellowships e grants de pesquisa, estamos construindo a comunidade e a infraestrutura que capacita desenvolvedores a construir o próprio Bitcoin."
+        }
+    },
+    "programs": {
+        "badge": "Nossos Programas",
+        "title": "Nossos Programas",
+        "learnMore": "Saiba mais",
+        "prev": "Programa anterior",
+        "next": "Próximo programa",
+        "cards": {
+            "mastering": {
+                "title": "Mastering Seminars",
+                "desc": "Nossos Mastering Seminars são grupos de estudo semanais baseados nos livros Mastering Bitcoin e Mastering the Lightning Network (Antonopoulos, et al). Cada sessão combina discussões entre pares, aprofundamentos técnicos e questionamento socrático para ajudar desenvolvedores e entusiastas a aprofundar seu entendimento do Bitcoin a partir de princípios fundamentais."
+            },
+            "launchpad": {
+                "title": "Bitcoin Dev Launchpad",
+                "desc": "O Bitcoin Dev Launchpad é nosso principal programa de aceleração para contribuidores open-source. Ao longo de 12 semanas, os participantes aprendem na prática, por meio de projetos hands-on e mentoria, seguido por uma fellowship de seis meses para os participantes de melhor desempenho."
+            },
+            "fellowship": {
+                "title": "Fellowship Program",
+                "desc": "Nosso Fellowship Program apoia desenvolvedores em início de carreira que estão explorando seu caminho no open-source de Bitcoin. Os fellows recebem apoio financeiro, mentoria e orientação técnica por seis meses, com o objetivo de desenvolver habilidades, confiança e um plano de longo prazo para contribuições significativas ao ecossistema."
+            },
+            "grants": {
+                "title": "Grants Program",
+                "desc": "Nosso Programa de Grants financia contribuidores experientes trabalhando em projetos de alto impacto no Bitcoin. Os grants são flexíveis e de longo prazo, pensados para dar autonomia aos desenvolvedores para focar em infraestrutura crítica, desde pesquisa e implementação de protocolo até ferramentas, bibliotecas e educação."
+            }
+        }
+    },
+    "about": {
+        "hero": {
+            "title": "O Bitcoin precisa de colaboradores de toda parte.",
+            "subtitle": "Criamos caminhos para que desenvolvedores e pesquisadores contribuam com o ecossistema open-source do Bitcoin.",
+            "sponsorsTitle": "Apoiadores"
+        },
+        "whatWeDo": {
+            "badge": "Sobre",
+            "title": "Nossa Missão",
+            "cta": "Entre em contato",
+            "desc1": "Para cumprir seu potencial como ferramenta de liberdade e soberania financeira, o Bitcoin precisa de uma comunidade diversa e global de contribuidores.",
+            "desc2": "O Bitcoin depende de pessoas que escolhem construí-lo. A Vinteum existe para ajudar a crescer essa comunidade. Apoiamos desenvolvedores e pesquisadores em toda a sua jornada — do primeiro contato à contribuição ativa e além — por meio de educação, mentoria e financiamento.",
+            "desc3": "Nosso trabalho é baseado em colaboração real: meetups, seminários, programas presenciais e residências, além de fellowships e grants que viabilizam o trabalho open-source de forma sustentada.",
+            "desc4": "Focamos em viabilizar contribuições para o Bitcoin Core, a Lightning Network e outras infraestruturas críticas que mantêm o Bitcoin seguro, descentralizado e utilizável."
+        },
+        "ourStory": {
+            "title": "Nossa História",
+            "imageAlt": "Equipe Vinteum",
+            "desc1": "A Vinteum foi fundada em 2022 por Lucas Ferreira e André Neves para criar caminhos locais para que desenvolvedores brasileiros contribuíssem com o ecossistema open-source do Bitcoin. Bruno Garcia, um dos primeiros contribuidores brasileiros do Bitcoin Core, ajudou a moldar nossa direção técnica e a mentorar a próxima geração.",
+            "desc2": "O apoio inicial de Wences Casares, John Pfeffer, Sebastian Serrano, OKX e a Human Rights Foundation nos ajudou a decolar. Desde 2024, o Xapo Bank cobre nossos custos operacionais, permitindo que todas as novas doações vão diretamente para desenvolvedores e programas educacionais."
+        },
+        "values": {
+            "badge": "Nossos Valores",
+            "title": "Nossos Valores",
+            "subtitle": "Somos guiados por um conjunto de princípios fundamentais que moldam tudo o que fazemos:",
+            "cards": {
+                "openSource": {
+                    "title": "Open-source primeiro",
+                    "desc": "Open-source primeiro. Acreditamos em infraestrutura pública, construída de forma transparente e acessível — desde o código que financiamos até os programas e materiais de aprendizado que produzimos."
+                },
+                "longTerm": {
+                    "title": "Pensamento de longo prazo",
+                    "desc": "Investimos em pessoas, não apenas em código — e apoiamos trabalhos que podem levar anos para amadurecer."
+                },
+                "bitcoinOnly": {
+                    "title": "Somente Bitcoin",
+                    "desc": "Não promovemos tokens, moedas ou hype. Apenas Bitcoin."
+                },
+                "localEmpowerment": {
+                    "title": "Descentralização",
+                    "desc": "Uma base diversa e global de contribuidores fortalece a segurança e a resiliência do Bitcoin."
+                },
+                "collaboration": {
+                    "title": "Colaboração",
+                    "desc": "Colaboramos com outras organizações e contribuidores para fortalecer o ecossistema como um todo."
+                }
+            }
+        },
+        "whyWeExist": {
+            "title": "Por Que Existimos",
+            "desc1": "A força do Bitcoin está em sua abertura: qualquer pessoa, em qualquer lugar, pode usá-lo, construir sobre ele e contribuir para seu futuro. Para cumprir seu potencial como ferramenta de liberdade e soberania financeira, o Bitcoin precisa de uma comunidade diversa e global de contribuidores que tragam diferentes experiências, perspectivas e desafios.",
+            "desc2": "A Vinteum existe para ajudar a tornar essa visão realidade. Ao treinar e apoiar desenvolvedores no Brasil e na América Latina, estamos trabalhando para garantir que as pessoas que constroem o Bitcoin reflitam as pessoas que dependem dele. Apoiar contribuidores de diferentes regiões não só fomenta inovação e visão local, mas também fortalece a resiliência da rede contra pressões políticas e pontos centrais de falha.",
+            "desc3": "Estamos construindo as condições para o desenvolvimento de Bitcoin florescer — enraizado em valores open-source, empoderamento local e pensamento de longo prazo."
+        },
+        "team": {
+            "badge": "Nossa equipe",
+            "title": "Nosso Time",
+            "subtitle": "Desenvolvedores, educadores e construtores de comunidade apaixonados por Bitcoin.",
+            "members": {
+                "lucas": {
+                    "name": "Lucas Ferreira",
+                    "role": "Diretor Executivo"
+                },
+                "andre": {
+                    "name": "André Neves",
+                    "role": "Head de Parcerias"
+                },
+                "bruno": {
+                    "name": "Bruno Garcia",
+                    "role": "Head de Engenharia"
+                },
+                "edil": {
+                    "name": "Prof. Edil Medeiros",
+                    "role": "Head de Pesquisa"
+                },
+                "jao": {
+                    "name": "Jão Noctus",
+                    "role": "Developer Advocate"
+                },
+                "lorenzo": {
+                    "name": "Lorenzo Maturano",
+                    "role": "Developer Advocate"
+                },
+                "thaiz": {
+                    "name": "Thaiz Batista",
+                    "role": "Head de Operações"
+                }
+            }
+        },
+        "supporters": {
+            "title": "Nossos Apoiadores"
+        },
+        "support": {
+            "badge": "Apoie Nossa Missão",
+            "text": "Somos gratos aos indivíduos e organizações que tornam nosso trabalho possível — desde nossos doadores fundadores até apoiadores contínuos como o Xapo Bank, cujo apoio desde 2024 nos permitiu crescer de forma sustentável.",
+            "cta": "Conheça nossos apoiadores",
+            "subtitle": "A Vinteum é financiada por indivíduos e organizações que compartilham nosso compromisso de fortalecer o Bitcoin por meio do desenvolvimento open-source. O apoio deles nos permite treinar novos contribuidores, financiar trabalho em infraestrutura crítica e cultivar um ecossistema próspero no Brasil e além."
+        }
+    },
+    "community": {
+        "badge": "Comunidade",
+        "subtitle": "Um espaço para aprender, colaborar e contribuir com o ecossistema Bitcoin.",
+        "title": "Nossa Comunidade",
+        "learnMore": "Saiba mais",
+        "cards": {
+            "bitdevs": {
+                "title": "Bitdevs pelo Brasil",
+                "desc": "Nossa comunidade organiza meetups mensais de BitDevs por todo o Brasil, seguindo o formato Socrático inaugurado pelo BitDevs NYC. Esses encontros de alto nível ajudam a revelar novos talentos, fortalecer comunidades locais de desenvolvedores e construir um pipeline sustentável para o desenvolvimento open-source de Bitcoin."
+            },
+            "discord": {
+                "title": "Comunidade no Discord",
+                "desc": "Nosso servidor público no Discord é onde desenvolvedores, mentores e participantes se conectam diariamente para compartilhar dúvidas, novidades e oportunidades. Seja para se preparar para o próximo Launchpad, participar de um seminário ou começar sua jornada técnica no Bitcoin, é o melhor lugar para se manter conectado e crescer."
+            },
+            "casa21": {
+                "title": "Casa21 Hackerhouse",
+                "desc": "Localizada em São Paulo, a Casa21 é nosso hub físico para aprendizado, colaboração e experimentação. Realizamos workshops, meetups e residências que reúnem desenvolvedores. É onde a comunidade digital do Bitcoin se encontra presencialmente e onde novas ideias ganham forma."
+            }
+        }
+    },
+    "bitdevs": {
+        "hero": {
+            "title": "Discussões técnicas mensais, com raízes na cultura open-source.",
+            "subtitle": "Cada meetup é organizado localmente e adaptado à sua comunidade, com temas que vão de mergulhos profundos em protocolos a sessões acessíveis para quem está começando a entender as bases técnicas do Bitcoin."
+        },
+        "cities": {
+            "text": "A Vinteum apoia meetups mensais de BitDevs em seis cidades brasileiras: São Paulo, Florianópolis, Curitiba, Brasília, Belo Horizonte e Porto Alegre. Eles seguem o formato Socrático do BitDevs NYC para promover discussões de alta qualidade sobre design do protocolo Bitcoin, implementação, pesquisa e questões em aberto.",
+            "saopaulo": {
+                "name": "São Paulo",
+                "desc": "Meetup mensal na Casa21 Hackerhouse. O hub mais ativo para desenvolvimento Bitcoin no Brasil."
+            },
+            "florianopolis": {
+                "name": "Florianópolis",
+                "desc": "Meetup mensal no formato socrático com uma comunidade local de desenvolvedores em crescimento."
+            },
+            "curitiba": {
+                "name": "Curitiba",
+                "desc": "Discussões técnicas regulares sobre protocolo Bitcoin e Lightning Network."
+            },
+            "brasilia": {
+                "name": "Brasília",
+                "desc": "Meetup mensal na capital, conectando desenvolvedores e Bitcoiners focados em políticas públicas."
+            },
+            "belohorizonte": {
+                "name": "Belo Horizonte",
+                "desc": "Grupo local ativo com deep-dives em pesquisa e implementação do Bitcoin."
+            },
+            "portoalegre": {
+                "name": "Porto Alegre",
+                "desc": "Encontros mensais no formato socrático, abertos a todos os níveis."
+            }
+        },
+        "whatToExpect": {
+            "badge": "saiba mais",
+            "title": "O Que Esperar",
+            "cards": {
+                "card1": "Discussões abertas e colaborativas sobre Bitcoin, Lightning e seus protocolos",
+                "card2": "Mergulhos profundos em BIPs, pull requests, artigos de pesquisa e detalhes de implementação",
+                "card3": "Um ambiente respeitoso, sem slides, projetado para aprendizado compartilhado",
+                "card4": "Conversas que vão além do hype superficial"
+            }
+        },
+        "codeOfConduct": {
+            "badge": "Sobre",
+            "title": "Código de Conduta",
+            "desc1": "Os meetups BitDevs são espaços abertos e respeitosos para discussão técnica. Assédio, discriminação ou qualquer forma de comportamento abusivo não será tolerado.",
+            "desc2": "Todos os participantes devem tratar uns aos outros com respeito, independentemente de gênero, raça, etnia, orientação sexual, capacidade, aparência, opiniões políticas, religião ou origem. Se você vivenciar ou presenciar qualquer problema durante um meetup BitDevs envolvendo organizadores ou participantes, entre em contato conosco imediatamente em info@vinteum.org.",
+            "desc3": "A Vinteum reserva-se o direito de retirar o apoio de qualquer meetup que não cumpra esses padrões."
+        },
+        "privacy": {
+            "badge": "Sobre",
+            "title": "Privacidade e ambiente seguro",
+            "desc1": "Nossos meetups seguem o espírito da Regra de Chatham House: os participantes podem usar livremente as informações discutidas, mas não podem revelar quem disse o quê ou onde foi dito.",
+            "desc2": "Os meetups nunca são gravados, e fotos só podem ser tiradas com a permissão explícita de todos que aparecem na imagem.",
+            "desc3": "Queremos que todos se sintam confortáveis para participar, fazer perguntas e se envolver em discussões abertas, inclusive anonimamente, se assim desejarem. O objetivo é criar um espaço respeitoso, técnico e acolhedor para aprender, ensinar e construir juntos."
+        },
+        "startInYourCity": {
+            "title": "Quer organizar um BitDevs na sua cidade?",
+            "desc1": "Estamos aqui para ajudar você a começar: desde a definição do formato até a divulgação dos seus primeiros eventos. Se você tem interesse em organizar um meetup BitDevs na sua cidade, podemos até enviar um dos nossos grantees, fellows ou colaboradores técnicos para co-organizar ou participar das primeiras sessões.",
+            "cta": "Fale conosco"
+        }
+    },
+    "mastering": {
+        "hero": {
+            "title": "Grupos de estudo semanais sobre Bitcoin e Lightning.",
+            "subtitle": "Os Mastering Seminars são grupos de estudo semanais baseados em discussão, construídos em torno dos livros Mastering Bitcoin e Mastering the Lightning Network."
+        },
+        "overview": {
+            "badge": "Sobre",
+            "title": "Visão Geral do Programa",
+            "item1": "Sessões semanais de 90 minutos",
+            "item2": "Discussões em grupo e perguntas guiadas",
+            "item3": "Sem slides ou aulas – só conversa",
+            "item4": "Dividido em duas trilhas",
+            "item4Subtitle": "Mastering Bitcoin (terças) · Mastering Lightning (quartas)"
+        },
+        "howItWorks": {
+            "badge": "Sobre",
+            "title": "Como Funciona",
+            "card1": "Participantes entram em uma chamada no Meet semanalmente",
+            "card2": "As sessões são baseadas no método socrático – sem aulas expositivas",
+            "card3": "Os grupos são divididos em salas menores para maximizar o engajamento",
+            "card4": "As perguntas são compartilhadas com antecedência",
+            "card5": "As sessões não são gravadas (para incentivar a participação aberta)"
+        },
+        "whoCanJoin": {
+            "title": "Quem Pode Participar",
+            "bullet1": "Qualquer pessoa interessada em entender profundamente Bitcoin e Lightning",
+            "bullet2": "Sem experiência em código necessária (mas ajuda!)",
+            "bullet3": "Ideal para devs, designers, product managers e educadores",
+            "cta": "ENTRAR NA LISTA DE ESPERA"
+        }
+    },
+    "grants": {
+        "hero": {
+            "title": "Financiando desenvolvedores que constroem a infraestrutura do Bitcoin.",
+            "subtitle": "O programa de grants da Vinteum apoia contribuidores experientes que trabalham em pesquisa, implementação, ferramentas, bibliotecas, testes, privacidade e outras áreas importantes da infraestrutura Bitcoin. Nossos grants são flexíveis e de longo prazo, para que desenvolvedores possam focar profundamente no seu trabalho."
+        },
+        "areasFund": {
+            "badge": "Sobre",
+            "title": "Áreas que Financiamos",
+            "cards": {
+                "card1": "Bitcoin Core e desenvolvimento de protocolo",
+                "card2": "Implementações e ferramentas da Lightning Network",
+                "card3": "Pesquisa em privacidade, escalabilidade e descentralização",
+                "card4": "Fuzzing, infraestrutura de testes e ferramentas para desenvolvedores",
+                "card5": "Bibliotecas de carteiras e SDKs para aplicações",
+                "card6": "Projetos que atendem regiões ou comunidades sub-representadas",
+                "card7": "Ferramentas educacionais e documentação que apoiam o onboarding de desenvolvedores"
+            }
+        },
+        "whoWeSupport": {
+            "title": "Quem Apoiamos",
+            "item1": "Estão contribuindo ativamente para projetos Bitcoin livres e open-source",
+            "item2": "Demonstram um histórico de contribuições cuidadosas e de alta qualidade",
+            "item3": "Priorizam segurança, transparência e pensamento de longo prazo",
+            "item4": "Trabalham bem em ambientes autogerenciados, com pouca supervisão",
+            "item5": "Colaboram de forma construtiva com a comunidade de desenvolvimento Bitcoin"
+        },
+        "apply": {
+            "title": "Interessado em se Candidatar?",
+            "desc1": "Se você é um contribuidor experiente trabalhando em um projeto Bitcoin open-source e gostaria de se candidatar a um grant, entre em contato conosco pelo info@vinteum.org. Inclua:",
+            "bullet1": "Um breve resumo do seu trabalho e objetivos",
+            "bullet2": "Links para contribuições anteriores (GitHub, mailing lists, posts no Delving Bitcoin, etc.)",
+            "bullet3": "Suas necessidades de financiamento e prazo proposto",
+            "desc2": "Analisamos propostas de forma contínua.",
+            "cta": "entre em contato"
+        },
+        "grantees": {
+            "badge": "Sobre",
+            "title": "Conheça nossos Grantees",
+            "cta": "candidate-se",
+            "filterCurrent": "Grantees Atuais",
+            "filterPast": "Ex-Grantees",
+            "showMore": "Ver todos os grantees",
+            "showLess": "Ver menos",
+            "members": {
+                "leonardoLima": { "name": "Leonardo Lima", "role": "Bitcoin Dev Kit" },
+                "davidsonSouza": { "name": "Davidson Souza", "role": "Floresta" },
+                "plebhash": { "name": "plebhash", "role": "Stratum V2" },
+                "pins": { "name": "Pins", "role": "LND" },
+                "chrisG": { "name": "Chris G.", "role": "Floresta" },
+                "johnnySantos": { "name": "Johnny Santos", "role": "P2Pool V2" },
+                "erickCestari": { "name": "Erick Cestari", "role": "Bitcoinfuzz / Smite" },
+                "thgOO": { "name": "thgO-O", "role": "BtcPayServer" }
+            }
+        }
+    },
+    "fellowship": {
+        "hero": {
+            "title": "Apoiando desenvolvedores em início de carreira no bitcoin open-source.",
+            "subtitle": "O Fellowship Program da Vinteum foi criado para apoiar desenvolvedores promissores que estão começando a contribuir com o Bitcoin open-source. Os fellows recebem mentoria, apoio financeiro e orientação técnica enquanto exploram o ecossistema, desenvolvem suas habilidades e começam a contribuir para projetos importantes do Bitcoin."
+        },
+        "whoItsFor": {
+            "badge": "Sobre",
+            "title": "Para Quem É Este Programa",
+            "cards": {
+                "card1": "Concluíram o Bitcoin Dev Launchpad ou possuem bases sólidas autodidatas",
+                "card2": "São apaixonados por open-source e querem trabalhar com Bitcoin em tempo integral",
+                "card3": "Querem explorar diferentes áreas (Core, Lightning, ferramentas, testes, etc.) antes de se especializar",
+                "card4": "Ainda não têm uma proposta de projeto clara ou histórico de financiamento"
+            }
+        },
+        "whatFellowsReceive": {
+            "title": "O Que os Fellows Recebem",
+            "item1": "6 meses de apoio financeiro para focar no trabalho open-source",
+            "item2": "Check-ins regulares e mentoria de devs experientes e da equipe Vinteum",
+            "item3": "Feedback técnico e integração à comunidade",
+            "item4": "Suporte para apresentar em conferências, contribuir com repositórios ou ingressar em futuros programas de grants"
+        },
+        "howToApply": {
+            "title": "Como se Candidatar",
+            "desc1": "Nosso Fellowship Program funciona de forma contínua. Embora a maioria dos fellows venha pelo Bitcoin Dev Launchpad, também aceitamos candidaturas diretas.",
+            "desc2": "Se você tem interesse, nos envie um e-mail para info@vinteum.org com:",
+            "bullet1": "Uma breve apresentação e background",
+            "bullet2": "Sua motivação para contribuir com o Bitcoin",
+            "bullet3": "Projetos anteriores, links do GitHub ou experiências de aprendizado",
+            "bullet4": "Áreas que você tem curiosidade de explorar",
+            "desc3": "Estamos sempre em busca da próxima geração de contribuidores.",
+            "cta": "entre em contato"
+        },
+        "fellows": {
+            "badge": "Sobre",
+            "title": "Conheça nossos Fellows",
+            "cta": "candidate-se",
+            "filterAll": "Todos",
+            "filterCurrent": "Fellows Atuais",
+            "filterPast": "Ex-Fellows",
+            "showMore": "Ver todos os fellows",
+            "showLess": "Ver menos",
+            "members": {
+                "viniciusCestari": { "name": "Vinicius Cestari", "role": "Bitcoin Core" },
+                "chrisG": { "name": "Chris G.", "role": "Floresta" },
+                "johnnySantos": { "name": "Johnny Santos", "role": "P2Pool V2" },
+                "bc1cindy": { "name": "bc1cindy", "role": "Payjoin Dev Kit" },
+                "caioUeda": { "name": "Caio Ueda Sampaio (K-YU)", "role": "Bitcoinfuzz" },
+                "allocz": { "name": "Allocz", "role": "btcd" },
+                "octavioLucca": { "name": "Octavio Lucca", "role": "Peer Observer" },
+                "victorAndre": { "name": "Victor André", "role": "BIP324" },
+                "isaqueFranklin": { "name": "Isaque Franklin", "role": "Estudando criptografia Bitcoin" },
+                "lucasLima": { "name": "Lucas Lima", "role": "Secure Fountain Codes" },
+                "renatoBritto": { "name": "Renato Britto (satsfy)", "role": "Rust-Bitcoin" },
+                "m4ycon": { "name": "m4ycon", "role": "Peer Observer" },
+                "jayrMotta": { "name": "Jayr Motta", "role": "Mujina" },
+                "lucasBalieiro": { "name": "Lucas Balieiro", "role": "Stratum V2" },
+                "joao": { "name": "João Leal", "role": "Floresta" },
+                "luis": { "name": "Luis Schwab", "role": "BDK / Floresta" },
+                "luca0x46": { "name": "Luca0x46", "role": "Second" },
+                "gustavoStingelin": { "name": "Gustavo Stingelin", "role": "Lightning Labs" },
+                "moisePompilio": { "name": "Moises Pompilio", "role": "Floresta" },
+                "erickCestari": { "name": "Erick Cestari", "role": "Bitcoinfuzz / Smite" },
+                "guilhermeMartins": { "name": "Guilherme Martins", "role": "Krux" },
+                "theMhv": { "name": "TheMhv", "role": "CDK" },
+                "joaozinho": { "name": "joaozinho", "role": "Krux" },
+                "caio": { "name": "Caio", "role": "Boltz" },
+                "lang": { "name": "Lang", "role": "Tether" },
+                "thgOO": { "name": "thgO-O", "role": "BtcPayServer" }
+            }
+        }
+    },
+    "launchpad": {
+        "hero": {
+            "title": "Comece a contribuir com o bitcoin open-source",
+            "subtitle": "O Bitcoin Dev Launchpad é nosso principal programa de aceleração de 12 semanas para contribuidores open-source. Aprenda na prática, com projetos hands-on e mentoria, seguido por uma fellowship de seis meses para os participantes de melhor desempenho."
+        },
+        "about": {
+            "desc1": "Buscamos autodidatas que aprendem fazendo. O Launchpad não é um bootcamp: é uma jornada intensiva com mentoria para ensinar as bases técnicas para quem quer se tornar contribuidor open-source de Bitcoin.",
+            "desc2": "O Launchpad foi criado para te levar de entender o protocolo a contribuir com ele.",
+            "title": "The Bitcoin Dev Launchpad",
+            "cta": "ENTRE NA LISTA DE ESPERA"
+        },
+        "cohort": {
+            "badge": "conheça",
+            "title": "Nossa Turma 2024-2025",
+            "applicants": "inscritos",
+            "trained": "desenvolvedores treinados",
+            "graduated": "formados",
+            "hired": "Contribuindo, Contratados"
+        },
+        "programStructure": {
+            "badge": "estrutura do programa",
+            "title": "Como o Launchpad funciona",
+            "prev": "Anterior",
+            "next": "Próximo",
+            "cards": {
+                "card1": {
+                    "title": "Aprofundamentos no Protocolo Bitcoin",
+                    "desc": "Leituras e discussões semanais cobrindo Bitcoin Core, Lightning e os internos de infraestrutura crítica."
+                },
+                "card2": {
+                    "title": "Contribuições Open-source",
+                    "desc": "Envie pull requests reais para o Bitcoin Core e repositórios do ecossistema com a orientação de contribuidores ativos."
+                },
+                "card3": {
+                    "title": "Code Reviews Socráticos",
+                    "desc": "Sessões estruturadas em grupo onde os participantes revisam, criticam e melhoram o código uns dos outros em tempo real."
+                },
+                "card4": {
+                    "title": "Q&A ao vivo com Core Devs",
+                    "desc": "Sessões regulares com desenvolvedores experientes do Bitcoin Core compartilhando conhecimento e respondendo perguntas diretamente."
+                },
+                "card5": {
+                    "title": "Mentorship from experienced devs",
+                    "desc": "Orientação individual de contribuidores open-source experientes para te ajudar a navegar desafios técnicos complexos."
+                }
+            }
+        },
+        "timeline": {
+            "title": "Cronograma\nde 12 Semanas",
+            "week1": { "title": "Semanas 1-2", "subtitle": "Onboarding no Bitcoin Core e construção de carteiras" },
+            "week2": { "title": "Semanas 3-5", "subtitle": "Cultura FOSS, transações testnet, PR Review Club" },
+            "week3": { "title": "Semanas 6-9", "subtitle": "Mineração, redes, contribuições open-source" },
+            "week4": { "title": "Semana 10", "subtitle": "Fundamentos da Lightning Network" },
+            "week5": { "title": "Semanas 11-12", "subtitle": "Hackathon presencial e offboarding (para os melhores participantes)" }
+        },
+        "whoItsFor": {
+            "badge": "Sobre",
+            "title": "Para Quem É",
+            "cards": {
+                "card1": "Desenvolvedores familiarizados com programação (qualquer linguagem)",
+                "card2": "Curiosos sobre o protocolo Bitcoin ou os internos da Lightning",
+                "card3": "Confortável com autoaprendizagem e leitura técnica em inglês",
+                "card4": "Baseado no Brasil (prioridade)"
+            }
+        },
+        "faq": {
+            "badge": "Sobre",
+            "title": "Requisitos para se candidatar",
+            "items": {
+                "item1": {
+                    "question": "Quanta experiência eu preciso?",
+                    "answer": "Buscamos desenvolvedores com 2–5 anos de experiência em programação. Este não é um bootcamp de programação."
+                },
+                "item2": {
+                    "question": "Quais linguagens de programação devo conhecer?",
+                    "answer": "Você deve se sentir confortável trabalhando ou disposto a aprender rapidamente linguagens de baixo nível como C, C++, Rust, C# ou Go."
+                },
+                "item3": {
+                    "question": "Que tipo de estilo de trabalho é esperado?",
+                    "answer": "Você deve ser autônomo e proativo, capaz de definir seu próprio roteiro de aprendizado."
+                },
+                "item4": {
+                    "question": "Quanto tempo preciso dedicar?",
+                    "answer": "Você precisa conseguir dedicar 15–20 horas por semana durante o programa."
+                },
+                "item5": {
+                    "question": "Preciso falar inglês?",
+                    "answer": "Sim — você deve se sentir confortável lendo e escrevendo em inglês, ou estar comprometido em melhorar."
+                }
+            }
+        },
+        "alumni": {
+            "badge": "Sobre",
+            "title": "Conheça nossos Alunos",
+            "cta": "ENTRAR NA LISTA DE ESPERA",
+            "cohort1": "1º cohort",
+            "cohort2": "2º cohort"
+        },
+        "testimonials": {
+            "title": "O Que os Participantes Estão Dizendo",
+            "prev": "Depoimento anterior",
+            "next": "Próximo depoimento",
+            "items": {
+                "item1": {
+                    "quote": "Desde o início, tudo foi bem estruturado e prático. O programa não é passivo—exige dedicação. Melhorei minhas habilidades de apresentação e ganhei confiança pelos desafios e mentoria, o que vai me ajudar profissional e pessoalmente.",
+                    "name": "Caio Costa",
+                    "cohort": "Turma 2024"
+                },
+                "item2": {
+                    "quote": "Uma jornada incrível que transformou minha compreensão do desenvolvimento Bitcoin. Os mentores são de alto nível e o suporte da comunidade foi incrível durante todo o programa.",
+                    "name": "Erick Cestari",
+                    "cohort": "Turma 2024"
+                },
+                "item3": {
+                    "quote": "O Launchpad me deu as ferramentas, o conhecimento e a rede para contribuir com o Bitcoin open-source. É uma oportunidade única para qualquer desenvolvedor sério.",
+                    "name": "Moisés Pompilio",
+                    "cohort": "Turma 2024"
+                },
+                "item4": {
+                    "quote": "O programa me levou muito além do que eu achei que conseguiria em 12 semanas. O currículo estruturado e as revisões entre pares foram transformadores.",
+                    "name": "Lucas Balieiro",
+                    "cohort": "Turma 2024"
+                }
+            }
+        }
+    },
+    "supporters": {
+        "hero": {
+            "title": "Obrigado a quem torna nossa missão possível",
+            "subtitle": "A Vinteum é financiada por pessoas e organizações que compartilham nosso compromisso de fortalecer o Bitcoin através do desenvolvimento open-source. O apoio deles nos permite treinar novos contribuidores, financiar trabalhos de infraestrutura crítica e fazer crescer um ecossistema vibrante no Brasil e além."
+        },
+        "intro": {
+            "desc1": "A Vinteum é financiada por pessoas e organizações que compartilham nosso compromisso de fortalecer o Bitcoin através do desenvolvimento open-source.",
+            "desc2": "O apoio deles nos permite treinar novos contribuidores, financiar trabalhos de infraestrutura crítica e fazer crescer um ecossistema vibrante no Brasil e além.",
+            "donateBitcoin": "Doar em Bitcoin",
+            "donateFiat": "Doar em Fiat"
+        },
+        "supportUs": {
+            "badge": "Apoie-nos",
+            "title": "Apoie-nos",
+            "description": "Nosso trabalho é possível graças a indivíduos, empresas e organizações que apoiam o desenvolvimento open-source do Bitcoin. Junte-se a eles.",
+            "imageAlt": "Encontro da comunidade Vinteum",
+            "donateBitcoin": "Doar em Bitcoin",
+            "donateFiat": "Doar em Fiat"
+        },
+        "globe": {
+            "subtitle": "Também incentivamos pessoas a contribuir participando de nossos eventos e seminários, ajudando a melhorar conteúdo educacional, organizando meetups ou workshops, apoiando a infraestrutura da Casa21 ou desenvolvendo comunidades locais de Bitcoin em suas próprias cidades."
+        },
+        "operationsMaintainer": {
+            "badge": "Apoiador",
+            "title": "Mantenedor de Operações",
+            "subtitle": "Apoia as operações da Vinteum, permitindo que todo o restante do financiamento vá diretamente para os programas."
+        },
+        "programSupporters": {
+            "title": "Program Supporters",
+            "subtitle": "Financiam nossas iniciativas educacionais e bolsas para desenvolvedores.",
+            "items": [
+                {
+                    "name": "OpenSats"
+                },
+                {
+                    "name": "HRF"
+                },
+                {
+                    "name": "Btrust"
+                }
+            ]
+        },
+        "foundingDonors": {
+            "title": "Doadores Fundadores",
+            "subtitle": "Forneceram o apoio inicial que ajudou a lançar a Vinteum.",
+            "items": [
+                {
+                    "name": "Wences Casares"
+                },
+                {
+                    "name": "John Pfeffer"
+                },
+                {
+                    "name": "Sebastian Serrano"
+                },
+                {
+                    "name": "OKX"
+                },
+                {
+                    "name": "HRF"
+                }
+            ]
+        }
+    },
+    "notFound": {
+        "code": "404",
+        "title": "Página não encontrada",
+        "subtitle": "A página que você está procurando não existe ou foi movida.",
+        "cta": "Voltar para o início"
+    },
+    "serverError": {
+        "code": "500",
+        "title": "Algo deu errado",
+        "subtitle": "Ocorreu um erro inesperado no servidor. Por favor, tente novamente ou volte para o início.",
+        "cta": "Voltar para o início",
+        "retry": "Tentar novamente"
+    },
+    "contact": {
+        "hero": {
+            "title": "Entre em contato",
+            "subtitle": "Tem dúvidas, ideias ou quer explorar uma parceria?"
+        },
+        "form": {
+            "badge": "Contato",
+            "title": "Envie uma mensagem",
+            "name": "Nome",
+            "namePlaceholder": "Seu nome completo",
+            "email": "Email",
+            "emailPlaceholder": "seu@email.com",
+            "subject": "Assunto",
+            "subjectPlaceholder": "Sobre o que é?",
+            "message": "Mensagem",
+            "messagePlaceholder": "Conte mais...",
+            "submit": "Enviar mensagem",
+            "sending": "Enviando...",
+            "success": "Mensagem enviada! Entraremos em contato em breve.",
+            "error": "Algo deu errado. Por favor, tente novamente."
+        },
+        "social": {
+            "title": "Encontre-nos em",
+            "emailLabel": "Email",
+            "email": "info@vinteum.org"
+        }
+    },
+    "donate": {
+        "hero": {
+            "title": "Apoie o desenvolvimento open-source do Bitcoin",
+            "subtitle": "Cada contribuição nos ajuda a treinar desenvolvedores, financiar trabalhos de infraestrutura crítica e fazer crescer o ecossistema Bitcoin no Brasil."
+        },
+        "impact": {
+            "badge": "Por que doar",
+            "title": "Sua contribuição faz a diferença",
+            "item1": "Financia desenvolvedores trabalhando em tempo integral no Bitcoin Core e na Lightning Network",
+            "item2": "Habilita a próxima geração de contribuidores open-source no Brasil",
+            "item3": "Apoia programas educacionais: Mastering Seminars, Launchpad, Fellowship e Grants",
+            "item4": "Ajuda a cobrir custos operacionais para que todas as doações vão diretamente aos programas",
+            "item5": "Fortalece uma comunidade global e descentralizada de desenvolvedores de Bitcoin"
+        },
+        "options": {
+            "badge": "Doar",
+            "title": "Como você quer contribuir",
+            "bitcoin": {
+                "label": "Bitcoin",
+                "description": "Envie Bitcoin on-chain ou pela Lightning Network. Sua doação vai diretamente para o apoio a desenvolvedores.",
+                "addressLabel": "Endereço on-chain",
+                "lightningLabel": "Endereço Lightning",
+                "copyAddress": "Copiar endereço",
+                "copied": "Copiado!",
+                "qrHint": "Escaneie para doar"
+            },
+            "fiat": {
+                "label": "Fiat",
+                "description": "Apoie com transferência bancária, cartão de crédito ou outros métodos de pagamento tradicionais pela nossa plataforma de doações.",
+                "cta": "Doar pela plataforma"
+            }
+        }
+    },
+    "blog": {
+        "hero": {
+            "badge": "Blog",
+            "title": "Novidades Vinteum",
+            "subtitle": "Notícias, pesquisas e insights da nossa equipe e da comunidade de desenvolvimento Bitcoin.",
+            "searchPlaceholder": "Buscar posts..."
+        },
+        "allCategories": "Todos",
+        "featured": "Destaque",
+        "readMore": "Ler artigo",
+        "readingTime": "min de leitura",
+        "by": "Por",
+        "pagination": {
+            "prev": "Anterior",
+            "next": "Próxima",
+            "page": "Página",
+            "of": "de"
+        },
+        "sidebar": {
+            "categories": "Categorias",
+            "recentPosts": "Posts recentes"
+        },
+        "post": {
+            "backToBlog": "Voltar ao blog",
+            "share": "Compartilhar",
+            "shareOn": "Compartilhar no",
+            "copyLink": "Copiar link",
+            "linkCopied": "Link copiado!",
+            "relatedTitle": "Artigos relacionados",
+            "publishedOn": "Publicado em"
+        },
+        "empty": "Nenhum post encontrado. Tente outro termo ou categoria."
+    },
+    "newsletter": {
+        "hero": {
+            "badge": "Newsletter",
+            "title": "Fique por dentro do desenvolvimento Bitcoin",
+            "subtitle": "Receba as últimas notícias, pesquisas e insights da Vinteum e da comunidade open-source de Bitcoin diretamente no seu e-mail."
+        },
+        "form": {
+            "badge": "Inscreva-se",
+            "title": "Assine nossa newsletter",
+            "subtitle": "Sem spam. Apenas atualizações relevantes sobre desenvolvimento Bitcoin, nossos programas e a comunidade open-source.",
+            "name": "Nome",
+            "email": "E-mail",
+            "namePlaceholder": "Seu nome",
+            "emailPlaceholder": "seu@email.com",
+            "cta": "Inscrever-se",
+            "sending": "Enviando...",
+            "success": "Inscrição realizada! Obrigado por se juntar a nós.",
+            "error": "Algo deu errado. Por favor, tente novamente."
+        },
+        "benefits": {
+            "title": "O que você vai receber",
+            "item1": "Atualizações mensais sobre desenvolvimento do Bitcoin Core e Lightning Network",
+            "item2": "Novidades sobre os programas e fellows da Vinteum",
+            "item3": "Conteúdo educacional sobre desenvolvimento Bitcoin open-source",
+            "item4": "Insights da nossa equipe e da comunidade global de Bitcoin"
+        }
+    }
+}
