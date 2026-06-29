@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
 
 export interface SocialLinks {
@@ -38,16 +38,43 @@ interface TeamMemberCardProps {
     isBoardMember?: boolean;
     links?: SocialLinks;
     fundedBy?: string;
+    easterEggImage?: string;
 }
 
-export function TeamMemberCard({ image, name, role, isBoardMember, links, fundedBy }: TeamMemberCardProps) {
+export function TeamMemberCard({ image, name, role, isBoardMember, links, fundedBy, easterEggImage }: TeamMemberCardProps) {
     const [imgError, setImgError] = useState(false);
+    const [showEgg, setShowEgg] = useState(false);
+    const lastPointerType = useRef('');
 
     const hasLinks = links && Object.values(links).some(Boolean);
 
+    const handlePointerEnter = (e: React.PointerEvent) => {
+        lastPointerType.current = e.pointerType;
+        if (e.pointerType !== 'touch') {
+            setShowEgg(true);
+        }
+    };
+
+    const handlePointerLeave = (e: React.PointerEvent) => {
+        if (e.pointerType !== 'touch') {
+            setShowEgg(false);
+        }
+    };
+
+    const handleClick = () => {
+        if (lastPointerType.current === 'touch') {
+            setShowEgg(prev => !prev);
+        }
+    };
+
     return (
         <div className="rounded-2xl border border-[#31422D] bg-[#161814] p-3 flex flex-col gap-4 h-full">
-            <div className="relative w-full aspect-square overflow-hidden rounded-xl">
+            <div
+                className={`relative w-full aspect-square overflow-hidden rounded-xl${easterEggImage ? ' cursor-pointer select-none' : ''}`}
+                onPointerEnter={easterEggImage ? handlePointerEnter : undefined}
+                onPointerLeave={easterEggImage ? handlePointerLeave : undefined}
+                onClick={easterEggImage ? handleClick : undefined}
+            >
                 {imgError || !image ? (
                     <div className="w-full h-full bg-[#31422D]" />
                 ) : (
@@ -59,6 +86,22 @@ export function TeamMemberCard({ image, name, role, isBoardMember, links, funded
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                         onError={() => setImgError(true)}
                     />
+                )}
+                {easterEggImage && (
+                    <div
+                        className="absolute inset-0 transition-opacity duration-300 ease-in-out pointer-events-none"
+                        style={{ opacity: showEgg ? 1 : 0 }}
+                        aria-hidden="true"
+                    >
+                        <Image
+                            src={easterEggImage}
+                            alt=""
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                            priority
+                        />
+                    </div>
                 )}
             </div>
             <div className="flex flex-col gap-1 px-1 pb-2">

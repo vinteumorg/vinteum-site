@@ -127,6 +127,7 @@ const FELLOWS: AlumniMember[] = [
         roleKey: "fellowship.fellows.members.renatoBritto.role",
         image: "/assets/images/people/fellows/renatobritto.jpg",
         status: "current",
+        easterEggImage: "/assets/images/people/fellows/bukele.jpg",
         links: {
             github: "https://github.com/satsfy",
             twitter: "https://x.com/0xsatsfy",
