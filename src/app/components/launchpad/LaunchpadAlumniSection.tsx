@@ -20,6 +20,7 @@ interface AlumniEntry {
     image: string;
     fundedBy?: string;
     links?: SocialLinks;
+    easterEggImage?: string;
 }
 
 const COHORT_1: AlumniEntry[] = [
@@ -258,6 +259,7 @@ const COHORT_2: AlumniEntry[] = [
         roleKey: "fellowship.fellows.members.renatoBritto.role",
         image: "/assets/images/people/fellows/renatobritto.jpg",
         fundedBy: "Vinteum",
+        easterEggImage: "/assets/images/people/fellows/bukele.jpg",
         links: {
             github: "https://github.com/satsfy",
             twitter: "https://x.com/0xsatsfy",
@@ -300,6 +302,7 @@ function CohortGrid({ members }: { members: AlumniEntry[] }) {
                         role={t(m.roleKey)}
                         fundedBy={m.fundedBy}
                         links={m.links}
+                        easterEggImage={m.easterEggImage}
                     />
                 </div>
             ))}

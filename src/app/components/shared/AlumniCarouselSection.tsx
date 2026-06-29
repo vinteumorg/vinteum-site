@@ -11,6 +11,7 @@ export type AlumniMember = {
     image: string;
     status?: "current" | "past";
     links?: SocialLinks;
+    easterEggImage?: string;
 };
 
 type Filter = "all" | "current" | "past";
@@ -105,6 +106,7 @@ export function AlumniCarouselSection({
                                 name={t(member.nameKey)}
                                 role={t(member.roleKey)}
                                 links={member.links}
+                                easterEggImage={member.easterEggImage}
                             />
                         </div>
                     ))}
