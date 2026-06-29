@@ -20,6 +20,9 @@ export function AboutWhatWeDoSection() {
             card={{
                 variant: "text",
                 description: [
+                    <strong key="intro" className="font-poppins text-sm md:text-[15px] text-foreground font-semibold leading-relaxed">
+                        {t("about.whatWeDo.intro")}
+                    </strong>,
                     t("about.whatWeDo.desc1"),
                     t("about.whatWeDo.desc2"),
                     t("about.whatWeDo.desc3"),
