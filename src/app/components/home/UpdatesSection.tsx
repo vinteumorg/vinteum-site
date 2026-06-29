@@ -1,10 +1,11 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { SectionTitle } from "../shared/SectionTitle";
+import { useScrollCarousel } from "@/hooks/useScrollCarousel";
 
 interface Post {
     title: string;
@@ -17,10 +18,6 @@ const VISIBLE_COUNT = 4;
 
 export function UpdatesSection() {
     const { t } = useLanguage();
-    const [startIndex, setStartIndex] = useState(0);
-    const [mobileIndex, setMobileIndex] = useState(0);
-    const mobileRef = useRef<HTMLDivElement>(null);
-    const snapTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
     const posts: Post[] = [
         {
@@ -50,6 +47,7 @@ export function UpdatesSection() {
     ];
 
     // Desktop navigation
+    const [startIndex, setStartIndex] = useState(0);
     const maxIndex = Math.max(posts.length - VISIBLE_COUNT, 0);
     const canGoPrev = startIndex > 0;
     const canGoNext = startIndex < maxIndex;
@@ -57,33 +55,8 @@ export function UpdatesSection() {
     const goNext = () => setStartIndex((i) => Math.min(i + 1, maxIndex));
     const visiblePosts = posts.slice(startIndex, startIndex + VISIBLE_COUNT);
 
-    useEffect(() => {
-        const el = mobileRef.current;
-        if (!el) return;
-
-        const updateActive = () => {
-            const cardEls = el.querySelectorAll<HTMLElement>("[data-mc]");
-            const center = el.scrollLeft + el.offsetWidth / 2;
-            let best = 0;
-            let bestDist = Infinity;
-            cardEls.forEach((c, i) => {
-                const dist = Math.abs(c.offsetLeft + c.offsetWidth / 2 - center);
-                if (dist < bestDist) { bestDist = dist; best = i; }
-            });
-            setMobileIndex(best);
-        };
-
-        const onScroll = () => {
-            if (snapTimer.current) clearTimeout(snapTimer.current);
-            snapTimer.current = setTimeout(updateActive, 50);
-        };
-
-        el.addEventListener("scroll", onScroll, { passive: true });
-        return () => {
-            el.removeEventListener("scroll", onScroll);
-            if (snapTimer.current) clearTimeout(snapTimer.current);
-        };
-    }, []);
+    // Mobile scroll
+    const { scrollRef: mobileRef, activeIndex: mobileIndex, handleScroll: handleMobileScroll, scrollToIndex: scrollMobileTo } = useScrollCarousel("[data-mc]");
 
     return (
         <section className="relative z-10 w-full py-12 md:py-28 overflow-hidden">
@@ -149,6 +122,7 @@ export function UpdatesSection() {
 
                 <div
                     ref={mobileRef}
+                    onScroll={handleMobileScroll}
                     className="flex overflow-x-auto gap-4 px-[9%] pt-8 pb-4 scrollbar-hide snap-x snap-mandatory scroll-smooth"
                 >
                     {posts.map((post, index) => {
@@ -183,12 +157,13 @@ export function UpdatesSection() {
 
                 <div className="flex justify-center gap-2 mt-4">
                     {posts.map((_, i) => (
-                        <span
+                        <button
                             key={i}
-                            className={`block rounded-full transition-all duration-300 ${i === mobileIndex
-                                ? "w-5 h-2 bg-primary"
-                                : "w-2 h-2 bg-foreground/20"
-                                }`}
+                            onClick={() => scrollMobileTo(i)}
+                            aria-label={`Card ${i + 1}`}
+                            className={`h-1.5 rounded-full transition-all duration-300 ${
+                                i === mobileIndex ? "w-6 bg-[#91FFAE]" : "w-1.5 bg-white/30"
+                            }`}
                         />
                     ))}
                 </div>
