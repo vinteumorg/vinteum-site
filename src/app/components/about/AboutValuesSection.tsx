@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useRef, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { SectionTitle } from "../shared/SectionTitle";
+import { useScrollCarousel } from "@/hooks/useScrollCarousel";
 
 const VALUE_CARDS = [
     {
@@ -35,37 +35,7 @@ const VALUE_CARDS = [
 
 export function AboutValuesSection() {
     const { t } = useLanguage();
-    const [mobileIndex, setMobileIndex] = useState(0);
-    const scrollRef = useRef<HTMLDivElement>(null);
-    const snapTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-    useEffect(() => {
-        const el = scrollRef.current;
-        if (!el) return;
-
-        const updateActive = () => {
-            const cardEls = el.querySelectorAll<HTMLElement>("[data-mc]");
-            const center = el.scrollLeft + el.offsetWidth / 2;
-            let best = 0;
-            let bestDist = Infinity;
-            cardEls.forEach((c, i) => {
-                const dist = Math.abs(c.offsetLeft + c.offsetWidth / 2 - center);
-                if (dist < bestDist) { bestDist = dist; best = i; }
-            });
-            setMobileIndex(best);
-        };
-
-        const onScroll = () => {
-            if (snapTimer.current) clearTimeout(snapTimer.current);
-            snapTimer.current = setTimeout(updateActive, 50);
-        };
-
-        el.addEventListener("scroll", onScroll, { passive: true });
-        return () => {
-            el.removeEventListener("scroll", onScroll);
-            if (snapTimer.current) clearTimeout(snapTimer.current);
-        };
-    }, []);
+    const { scrollRef, activeIndex, handleScroll, scrollToIndex } = useScrollCarousel("[data-mc]");
 
     return (
         <section className="relative w-full py-12 md:py-28 overflow-hidden">
@@ -81,12 +51,12 @@ export function AboutValuesSection() {
 
             {/* Cards — mobile/tablet: scroll horizontal com snap */}
             <div className="lg:hidden relative">
-                {/* Sombra nas bordas */}
                 <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
                 <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
 
                 <div
                     ref={scrollRef}
+                    onScroll={handleScroll}
                     className="flex overflow-x-auto gap-4 px-[9%] pt-8 pb-4 scrollbar-hide snap-x snap-mandatory scroll-smooth"
                 >
                     {VALUE_CARDS.map((card, index) => (
@@ -117,15 +87,15 @@ export function AboutValuesSection() {
                     ))}
                 </div>
 
-                {/* Dots indicadores */}
                 <div className="flex justify-center gap-2 mt-4">
                     {VALUE_CARDS.map((_, i) => (
-                        <span
+                        <button
                             key={i}
-                            className={`block rounded-full transition-all duration-300 ${i === mobileIndex
-                                ? "w-5 h-2 bg-primary"
-                                : "w-2 h-2 bg-foreground/20"
-                                }`}
+                            onClick={() => scrollToIndex(i)}
+                            aria-label={`Card ${i + 1}`}
+                            className={`h-1.5 rounded-full transition-all duration-300 ${
+                                i === activeIndex ? "w-6 bg-[#91FFAE]" : "w-1.5 bg-white/30"
+                            }`}
                         />
                     ))}
                 </div>
