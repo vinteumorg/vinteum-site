@@ -7,7 +7,7 @@ import type { ReactNode } from "react";
 interface TextCardContent {
     variant: "text";
     title?: string;
-    description: string[];
+    description: ReactNode[];
 }
 
 interface MediaCardContent {
@@ -15,7 +15,7 @@ interface MediaCardContent {
     imageSrc: string;
     imageAlt: string;
     title: string;
-    description: string[];
+    description: ReactNode[];
     readMoreLabel: string;
     readMoreHref: string;
 }

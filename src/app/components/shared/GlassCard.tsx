@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { ReactNode } from "react";
 
 interface GlassCardTextVariant {
     variant: "text";
     title?: string;
-    description: string[];
+    description: ReactNode[];
 }
 
 interface GlassCardMediaVariant {
@@ -12,7 +13,7 @@ interface GlassCardMediaVariant {
     imageSrc: string;
     imageAlt: string;
     title: string;
-    description: string[];
+    description: ReactNode[];
     readMoreLabel: string;
     readMoreHref: string;
 }
