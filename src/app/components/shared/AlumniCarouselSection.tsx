@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { TeamMemberCard } from "./TeamMemberCard";
+import { SocialLinks, TeamMemberCard } from "./TeamMemberCard";
 import { SectionTitle } from "./SectionTitle";
 
 export type AlumniMember = {
@@ -10,6 +10,7 @@ export type AlumniMember = {
     roleKey: string;
     image: string;
     status?: "current" | "past";
+    links?: SocialLinks;
 };
 
 type Filter = "all" | "current" | "past";
@@ -103,6 +104,7 @@ export function AlumniCarouselSection({
                                 image={member.image}
                                 name={t(member.nameKey)}
                                 role={t(member.roleKey)}
+                                links={member.links}
                             />
                         </div>
                     ))}
