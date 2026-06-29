@@ -1,15 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useRef, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { SectionTitle } from "../shared/SectionTitle";
+import { useScrollCarousel } from "@/hooks/useScrollCarousel";
 
 export function CommunitySection() {
     const { t } = useLanguage();
-    const [mobileIndex, setMobileIndex] = useState(0);
-    const mobileRef = useRef<HTMLDivElement>(null);
-    const snapTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+    const { scrollRef, activeIndex, handleScroll, scrollToIndex } = useScrollCarousel("[data-mc]");
 
     const cards = [
         {
@@ -32,34 +30,6 @@ export function CommunitySection() {
         },
     ];
 
-    useEffect(() => {
-        const el = mobileRef.current;
-        if (!el) return;
-
-        const updateActive = () => {
-            const cardEls = el.querySelectorAll<HTMLElement>("[data-mc]");
-            const center = el.scrollLeft + el.offsetWidth / 2;
-            let best = 0;
-            let bestDist = Infinity;
-            cardEls.forEach((c, i) => {
-                const dist = Math.abs(c.offsetLeft + c.offsetWidth / 2 - center);
-                if (dist < bestDist) { bestDist = dist; best = i; }
-            });
-            setMobileIndex(best);
-        };
-
-        const onScroll = () => {
-            if (snapTimer.current) clearTimeout(snapTimer.current);
-            snapTimer.current = setTimeout(updateActive, 50);
-        };
-
-        el.addEventListener("scroll", onScroll, { passive: true });
-        return () => {
-            el.removeEventListener("scroll", onScroll);
-            if (snapTimer.current) clearTimeout(snapTimer.current);
-        };
-    }, []);
-
     return (
         <section className="w-full py-12 md:py-28 overflow-hidden">
             {/* Header */}
@@ -77,11 +47,12 @@ export function CommunitySection() {
                 <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
 
                 <div
-                    ref={mobileRef}
+                    ref={scrollRef}
+                    onScroll={handleScroll}
                     className="flex overflow-x-auto gap-4 px-[9%] pt-8 pb-4 scrollbar-hide snap-x snap-mandatory scroll-smooth"
                 >
                     {cards.map((card, index) => {
-                        const isActive = index === mobileIndex;
+                        const isActive = index === activeIndex;
                         return (
                             <div
                                 key={card.titleKey}
@@ -111,12 +82,13 @@ export function CommunitySection() {
 
                 <div className="flex justify-center gap-2 mt-4">
                     {cards.map((_, i) => (
-                        <span
+                        <button
                             key={i}
-                            className={`block rounded-full transition-all duration-300 ${i === mobileIndex
-                                ? "w-5 h-2 bg-primary"
-                                : "w-2 h-2 bg-foreground/20"
-                                }`}
+                            onClick={() => scrollToIndex(i)}
+                            aria-label={`Card ${i + 1}`}
+                            className={`h-1.5 rounded-full transition-all duration-300 ${
+                                i === activeIndex ? "w-6 bg-[#91FFAE]" : "w-1.5 bg-white/30"
+                            }`}
                         />
                     ))}
                 </div>

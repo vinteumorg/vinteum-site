@@ -1,9 +1,10 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { SectionTitle } from "../shared/SectionTitle";
+import { useScrollCarousel } from "@/hooks/useScrollCarousel";
 
 interface Program {
     titleKey: string;
@@ -47,37 +48,7 @@ export function ProgramsSection() {
     const goToNext = () => setCurrentIndex((i) => Math.min(i + 1, programs.length - 1));
     const goToPrev = () => setCurrentIndex((i) => Math.max(i - 1, 0));
 
-    const [mobileIndex, setMobileIndex] = useState(0);
-    const mobileRef = useRef<HTMLDivElement>(null);
-    const snapTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-    useEffect(() => {
-        const el = mobileRef.current;
-        if (!el) return;
-
-        const updateActive = () => {
-            const cards = el.querySelectorAll<HTMLElement>("[data-mc]");
-            const center = el.scrollLeft + el.offsetWidth / 2;
-            let best = 0;
-            let bestDist = Infinity;
-            cards.forEach((c, i) => {
-                const dist = Math.abs(c.offsetLeft + c.offsetWidth / 2 - center);
-                if (dist < bestDist) { bestDist = dist; best = i; }
-            });
-            setMobileIndex(best);
-        };
-
-        const onScroll = () => {
-            if (snapTimer.current) clearTimeout(snapTimer.current);
-            snapTimer.current = setTimeout(updateActive, 50);
-        };
-
-        el.addEventListener("scroll", onScroll, { passive: true });
-        return () => {
-            el.removeEventListener("scroll", onScroll);
-            if (snapTimer.current) clearTimeout(snapTimer.current);
-        };
-    }, []);
+    const { scrollRef: mobileRef, activeIndex: mobileIndex, handleScroll: handleMobileScroll, scrollToIndex: scrollMobileTo } = useScrollCarousel("[data-mc]");
 
     return (
         <section className="w-full py-12 md:py-28">
@@ -93,6 +64,7 @@ export function ProgramsSection() {
 
                 <div
                     ref={mobileRef}
+                    onScroll={handleMobileScroll}
                     className="flex overflow-x-auto gap-4 px-[9%] pt-8 pb-4 scrollbar-hide snap-x snap-mandatory scroll-smooth"
                 >
                     {programs.map((program, index) => {
@@ -120,12 +92,13 @@ export function ProgramsSection() {
 
                 <div className="flex justify-center gap-2 mt-4">
                     {programs.map((_, i) => (
-                        <span
+                        <button
                             key={i}
-                            className={`block rounded-full transition-all duration-300 ${i === mobileIndex
-                                ? "w-5 h-2 bg-primary"
-                                : "w-2 h-2 bg-foreground/20"
-                                }`}
+                            onClick={() => scrollMobileTo(i)}
+                            aria-label={`Card ${i + 1}`}
+                            className={`h-1.5 rounded-full transition-all duration-300 ${
+                                i === mobileIndex ? "w-6 bg-[#91FFAE]" : "w-1.5 bg-white/30"
+                            }`}
                         />
                     ))}
                 </div>
