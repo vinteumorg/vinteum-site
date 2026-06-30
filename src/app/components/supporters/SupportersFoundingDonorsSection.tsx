@@ -10,11 +10,11 @@ const foundingDonors = [
         nameKey: "supporters.foundingDonors.items.0.name",
     },
     {
-        image: "/assets/logos/donors/donor-2.jpg",
+        image: "/assets/logos/donors/donor-2.png",
         nameKey: "supporters.foundingDonors.items.1.name",
     },
     {
-        image: "/assets/logos/donors/donor-3.jpg",
+        image: "/assets/logos/donors/donor-3.png",
         nameKey: "supporters.foundingDonors.items.2.name",
     },
     {
