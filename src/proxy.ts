@@ -24,16 +24,21 @@ export function proxy(request: NextRequest) {
 
     const { pathname } = request.nextUrl;
 
-    // Next.js Link components still generate hrefs like /blog/[slug] even
-    // when running on the subdomain, so those requests must pass through
-    // as-is — the route already exists at that path.
+    // Strip the /blog prefix with a redirect so URLs stay clean.
+    // Next.js Link components generate hrefs like /blog/cc even on the
+    // subdomain; this redirect normalises them to /cc.
+    //   blog.localhost:3000/blog/cc  → 308 → blog.localhost:3000/cc
+    //   blog.localhost:3000/blog     → 308 → blog.localhost:3000/
     if (pathname.startsWith("/blog")) {
-        return NextResponse.next();
+        const clean = pathname.slice("/blog".length) || "/";
+        const url = request.nextUrl.clone();
+        url.pathname = clean;
+        return NextResponse.redirect(url, 308);
     }
 
-    // Rewrite all other paths:
-    //   /          → /blog       (listing page)
-    //   /my-post   → /blog/my-post  (clean post URLs if linked directly)
+    // Rewrite the clean path to the internal /blog/* Next.js route.
+    //   /     → /blog         (listing page)
+    //   /cc   → /blog/cc      (post page)
     const url = request.nextUrl.clone();
     url.pathname = pathname === "/" ? "/blog" : `/blog${pathname}`;
     return NextResponse.rewrite(url);
