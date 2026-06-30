@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { SectionTitle } from "../shared/SectionTitle";
@@ -45,9 +45,37 @@ export function ProgramsSection() {
     const { t } = useLanguage();
 
     const [currentIndex, setCurrentIndex] = useState(1);
-    const goToNext = () => setCurrentIndex((i) => Math.min(i + 1, programs.length - 1));
-    const goToPrev = () => setCurrentIndex((i) => Math.max(i - 1, 0));
 
+    // Desktop: native scroll carousel — browser handles trackpad gestures naturally
+    const desktopScrollRef = useRef<HTMLDivElement>(null);
+
+    const handleDesktopScroll = useCallback(() => {
+        const el = desktopScrollRef.current;
+        if (!el) return;
+        const cards = Array.from(el.querySelectorAll<HTMLElement>("[data-dc]"));
+        const center = el.scrollLeft + el.clientWidth / 2;
+        let nearest = 0, nearestDist = Infinity;
+        cards.forEach((card, i) => {
+            const dist = Math.abs(card.offsetLeft + card.offsetWidth / 2 - center);
+            if (dist < nearestDist) { nearestDist = dist; nearest = i; }
+        });
+        setCurrentIndex(nearest);
+    }, []);
+
+    const scrollDesktopTo = useCallback((i: number) => {
+        const el = desktopScrollRef.current;
+        if (!el) return;
+        const cards = el.querySelectorAll<HTMLElement>("[data-dc]");
+        const card = cards[i];
+        if (!card) return;
+        el.scrollTo({ left: card.offsetLeft - (el.clientWidth - card.offsetWidth) / 2, behavior: "smooth" });
+    }, []);
+
+    useEffect(() => {
+        scrollDesktopTo(1);
+    }, [scrollDesktopTo]);
+
+    // Mobile: snap-scroll carousel
     const { scrollRef: mobileRef, activeIndex: mobileIndex, handleScroll: handleMobileScroll, scrollToIndex: scrollMobileTo } = useScrollCarousel("[data-mc]");
 
     return (
@@ -104,16 +132,17 @@ export function ProgramsSection() {
                 </div>
             </div>
 
+            {/* ── Desktop ── */}
             <div className="hidden md:block relative mt-14">
                 <div className="absolute inset-0 h-[620px] pointer-events-none select-none overflow-hidden">
                     <Image src="/assets/backgrounds/programs-section.svg" alt="" fill className="object-cover object-top" aria-hidden="true" />
                 </div>
 
                 <div className="relative z-10">
-                    {/* Botões */}
+                    {/* Navigation buttons */}
                     <div className="flex justify-center gap-3 pb-8">
                         <button
-                            onClick={goToPrev}
+                            onClick={() => scrollDesktopTo(currentIndex - 1)}
                             disabled={currentIndex === 0}
                             aria-label={t("programs.prev")}
                             className="w-12 h-12 rounded-full flex items-center justify-center cursor-pointer transition-all duration-200 backdrop-blur-sm hover:scale-110 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:scale-100 bg-[rgba(27,50,35,0.8)] border-2 border-[rgba(145,255,174,0.3)] text-[#91FFAE] hover:bg-[rgba(27,50,35,1)] hover:border-[#91FFAE]"
@@ -123,7 +152,7 @@ export function ProgramsSection() {
                             </svg>
                         </button>
                         <button
-                            onClick={goToNext}
+                            onClick={() => scrollDesktopTo(currentIndex + 1)}
                             disabled={currentIndex === programs.length - 1}
                             aria-label={t("programs.next")}
                             className="w-12 h-12 rounded-full flex items-center justify-center cursor-pointer transition-all duration-200 backdrop-blur-sm hover:scale-110 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:scale-100 bg-[rgba(27,50,35,0.8)] border-2 border-[rgba(145,255,174,0.3)] text-[#91FFAE] hover:bg-[rgba(27,50,35,1)] hover:border-[#91FFAE]"
@@ -134,18 +163,22 @@ export function ProgramsSection() {
                         </button>
                     </div>
 
-                    <div className="relative overflow-hidden h-[560px]">
+                    <div className="relative h-[560px]">
                         <div className="absolute left-0 top-0 w-40 h-full bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
                         <div className="absolute right-0 top-0 w-40 h-full bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
 
                         <div
-                            className={`flex gap-6 absolute top-8 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] programs-slide-${currentIndex}`}
+                            ref={desktopScrollRef}
+                            onScroll={handleDesktopScroll}
+                            className="flex gap-6 overflow-x-auto scrollbar-hide h-full items-start pt-8"
+                            style={{ paddingLeft: "calc(50% - 210px)", paddingRight: "calc(50% - 210px)" }}
                         >
                             {programs.map((program, index) => {
                                 const isActive = index === currentIndex;
                                 return (
                                     <div
                                         key={index}
+                                        data-dc
                                         className={`flex-shrink-0 w-[420px] h-[500px] rounded-[30px] overflow-hidden relative transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${isActive ? "scale-100 opacity-100 -translate-y-8" : "scale-[0.9] opacity-60 translate-y-0"
                                             }`}
                                     >
