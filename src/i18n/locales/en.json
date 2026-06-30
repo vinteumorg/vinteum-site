@@ -49,7 +49,8 @@
             "subscribeBtn": "Subscribe",
             "success": "You're subscribed! Thank you.",
             "duplicate": "You're already subscribed.",
-            "error": "Something went wrong. Please try again."
+            "error": "Something went wrong. Please try again.",
+            "emailInvalid": "Please enter a valid email address."
         },
         "contact": "Contact us",
         "brandkit": "Brandkit download",
