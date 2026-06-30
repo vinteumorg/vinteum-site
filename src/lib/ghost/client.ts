@@ -16,21 +16,19 @@ const POST_FIELDS = [
     "meta_title", "meta_description",
 ].join(",");
 
-function getConfig() {
+function getConfig(): { url: string; key: string } | null {
     const url = process.env.GHOST_URL;
     const key = process.env.GHOST_CONTENT_API_KEY;
-    if (!url || !key) {
-        throw new Error("GHOST_URL and GHOST_CONTENT_API_KEY environment variables are required");
-    }
+    if (!url || !key) return null;
     return { url, key };
 }
 
 function buildUrl(
     base: string,
+    key: string,
     endpoint: string,
     params: Record<string, string>
 ): string {
-    const { key } = getConfig();
     const url = new URL(`${base}/ghost/api/content/${endpoint}/`);
     url.searchParams.set("key", key);
     for (const [k, v] of Object.entries(params)) {
@@ -38,6 +36,11 @@ function buildUrl(
     }
     return url.toString();
 }
+
+const EMPTY_POSTS_RESPONSE: GhostPostsResponse = {
+    posts: [],
+    meta: { pagination: { page: 1, limit: 15, pages: 0, total: 0, next: null, prev: null } },
+};
 
 const REVALIDATE = 60; // seconds
 
@@ -57,7 +60,10 @@ export interface GetPostsOptions {
 }
 
 export async function getPosts(options: GetPostsOptions = {}): Promise<GhostPostsResponse> {
-    const { url } = getConfig();
+    const config = getConfig();
+    if (!config) return EMPTY_POSTS_RESPONSE;
+
+    const { url, key } = config;
     const { page = 1, limit = 6, tag, featured = undefined } = options;
 
     const filters = ["visibility:public"];
@@ -65,7 +71,7 @@ export async function getPosts(options: GetPostsOptions = {}): Promise<GhostPost
     if (featured !== undefined) filters.push(`featured:${featured}`);
 
     return ghostFetch<GhostPostsResponse>(
-        buildUrl(url, "posts", {
+        buildUrl(url, key, "posts", {
             include: "authors,tags",
             fields: POST_FIELDS,
             filter: filters.join("+"),
@@ -77,9 +83,12 @@ export async function getPosts(options: GetPostsOptions = {}): Promise<GhostPost
 }
 
 export async function getPostBySlug(slug: string): Promise<GhostPost | null> {
-    const { url } = getConfig();
+    const config = getConfig();
+    if (!config) return null;
 
-    const apiUrl = buildUrl(url, `posts/slug/${slug}`, {
+    const { url, key } = config;
+
+    const apiUrl = buildUrl(url, key, `posts/slug/${slug}`, {
         include: "authors,tags",
         fields: POST_FIELDS,
     });
@@ -102,12 +111,14 @@ export async function getRelatedPosts(
 ): Promise<GhostPost[]> {
     if (tagSlugs.length === 0) return [];
 
-    const { url } = getConfig();
+    const config = getConfig();
+    if (!config) return [];
 
+    const { url, key } = config;
     const tagFilter = tagSlugs.map((t) => `tag:${t}`).join(",");
 
     const data = await ghostFetch<GhostPostsResponse>(
-        buildUrl(url, "posts", {
+        buildUrl(url, key, "posts", {
             include: "authors,tags",
             fields: POST_FIELDS,
             filter: `(${tagFilter})+slug:-${excludeSlug}+visibility:public`,
@@ -120,10 +131,13 @@ export async function getRelatedPosts(
 }
 
 export async function getAllTags(): Promise<GhostTag[]> {
-    const { url } = getConfig();
+    const config = getConfig();
+    if (!config) return [];
+
+    const { url, key } = config;
 
     const data = await ghostFetch<GhostTagsResponse>(
-        buildUrl(url, "tags", {
+        buildUrl(url, key, "tags", {
             limit: "all",
             filter: "visibility:public",
             fields: "id,name,slug,description,url",
@@ -135,10 +149,13 @@ export async function getAllTags(): Promise<GhostTag[]> {
 }
 
 export async function getFeaturedPost(): Promise<GhostPost | null> {
-    const { url } = getConfig();
+    const config = getConfig();
+    if (!config) return null;
+
+    const { url, key } = config;
 
     const data = await ghostFetch<GhostPostsResponse>(
-        buildUrl(url, "posts", {
+        buildUrl(url, key, "posts", {
             include: "authors,tags",
             fields: POST_FIELDS,
             filter: "featured:true+visibility:public",
