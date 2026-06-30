@@ -11,7 +11,7 @@ export function BlogSearchInput({ value, onChange }: BlogSearchInputProps) {
     const { t } = useLanguage();
 
     return (
-        <div className="relative w-full max-w-xs">
+        <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md">
             <div className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none text-foreground/40" aria-hidden="true">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="11" cy="11" r="8" />

@@ -59,8 +59,8 @@ export function BlogSidebar({
                         {recentPosts.map((post) => (
                             <li key={post.slug}>
                                 <Link href={`/blog/${post.slug}`} className="flex items-start gap-3 group">
-                                    <div className="relative w-14 h-14 rounded-lg overflow-hidden shrink-0 bg-primary/10">
-                                        {post.feature_image && (
+                                    <div className="relative w-16 h-16 rounded-xl overflow-hidden shrink-0 bg-gradient-to-br from-primary/10 via-[rgba(49,66,45,0.3)] to-background">
+                                        {post.feature_image ? (
                                             <Image
                                                 src={post.feature_image}
                                                 alt={post.feature_image_alt ?? post.title}
@@ -68,10 +68,14 @@ export function BlogSidebar({
                                                 loading="lazy"
                                                 className="object-cover group-hover:scale-105 transition-transform duration-300"
                                             />
+                                        ) : (
+                                            <div className="absolute inset-0 flex items-center justify-center">
+                                                <span className="font-sk-concretica text-primary/20 text-xs uppercase select-none">V</span>
+                                            </div>
                                         )}
                                     </div>
                                     <div className="flex flex-col gap-1 min-w-0">
-                                        <span className="font-poppins text-xs text-foreground group-hover:text-primary transition-colors leading-snug line-clamp-2">
+                                        <span className="font-poppins text-xs text-foreground/80 group-hover:text-primary transition-colors leading-snug line-clamp-2">
                                             {post.title}
                                         </span>
                                         <span className="font-space-mono text-xs text-foreground/40">
