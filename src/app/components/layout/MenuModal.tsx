@@ -30,7 +30,7 @@ const programsLinks = [
 const communityLinks = [
     { key: "communityItems.discord", href: "https://discord.gg/vinteum" },
     { key: "communityItems.meetups", href: "/bitdevs" },
-    { key: "communityItems.hackerhouse", href: "https://casa21-nu.vercel.app/" },
+    { key: "communityItems.hackerhouse", href: "https://casa21.vinteum.org/" },
 ];
 
 const mainItems = [
