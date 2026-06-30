@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const ITEM_KEYS = [
@@ -12,6 +13,7 @@ const ITEM_KEYS = [
 
 export function DonateImpactSection() {
     const { t } = useLanguage();
+    const [iframeLoaded, setIframeLoaded] = useState(false);
 
     return (
         <section className="relative w-full py-12 md:py-28 bg-[#111110]">
@@ -40,14 +42,46 @@ export function DonateImpactSection() {
                     </div>
 
                     <div className="w-full max-w-[500px] mx-auto lg:max-w-none lg:w-[45%] flex flex-col lg:sticky lg:top-28">
-                        <iframe
-                            src="https://geyser.fund/widget/project/vinteum/contribution?view=full&colorMode=dark"
-                            title="Geyser Project Contribution Widget"
-                            style={{
-                                width: '100%',
-                                minHeight: '620px',
-                            }}
-                        />
+                        <div className="relative" style={{ minHeight: '620px' }}>
+                            {!iframeLoaded && (
+                                <div className="absolute inset-0 flex flex-col items-center justify-center rounded-2xl border border-primary/20 bg-[rgba(49,66,45,0.12)]">
+                                    <svg
+                                        className="animate-spin"
+                                        width="40"
+                                        height="40"
+                                        viewBox="0 0 40 40"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <circle
+                                            cx="20"
+                                            cy="20"
+                                            r="16"
+                                            stroke="#91FFAE"
+                                            strokeOpacity="0.2"
+                                            strokeWidth="3"
+                                        />
+                                        <path
+                                            d="M36 20a16 16 0 0 0-16-16"
+                                            stroke="#91FFAE"
+                                            strokeWidth="3"
+                                            strokeLinecap="round"
+                                        />
+                                    </svg>
+                                </div>
+                            )}
+                            <iframe
+                                src="https://geyser.fund/widget/project/vinteum/contribution?view=full&colorMode=dark"
+                                title="Geyser Project Contribution Widget"
+                                onLoad={() => setIframeLoaded(true)}
+                                style={{
+                                    width: '100%',
+                                    minHeight: '620px',
+                                    opacity: iframeLoaded ? 1 : 0,
+                                    transition: 'opacity 0.3s ease',
+                                }}
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
