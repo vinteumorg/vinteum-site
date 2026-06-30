@@ -177,9 +177,9 @@ export function Footer({ newsletters }: FooterProps) {
                                 {t("footer.contact")}
                             </Link>
                             <span className="text-primary">/</span>
-                            <Link href="/brandkit" className="hover:text-primary transition-colors">
+                            <a href="/vinteum-brandkit.pdf" download className="hover:text-primary transition-colors">
                                 {t("footer.brandkit")}
-                            </Link>
+                            </a>
                         </div>
 
                         <div className="grid grid-cols-2 gap-12">
