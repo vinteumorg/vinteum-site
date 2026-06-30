@@ -3,14 +3,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { formatDate } from "../../../lib/blog";
-import type { BlogPost } from "../../../lib/blog";
+import { formatDate } from "@/lib/blog";
+import type { GhostPost } from "@/lib/ghost";
 
 interface BlogSidebarProps {
     categories: string[];
     activeCategory: string | null;
     onCategoryChange: (cat: string | null) => void;
-    recentPosts: BlogPost[];
+    recentPosts: GhostPost[];
 }
 
 export function BlogSidebar({
@@ -37,8 +37,8 @@ export function BlogSidebar({
                                     type="button"
                                     onClick={() => onCategoryChange(cat)}
                                     className={`w-full text-left px-3 py-2 rounded-lg font-poppins text-sm transition-colors cursor-pointer ${isActive
-                                            ? "bg-primary/15 text-primary"
-                                            : "text-foreground/60 hover:text-foreground hover:bg-primary/5"
+                                        ? "bg-primary/15 text-primary"
+                                        : "text-foreground/60 hover:text-foreground hover:bg-primary/5"
                                         }`}
                                 >
                                     {cat ?? t("blog.allCategories")}
@@ -50,39 +50,40 @@ export function BlogSidebar({
             </div>
 
             {/* Recent Posts */}
-            <div className="rounded-2xl border border-primary/20 bg-[rgba(49,66,45,0.12)] backdrop-blur-sm p-5">
-                <h3 className="font-rethink-sans text-base font-normal text-foreground mb-4">
-                    {t("blog.sidebar.recentPosts")}
-                </h3>
-                <ul className="flex flex-col gap-4">
-                    {recentPosts.map((post) => (
-                        <li key={post.slug}>
-                            <Link
-                                href={`/blog/${post.slug}`}
-                                className="flex items-start gap-3 group"
-                            >
-                                <div className="relative w-14 h-14 rounded-lg overflow-hidden shrink-0">
-                                    <Image
-                                        src={post.coverImage}
-                                        alt={post.title}
-                                        fill
-                                        loading="lazy"
-                                        className="object-cover group-hover:scale-105 transition-transform duration-300"
-                                    />
-                                </div>
-                                <div className="flex flex-col gap-1 min-w-0">
-                                    <span className="font-poppins text-xs text-foreground group-hover:text-primary transition-colors leading-snug line-clamp-2">
-                                        {post.title}
-                                    </span>
-                                    <span className="font-space-mono text-xs text-foreground/40">
-                                        {formatDate(post.date, locale === "BR" ? "pt" : "en")}
-                                    </span>
-                                </div>
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            </div>
+            {recentPosts.length > 0 && (
+                <div className="rounded-2xl border border-primary/20 bg-[rgba(49,66,45,0.12)] backdrop-blur-sm p-5">
+                    <h3 className="font-rethink-sans text-base font-normal text-foreground mb-4">
+                        {t("blog.sidebar.recentPosts")}
+                    </h3>
+                    <ul className="flex flex-col gap-4">
+                        {recentPosts.map((post) => (
+                            <li key={post.slug}>
+                                <Link href={`/blog/${post.slug}`} className="flex items-start gap-3 group">
+                                    <div className="relative w-14 h-14 rounded-lg overflow-hidden shrink-0 bg-primary/10">
+                                        {post.feature_image && (
+                                            <Image
+                                                src={post.feature_image}
+                                                alt={post.feature_image_alt ?? post.title}
+                                                fill
+                                                loading="lazy"
+                                                className="object-cover group-hover:scale-105 transition-transform duration-300"
+                                            />
+                                        )}
+                                    </div>
+                                    <div className="flex flex-col gap-1 min-w-0">
+                                        <span className="font-poppins text-xs text-foreground group-hover:text-primary transition-colors leading-snug line-clamp-2">
+                                            {post.title}
+                                        </span>
+                                        <span className="font-space-mono text-xs text-foreground/40">
+                                            {formatDate(post.published_at, locale === "BR" ? "pt" : "en")}
+                                        </span>
+                                    </div>
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            )}
         </aside>
     );
 }
