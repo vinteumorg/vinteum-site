@@ -25,7 +25,7 @@ export function filterPosts(
         result = result.filter(
             (p) =>
                 p.title.toLowerCase().includes(q) ||
-                (p.custom_excerpt ?? p.excerpt).toLowerCase().includes(q) ||
+                (p.custom_excerpt ?? p.excerpt ?? "").toLowerCase().includes(q) ||
                 p.tags.some((t) => t.name.toLowerCase().includes(q))
         );
     }
