@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Rethink_Sans, Poppins, Space_Mono, Barlow_Condensed,
 import "./globals.css";
 import { Footer, Navbar } from "./components/layout";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import { getNewsletters } from "@/lib/ghost/admin";
 
 const barlowCondensed = Barlow_Condensed({
   variable: "--font-barlow-condensed",
@@ -59,11 +60,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const newsletters = await getNewsletters().catch(() => []);
+
   return (
     <html lang="pt-BR">
       <body
@@ -72,7 +75,7 @@ export default function RootLayout({
         <LanguageProvider>
           <Navbar />
           <main className="overflow-x-hidden">{children}</main>
-          <Footer />
+          <Footer newsletters={newsletters} />
         </LanguageProvider>
       </body>
     </html>

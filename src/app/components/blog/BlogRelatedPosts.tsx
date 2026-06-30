@@ -2,10 +2,10 @@
 
 import { useLanguage } from "@/contexts/LanguageContext";
 import { BlogPostCard } from "./BlogPostCard";
-import type { BlogPost } from "../../../lib/blog";
+import type { GhostPost } from "@/lib/ghost";
 
 interface BlogRelatedPostsProps {
-    posts: BlogPost[];
+    posts: GhostPost[];
 }
 
 export function BlogRelatedPosts({ posts }: BlogRelatedPostsProps) {
@@ -19,7 +19,6 @@ export function BlogRelatedPosts({ posts }: BlogRelatedPostsProps) {
                 <h2 className="font-rethink-sans text-2xl md:text-3xl font-normal text-foreground mb-8">
                     {t("blog.post.relatedTitle")}
                 </h2>
-
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
                     {posts.map((post) => (
                         <BlogPostCard key={post.slug} post={post} />

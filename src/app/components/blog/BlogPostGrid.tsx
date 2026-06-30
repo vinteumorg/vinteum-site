@@ -6,27 +6,34 @@ import { BlogPostCard } from "./BlogPostCard";
 import { BlogCategoryFilter } from "./BlogCategoryFilter";
 import { BlogPagination } from "./BlogPagination";
 import { BlogSidebar } from "./BlogSidebar";
-import { filterPosts, getPaginatedPosts, getAllCategories, MOCK_POSTS } from "../../../lib/blog";
+import { filterPosts, getPaginatedPosts } from "@/lib/blog";
+import type { GhostPost } from "@/lib/ghost";
 
 const PER_PAGE = 6;
 
 interface BlogPostGridProps {
+    posts: GhostPost[];
+    featuredPost: GhostPost | null;
     search: string;
-    onCategoryChange?: (cat: string | null) => void;
 }
 
-export function BlogPostGrid({ search, onCategoryChange }: BlogPostGridProps) {
+export function BlogPostGrid({ posts, featuredPost, search }: BlogPostGridProps) {
     const { t } = useLanguage();
 
     const [activeCategory, setActiveCategory] = useState<string | null>(null);
     const [currentPage, setCurrentPage] = useState(1);
 
-    const categories = useMemo(() => getAllCategories(), []);
-    const recentPosts = useMemo(() => MOCK_POSTS.slice(0, 4), []);
+    const categories = useMemo(
+        () =>
+            [...new Set(posts.flatMap((p) => p.tags.filter((t) => t.visibility === "public").map((t) => t.name)))].sort(),
+        [posts]
+    );
+
+    const recentPosts = useMemo(() => posts.slice(0, 4), [posts]);
 
     const filteredPosts = useMemo(
-        () => filterPosts(MOCK_POSTS, activeCategory, search),
-        [activeCategory, search]
+        () => filterPosts(posts, activeCategory, search),
+        [posts, activeCategory, search]
     );
 
     const { posts: pagePosts, totalPages } = useMemo(
@@ -34,21 +41,16 @@ export function BlogPostGrid({ search, onCategoryChange }: BlogPostGridProps) {
         [filteredPosts, currentPage]
     );
 
-    const featuredPost = useMemo(
-        () => (!search && !activeCategory ? MOCK_POSTS.find((p) => p.featured) : undefined),
-        [search, activeCategory]
-    );
+    const showFeatured = !search && !activeCategory && featuredPost;
 
     const handleCategoryChange = (cat: string | null) => {
         setActiveCategory(cat);
         setCurrentPage(1);
-        onCategoryChange?.(cat);
     };
 
     return (
         <section className="w-full py-12 md:py-16">
             <div className="max-w-7xl mx-auto px-8 md:px-14 lg:px-20">
-                {/* Filters bar */}
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-10">
                     <BlogCategoryFilter
                         categories={categories}
@@ -58,16 +60,13 @@ export function BlogPostGrid({ search, onCategoryChange }: BlogPostGridProps) {
                 </div>
 
                 <div className="flex flex-col lg:flex-row gap-10 lg:gap-12 lg:items-start">
-                    {/* Main content */}
                     <div className="flex-1 min-w-0">
-                        {/* Featured post */}
-                        {featuredPost && (
+                        {showFeatured && (
                             <div className="mb-6">
-                                <BlogPostCard post={featuredPost} featured />
+                                <BlogPostCard post={featuredPost!} featured />
                             </div>
                         )}
 
-                        {/* Grid */}
                         {pagePosts.length > 0 ? (
                             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
                                 {pagePosts
@@ -94,7 +93,6 @@ export function BlogPostGrid({ search, onCategoryChange }: BlogPostGridProps) {
                         />
                     </div>
 
-                    {/* Sidebar — desktop */}
                     <aside className="hidden lg:block w-72 shrink-0">
                         <BlogSidebar
                             categories={categories}

@@ -45,6 +45,8 @@
             "title": "Se inscreva na\nnossa newsletter",
             "placeholder": "email@email.com",
             "submit": "Enviar",
+            "chooseLabel": "Escolha as newsletters",
+            "subscribeBtn": "Inscrever-se",
             "success": "Inscrição realizada! Obrigado.",
             "duplicate": "Este e-mail já está inscrito.",
             "error": "Algo deu errado. Tente novamente."

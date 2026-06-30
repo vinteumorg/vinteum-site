@@ -6,45 +6,17 @@ import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { SectionTitle } from "../shared/SectionTitle";
 import { useScrollCarousel } from "@/hooks/useScrollCarousel";
+import { formatDate } from "@/lib/blog";
+import type { GhostPost } from "@/lib/ghost";
 
-interface Post {
-    title: string;
-    date: string;
-    image: string;
-    href: string;
+interface UpdatesSectionProps {
+    posts: GhostPost[];
 }
 
 const VISIBLE_COUNT = 4;
 
-export function UpdatesSection() {
-    const { t } = useLanguage();
-
-    const posts: Post[] = [
-        {
-            title: "Nome da notícia",
-            date: "01/09/2025",
-            image: "/assets/images/blog/post-placeholder.png",
-            href: "/blog/post-1",
-        },
-        {
-            title: "Nome da notícia",
-            date: "01/10/2025",
-            image: "/assets/images/blog/post-placeholder.png",
-            href: "/blog/post-2",
-        },
-        {
-            title: "Nome da notícia",
-            date: "01/11/2025",
-            image: "/assets/images/blog/post-placeholder.png",
-            href: "/blog/post-3",
-        },
-        {
-            title: "Nome da notícia",
-            date: "01/12/2025",
-            image: "/assets/images/blog/post-placeholder.png",
-            href: "/blog/post-4",
-        },
-    ];
+export function UpdatesSection({ posts }: UpdatesSectionProps) {
+    const { t, locale } = useLanguage();
 
     // Desktop navigation
     const [startIndex, setStartIndex] = useState(0);
@@ -57,6 +29,8 @@ export function UpdatesSection() {
 
     // Mobile scroll
     const { scrollRef: mobileRef, activeIndex: mobileIndex, handleScroll: handleMobileScroll, scrollToIndex: scrollMobileTo } = useScrollCarousel("[data-mc]");
+
+    if (posts.length === 0) return null;
 
     return (
         <section className="relative z-10 w-full py-12 md:py-28 overflow-hidden">
@@ -91,24 +65,31 @@ export function UpdatesSection() {
                 <div className="hidden md:grid md:grid-cols-4 gap-4 w-full">
                     {visiblePosts.map((post, i) => (
                         <Link
-                            key={startIndex + i}
-                            href={post.href}
+                            key={post.id}
+                            href={`/blog/${post.slug}`}
                             className="group border border-border rounded-2xl overflow-hidden bg-background-surface transition-colors hover:border-primary/40"
                         >
-                            <div className="relative w-full aspect-[4/3] overflow-hidden">
-                                <Image
-                                    src={post.image}
-                                    alt={post.title}
-                                    fill
-                                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                                />
+                            <div className="relative w-full aspect-[4/3] overflow-hidden bg-badge-bg">
+                                {post.feature_image ? (
+                                    <Image
+                                        src={post.feature_image}
+                                        alt={post.feature_image_alt ?? post.title}
+                                        fill
+                                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                                        sizes="(max-width: 1280px) 25vw, 280px"
+                                    />
+                                ) : (
+                                    <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
+                                        <span className="font-space-mono text-primary/30 text-xs uppercase tracking-widest">Vinteum</span>
+                                    </div>
+                                )}
                             </div>
                             <div className="p-5 flex flex-col gap-1.5">
-                                <h3 className="font-space-mono text-base font-normal text-foreground leading-snug">
+                                <h3 className="font-space-mono text-base font-normal text-foreground leading-snug line-clamp-2">
                                     {post.title}
                                 </h3>
                                 <span className="font-poppins text-foreground/50 text-sm">
-                                    {post.date}
+                                    {formatDate(post.published_at, locale === "BR" ? "pt" : "en")}
                                 </span>
                             </div>
                         </Link>
@@ -129,25 +110,32 @@ export function UpdatesSection() {
                         const isActive = index === mobileIndex;
                         return (
                             <Link
-                                key={post.href}
+                                key={post.id}
                                 data-mc
-                                href={post.href}
+                                href={`/blog/${post.slug}`}
                                 className={`snap-center w-[82vw] flex-shrink-0 group border border-border rounded-2xl overflow-hidden bg-background-surface transition-transform duration-200 ease-[cubic-bezier(0.4,0,0.2,1)] ${isActive ? "-translate-y-6 scale-[1.02]" : "translate-y-0 scale-100"}`}
                             >
-                                <div className="relative w-full aspect-[4/3] overflow-hidden">
-                                    <Image
-                                        src={post.image}
-                                        alt={post.title}
-                                        fill
-                                        className="object-cover group-hover:scale-105 transition-transform duration-300"
-                                    />
+                                <div className="relative w-full aspect-[4/3] overflow-hidden bg-badge-bg">
+                                    {post.feature_image ? (
+                                        <Image
+                                            src={post.feature_image}
+                                            alt={post.feature_image_alt ?? post.title}
+                                            fill
+                                            className="object-cover group-hover:scale-105 transition-transform duration-300"
+                                            sizes="82vw"
+                                        />
+                                    ) : (
+                                        <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
+                                            <span className="font-space-mono text-primary/30 text-xs uppercase tracking-widest">Vinteum</span>
+                                        </div>
+                                    )}
                                 </div>
                                 <div className="p-5 flex flex-col gap-1.5">
-                                    <h3 className="font-space-mono text-base font-normal text-foreground leading-snug">
+                                    <h3 className="font-space-mono text-base font-normal text-foreground leading-snug line-clamp-2">
                                         {post.title}
                                     </h3>
                                     <span className="font-poppins text-foreground/50 text-sm">
-                                        {post.date}
+                                        {formatDate(post.published_at, locale === "BR" ? "pt" : "en")}
                                     </span>
                                 </div>
                             </Link>

@@ -1,0 +1,38 @@
+# Ghost CMS — Local Development
+# Runs Ghost with SQLite (no external database required) on port 2368.
+#
+# Usage:
+#   docker compose up -d       → Start in detached mode
+#   docker compose logs -f     → Follow container logs
+#   docker compose down        → Stop and remove containers
+#   docker compose down -v     → Stop and remove containers, including all data
+
+services:
+  ghost:
+    image: ghost:5
+    restart: unless-stopped
+    ports:
+      - "2368:2368"
+    environment:
+      # Public Ghost URL (required for internal links)
+      url: http://localhost:2368
+
+      # SQLite database — no additional configuration required
+      database__client: sqlite3
+      database__connection__filename: /var/lib/ghost/content/data/ghost.db
+      database__useNullAsDefault: "true"
+      database__debug: "false"
+
+      # Email transport — disabled for local development
+      mail__transport: Direct
+
+      # Development mode
+      NODE_ENV: development
+
+    volumes:
+      # Persist posts, images, themes, and configuration across restarts
+      - ghost_data:/var/lib/ghost/content
+
+volumes:
+  ghost_data:
+    driver: local
