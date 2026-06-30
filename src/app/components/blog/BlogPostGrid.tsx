@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { BlogPostCard } from "./BlogPostCard";
 import { BlogCategoryFilter } from "./BlogCategoryFilter";
@@ -42,6 +42,10 @@ export function BlogPostGrid({ posts, featuredPost, search }: BlogPostGridProps)
     );
 
     const showFeatured = !search && !activeCategory && featuredPost;
+
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [search]);
 
     const handleCategoryChange = (cat: string | null) => {
         setActiveCategory(cat);
