@@ -17,14 +17,23 @@ export function Footer({ newsletters }: FooterProps) {
 
     const [step, setStep] = useState<FooterNewsletterStep>("email");
     const [email, setEmail] = useState("");
+    const [emailError, setEmailError] = useState("");
     const [selected, setSelected] = useState<string[]>(() => newsletters.map((nl) => nl.id));
     const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const isValidEmail = (value: string) =>
+        /^[^\s@,]+@[^\s@,]+\.[a-zA-Z]{2,}$/.test(value.trim());
 
     const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
     const handleEmailSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        if (email.trim()) setStep(newsletters.length > 0 ? "newsletters" : "newsletters");
+        if (!isValidEmail(email)) {
+            setEmailError(t("footer.newsletter.emailInvalid"));
+            return;
+        }
+        setEmailError("");
+        setStep("newsletters");
     };
 
     const toggleNewsletter = (id: string) => {
@@ -74,11 +83,13 @@ export function Footer({ newsletters }: FooterProps) {
                     <input
                         type="email"
                         value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        onChange={(e) => { setEmail(e.target.value); setEmailError(""); }}
                         placeholder={t("footer.newsletter.placeholder")}
-                        required
-                        className="w-full bg-transparent border-b border-foreground-secondary text-foreground placeholder:text-foreground-secondary pb-2 pr-10 focus:outline-none focus:border-primary transition-colors"
+                        className={`w-full bg-transparent border-b text-foreground placeholder:text-foreground-secondary pb-2 pr-10 focus:outline-none transition-colors ${emailError ? "border-red-400" : "border-foreground-secondary focus:border-primary"}`}
                     />
+                    {emailError && (
+                        <p className="font-poppins text-xs text-red-400 mt-2">{emailError}</p>
+                    )}
                     <button
                         type="submit"
                         className="absolute right-0 bottom-2 text-primary hover:text-primary-hover transition-colors"
