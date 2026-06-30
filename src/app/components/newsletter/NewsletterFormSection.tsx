@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { SectionTitle } from "../shared/SectionTitle";
+import type { GhostNewsletter } from "@/lib/ghost";
 
 type FormState = "idle" | "sending" | "success" | "error";
 
@@ -13,24 +14,43 @@ const BENEFIT_KEYS = [
     "newsletter.benefits.item4",
 ];
 
-export function NewsletterFormSection() {
+interface NewsletterFormSectionProps {
+    newsletters: GhostNewsletter[];
+}
+
+export function NewsletterFormSection({ newsletters }: NewsletterFormSectionProps) {
     const { t } = useLanguage();
 
     const [form, setForm] = useState({ name: "", email: "" });
+    const [selected, setSelected] = useState<string[]>(() => newsletters.map((nl) => nl.id));
     const [status, setStatus] = useState<FormState>("idle");
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
     };
 
+    const toggleNewsletter = (id: string) => {
+        setSelected((prev) =>
+            prev.includes(id) ? prev.filter((k) => k !== id) : [...prev, id]
+        );
+    };
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        if (selected.length === 0) return;
         setStatus("sending");
-        // TODO: implement newsletter subscription
         try {
-            await new Promise((resolve) => setTimeout(resolve, 1000));
-            setStatus("success");
-            setForm({ name: "", email: "" });
+            const res = await fetch("/api/newsletter/subscribe", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name: form.name, email: form.email, newsletters: selected }),
+            });
+            if (res.ok) {
+                setStatus("success");
+                setForm({ name: "", email: "" });
+            } else {
+                setStatus("error");
+            }
         } catch {
             setStatus("error");
         }
@@ -45,17 +65,13 @@ export function NewsletterFormSection() {
                 <div className="flex flex-col lg:flex-row gap-5 lg:items-start">
 
                     <div className="lg:w-[45%] rounded-[30px] border border-primary/20 backdrop-blur-sm bg-[rgba(49,66,45,0.12)] shadow-[0_8px_32px_rgba(0,0,0,0.3)] p-8 md:p-10 flex flex-col gap-8">
-
                         <div className="flex flex-col gap-4">
                             {BENEFIT_KEYS.map((key) => (
                                 <div
                                     key={key}
                                     className="flex items-start gap-4 rounded-2xl border border-primary/20 bg-[rgba(49,66,45,0.12)] px-6 py-5"
                                 >
-                                    <span
-                                        className="mt-0.5 shrink-0 w-5 h-5 rounded-full border border-primary flex items-center justify-center"
-                                        aria-hidden="true"
-                                    >
+                                    <span className="mt-0.5 shrink-0 w-5 h-5 rounded-full border border-primary flex items-center justify-center" aria-hidden="true">
                                         <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
                                             <circle cx="5" cy="5" r="3" fill="#91FFAE" />
                                         </svg>
@@ -69,9 +85,6 @@ export function NewsletterFormSection() {
                     </div>
 
                     <div className="lg:w-[55%] rounded-[30px] border border-primary/20 backdrop-blur-sm bg-[rgba(49,66,45,0.12)] shadow-[0_8px_32px_rgba(0,0,0,0.3)] p-8 md:p-10">
-                        <div className="flex items-center justify-between mb-8">
-                        </div>
-
                         <SectionTitle className="text-left mb-4">
                             {t("newsletter.form.title")}
                         </SectionTitle>
@@ -123,6 +136,32 @@ export function NewsletterFormSection() {
                                     </div>
                                 </div>
 
+                                {newsletters.length > 0 && (
+                                    <div className="flex flex-col gap-3">
+                                        <span className="font-poppins text-xs text-foreground/60 uppercase tracking-widest">
+                                            {t("footer.newsletter.chooseLabel")}
+                                        </span>
+                                        {newsletters.map((nl) => (
+                                            <label key={nl.id} className="flex items-center gap-3 cursor-pointer group">
+                                                <span className={`w-4 h-4 rounded border flex items-center justify-center shrink-0 transition-colors ${selected.includes(nl.id) ? "bg-primary border-primary" : "border-foreground/30 group-hover:border-primary/60"}`}>
+                                                    {selected.includes(nl.id) && (
+                                                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="#172719" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                            <path d="M2 5l2 2 4-4" />
+                                                        </svg>
+                                                    )}
+                                                </span>
+                                                <input
+                                                    type="checkbox"
+                                                    className="sr-only"
+                                                    checked={selected.includes(nl.id)}
+                                                    onChange={() => toggleNewsletter(nl.id)}
+                                                />
+                                                <span className="font-poppins text-sm text-foreground/80">{nl.name}</span>
+                                            </label>
+                                        ))}
+                                    </div>
+                                )}
+
                                 {status === "error" && (
                                     <p className="font-poppins text-sm text-red-400">
                                         {t("newsletter.form.error")}
@@ -132,26 +171,14 @@ export function NewsletterFormSection() {
                                 <div>
                                     <button
                                         type="submit"
-                                        disabled={status === "sending"}
+                                        disabled={status === "sending" || selected.length === 0}
                                         className="inline-flex items-center gap-3 pl-6 pr-2 py-2 rounded-[10px] bg-[#91FFAE] hover:bg-primary-hover transition-colors duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                                     >
                                         <span className="font-poppins text-base font-medium text-[#172719] whitespace-nowrap">
-                                            {status === "sending"
-                                                ? t("newsletter.form.sending")
-                                                : t("newsletter.form.cta")}
+                                            {status === "sending" ? t("newsletter.form.sending") : t("newsletter.form.cta")}
                                         </span>
                                         <span className="w-9 h-9 rounded-lg bg-[#59D279] flex items-center justify-center shrink-0">
-                                            <svg
-                                                width="18"
-                                                height="18"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#172719"
-                                                strokeWidth="2.5"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                aria-hidden="true"
-                                            >
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#172719" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                                                 <path d="M7 17L17 7M17 7H7M17 7v10" />
                                             </svg>
                                         </span>
