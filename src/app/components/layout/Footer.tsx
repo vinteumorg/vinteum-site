@@ -104,7 +104,20 @@ export function Footer({ newsletters }: FooterProps) {
 
             {step === "newsletters" && (
                 <form onSubmit={handleSubscribe} className="flex flex-col gap-5 mt-auto">
-                    <p className="font-poppins text-xs text-foreground/50 truncate">{email}</p>
+                    <div className="flex items-center gap-2">
+                        <p className="font-poppins text-xs text-foreground/50 truncate">{email}</p>
+                        <button
+                            type="button"
+                            onClick={() => { setStep("email"); setEmailError(""); }}
+                            className="shrink-0 text-foreground/40 hover:text-primary transition-colors"
+                            aria-label="Edit email"
+                        >
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                            </svg>
+                        </button>
+                    </div>
 
                     {newsletters.length > 0 && (
                         <div className="flex flex-col gap-2">
