@@ -59,7 +59,7 @@ export function BlogSidebar({
                         {recentPosts.map((post) => (
                             <li key={post.slug}>
                                 <Link href={`/blog/${post.slug}`} className="flex items-start gap-3 group">
-                                    <div className="relative w-16 h-16 rounded-xl overflow-hidden shrink-0 bg-gradient-to-br from-primary/10 via-[rgba(49,66,45,0.3)] to-background">
+                                    <div className="relative w-24 h-14 rounded-xl overflow-hidden shrink-0 bg-gradient-to-br from-primary/10 via-[rgba(49,66,45,0.3)] to-background">
                                         {post.feature_image ? (
                                             <Image
                                                 src={post.feature_image}
