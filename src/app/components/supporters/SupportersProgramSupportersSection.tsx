@@ -6,7 +6,7 @@ import { SectionTitle } from "../shared/SectionTitle";
 
 const programSupporters = [
     {
-        image: "/assets/logos/supporters/supporter-1.jpg",
+        image: "/assets/logos/supporters/supporter-1.png",
         nameKey: "supporters.programSupporters.items.0.name",
     },
     {
@@ -17,6 +17,10 @@ const programSupporters = [
         image: "/assets/logos/supporters/supporter-3.png",
         nameKey: "supporters.programSupporters.items.2.name",
     },
+    {
+        image: "/assets/logos/supporters/supporter-4.png",
+        nameKey: "supporters.programSupporters.items.3.name",
+    }
 ];
 
 export function SupportersProgramSupportersSection() {
