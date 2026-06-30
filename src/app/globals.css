@@ -15,34 +15,34 @@
 
 :root {
   /* === Background Colors === */
-  --background: #0E0F0E;              /* Primary background - preto */
-  --background-secondary: #1D211D;    /* Secondary background - quase preto esverdeado */
+  --background: #0E0F0E;              /* Primary background */
+  --background-secondary: #1D211D;    /* Secondary background */
   --background-sheet: #172719;        /* Bottom sheet background */
   --background-overlay: rgba(23, 39, 25, 0.3);  /* Overlay - 30% opacity */
-  --background-surface: rgba(49, 66, 45, 0.17); /* Surface - verde escuro 17% */
-  
+  --background-surface: rgba(49, 66, 45, 0.17); /* Surface - dark green 17% */
+
   /* === Text Colors === */
-  --foreground: #FFFFFF;              /* Primary text - branco 100% */
-  --foreground-secondary: rgba(255, 255, 255, 0.8);  /* Secondary text - branco 80% */
-  --text-highlight: #3CAE66;          /* Highlighted text - verde médio */
-  
+  --foreground: #FFFFFF;              /* Primary text */
+  --foreground-secondary: rgba(255, 255, 255, 0.8);  /* Secondary text */
+  --text-highlight: #3CAE66;          /* Highlighted text */
+
   /* === Brand & Accent Colors === */
-  --primary: #91FFAE;                 /* Primary brand color - verde claro */
-  --primary-hover: #59D279;           /* Primary hover state - verde */
-  --accent-green: #50FF47;            /* Accent green - verde neon */
-  --accent-dark: #31422D;             /* Accent dark - verde escuro */
-  
+  --primary: #91FFAE;                 /* Primary brand color */
+  --primary-hover: #59D279;           /* Primary hover state */
+  --accent-green: #50FF47;            /* Accent green */
+  --accent-dark: #31422D;             /* Accent dark */
+
   /* === Button Colors === */
   --btn-primary-bg: #91FFAE;          /* Primary button background */
   --btn-primary-text: #172719;        /* Primary button text */
   --btn-primary-hover: #59D279;       /* Primary button hover */
-  --btn-secondary-bg: #293C2F;        /* Secondary button background - verde escuro */
+  --btn-secondary-bg: #293C2F;        /* Secondary button background */
   --btn-secondary-text: #FFFFFF;      /* Secondary button text */
-  
+
   /* === Badge Colors === */
   --badge-bg: rgba(145, 255, 174, 0.14);  /* Badge background - 14% opacity */
   --badge-text: #91FFAE;              /* Badge text */
-  
+
   /* === Border Colors === */
   --border: rgba(145, 255, 174, 0.2); /* Border color */
   --border-subtle: rgba(255, 255, 255, 0.1); /* Subtle border */
@@ -186,3 +186,746 @@ body {
 .programs-slide-2 { transform: translateX(calc(50vw - 210px - 888px)); }
 .programs-slide-3 { transform: translateX(calc(50vw - 210px - 1332px)); }
 .programs-slide-4 { transform: translateX(calc(50vw - 210px - 1776px)); }
+
+/* ============================================================
+   GHOST CMS — KOENIG CARD STYLES
+   Ghost 5.x (Lexical editor) — full coverage for all card types
+   ============================================================ */
+
+/* ── Base typography ──────────────────────────────────────────── */
+.ghost-content {
+  color: var(--foreground);
+  line-height: 1.8;
+  font-size: 1.0625rem;
+}
+
+.ghost-content h1,
+.ghost-content h2,
+.ghost-content h3,
+.ghost-content h4,
+.ghost-content h5,
+.ghost-content h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--foreground);
+}
+.ghost-content h1 { font-size: 2rem; }
+.ghost-content h2 { font-size: 1.5rem; }
+.ghost-content h3 { font-size: 1.25rem; }
+.ghost-content h4 { font-size: 1.1rem; }
+.ghost-content h5 { font-size: 1rem; }
+.ghost-content h6 { font-size: 0.9rem; opacity: 0.8; }
+
+.ghost-content p { margin-bottom: 1.5rem; }
+.ghost-content p:last-child { margin-bottom: 0; }
+
+.ghost-content a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.15s;
+}
+.ghost-content a:hover { opacity: 0.75; }
+
+.ghost-content strong { font-weight: 700; }
+.ghost-content em { font-style: italic; }
+.ghost-content s { opacity: 0.5; }
+
+.ghost-content ul,
+.ghost-content ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.75rem;
+}
+.ghost-content ul { list-style-type: disc; }
+.ghost-content ol { list-style-type: decimal; }
+.ghost-content li { margin-bottom: 0.5rem; }
+.ghost-content li > ul,
+.ghost-content li > ol { margin-top: 0.5rem; margin-bottom: 0; }
+
+.ghost-content blockquote {
+  border-left: 3px solid var(--primary);
+  margin: 2rem 0;
+  padding: 0.75rem 1.5rem;
+  color: color-mix(in srgb, var(--foreground) 80%, transparent);
+  font-style: italic;
+}
+
+.ghost-content hr {
+  border: none;
+  border-top: 1px solid color-mix(in srgb, var(--primary) 25%, transparent);
+  margin: 3rem 0;
+}
+
+/* ── Code ─────────────────────────────────────────────────────── */
+.ghost-content pre {
+  background: color-mix(in srgb, var(--primary) 6%, var(--background));
+  border: 1px solid color-mix(in srgb, var(--primary) 18%, transparent);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+.ghost-content code {
+  font-size: 0.875em;
+  background: color-mix(in srgb, var(--primary) 10%, transparent);
+  border-radius: 4px;
+  padding: 0.15em 0.45em;
+}
+.ghost-content pre code {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+}
+
+/* ── Loose images & figure ───────────────────────────────────── */
+.ghost-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin: 1.5rem 0;
+}
+.ghost-content figure { margin: 2.5rem 0; }
+.ghost-content figcaption {
+  font-size: 0.8rem;
+  color: color-mix(in srgb, var(--foreground) 55%, transparent);
+  text-align: center;
+  margin-top: 0.625rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* ── Shared card base ────────────────────────────────────────── */
+.ghost-content .kg-card { margin: 2.5rem 0; }
+.ghost-content .kg-card:first-child { margin-top: 0; }
+.ghost-content .kg-card:last-child  { margin-bottom: 0; }
+
+/* ── Width modifiers ─────────────────────────────────────────── */
+.ghost-content .kg-width-wide {
+  margin-left: -8%;
+  margin-right: -8%;
+  max-width: 116%;
+  width: 116%;
+}
+.ghost-content .kg-width-full {
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  max-width: 100vw;
+  width: 100vw;
+}
+
+/* ── Image card ───────────────────────────────────────────────── */
+.ghost-content .kg-image-card img.kg-image {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* ── Gallery card ─────────────────────────────────────────────── */
+.ghost-content .kg-gallery-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.ghost-content .kg-gallery-row {
+  display: flex;
+  gap: 6px;
+}
+.ghost-content .kg-gallery-image {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.ghost-content .kg-gallery-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;
+  border-radius: 0;
+}
+
+/* ── Video card ───────────────────────────────────────────────── */
+.ghost-content .kg-video-card .kg-video-container { position: relative; }
+.ghost-content .kg-video-card video {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  outline: none;
+}
+/* Hide Ghost overlay and custom player — native controls added via JS */
+.ghost-content .kg-video-overlay,
+.ghost-content .kg-video-player-container { display: none; }
+
+/* ── Embed card (YouTube, Vimeo, Twitter…) ────────────────────── */
+.ghost-content .kg-embed-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ghost-content .kg-embed-card iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: 12px;
+}
+.ghost-content .kg-embed-card blockquote {
+  border: none;
+  padding: 0;
+  font-style: normal;
+  width: 100%;
+  opacity: 1;
+}
+
+/* ── Bookmark card ────────────────────────────────────────────── */
+.ghost-content .kg-bookmark-card { display: block; }
+.ghost-content .kg-bookmark-container {
+  display: flex;
+  border: 1px solid color-mix(in srgb, var(--primary) 20%, transparent);
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: border-color 0.2s, background 0.2s;
+  background: color-mix(in srgb, var(--primary) 4%, var(--background));
+}
+.ghost-content .kg-bookmark-container:hover {
+  border-color: color-mix(in srgb, var(--primary) 50%, transparent);
+  background: color-mix(in srgb, var(--primary) 8%, var(--background));
+}
+.ghost-content .kg-bookmark-content {
+  flex: 1;
+  padding: 1.25rem;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.ghost-content .kg-bookmark-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--foreground);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.ghost-content .kg-bookmark-description {
+  font-size: 0.825rem;
+  color: color-mix(in srgb, var(--foreground) 60%, transparent);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  flex: 1;
+}
+.ghost-content .kg-bookmark-metadata {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+.ghost-content .kg-bookmark-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  margin: 0;
+  border-radius: 2px;
+}
+.ghost-content .kg-bookmark-author,
+.ghost-content .kg-bookmark-publisher {
+  font-size: 0.75rem;
+  color: color-mix(in srgb, var(--foreground) 50%, transparent);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ghost-content .kg-bookmark-thumbnail {
+  width: 180px;
+  min-width: 120px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.ghost-content .kg-bookmark-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;
+  border-radius: 0;
+  display: block;
+}
+@media (max-width: 640px) {
+  .ghost-content .kg-bookmark-thumbnail { display: none; }
+  .ghost-content .kg-bookmark-container { flex-direction: column; }
+}
+
+/* ── Callout card ─────────────────────────────────────────────── */
+.ghost-content .kg-callout-card {
+  display: flex;
+  gap: 0.875rem;
+  align-items: flex-start;
+  padding: 1.125rem 1.5rem;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--primary) 8%, var(--background));
+  border: 1px solid color-mix(in srgb, var(--primary) 22%, transparent);
+}
+.ghost-content .kg-callout-card-grey   { background: color-mix(in srgb, #888 10%, var(--background)); border-color: color-mix(in srgb, #888 25%, transparent); }
+.ghost-content .kg-callout-card-white  { background: color-mix(in srgb, #fff 5%, var(--background)); border-color: color-mix(in srgb, #fff 20%, transparent); }
+.ghost-content .kg-callout-card-blue   { background: color-mix(in srgb, #4a9eff 10%, var(--background)); border-color: color-mix(in srgb, #4a9eff 30%, transparent); }
+.ghost-content .kg-callout-card-green  { background: color-mix(in srgb, var(--primary) 10%, var(--background)); border-color: color-mix(in srgb, var(--primary) 30%, transparent); }
+.ghost-content .kg-callout-card-yellow { background: color-mix(in srgb, #f5c518 10%, var(--background)); border-color: color-mix(in srgb, #f5c518 30%, transparent); }
+.ghost-content .kg-callout-card-red    { background: color-mix(in srgb, #ff4b4b 10%, var(--background)); border-color: color-mix(in srgb, #ff4b4b 30%, transparent); }
+.ghost-content .kg-callout-card-pink   { background: color-mix(in srgb, #ff6b9d 10%, var(--background)); border-color: color-mix(in srgb, #ff6b9d 30%, transparent); }
+.ghost-content .kg-callout-card-purple { background: color-mix(in srgb, #a855f7 10%, var(--background)); border-color: color-mix(in srgb, #a855f7 30%, transparent); }
+.ghost-content .kg-callout-card-accent { background: color-mix(in srgb, var(--primary) 12%, var(--background)); border-color: var(--primary); }
+.ghost-content .kg-callout-emoji {
+  font-size: 1.5rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+.ghost-content .kg-callout-text {
+  flex: 1;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--foreground);
+}
+.ghost-content .kg-callout-text p:last-child { margin-bottom: 0; }
+
+/* ── Toggle card ──────────────────────────────────────────────── */
+.ghost-content .kg-toggle-card {
+  border: 1px solid color-mix(in srgb, var(--primary) 22%, transparent);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.ghost-content .kg-toggle-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  user-select: none;
+  background: color-mix(in srgb, var(--primary) 5%, transparent);
+  transition: background 0.2s;
+}
+.ghost-content .kg-toggle-heading:hover {
+  background: color-mix(in srgb, var(--primary) 10%, transparent);
+}
+.ghost-content .kg-toggle-heading-text {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--foreground);
+  line-height: 1.3;
+}
+.ghost-content .kg-toggle-card-icon {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease;
+}
+.ghost-content .kg-toggle-card-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--primary);
+  fill: none;
+  stroke-width: 2;
+}
+.ghost-content .kg-toggle-card[data-kg-toggle-state="open"] .kg-toggle-card-icon {
+  transform: rotate(180deg);
+}
+.ghost-content .kg-toggle-content {
+  padding: 1rem 1.25rem;
+  border-top: 1px solid color-mix(in srgb, var(--primary) 15%, transparent);
+  display: none;
+}
+.ghost-content .kg-toggle-card[data-kg-toggle-state="open"] .kg-toggle-content {
+  display: block;
+}
+.ghost-content .kg-toggle-content > *:last-child { margin-bottom: 0; }
+
+/* ── Button card ──────────────────────────────────────────────── */
+.ghost-content .kg-button-card {
+  display: flex;
+  justify-content: center;
+}
+.ghost-content .kg-button-card.kg-align-left  { justify-content: flex-start; }
+.ghost-content .kg-button-card.kg-align-right { justify-content: flex-end; }
+.ghost-content .kg-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.65rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.ghost-content .kg-btn-accent {
+  background: var(--primary);
+  color: #172719;
+}
+.ghost-content .kg-btn-accent:hover { background: var(--primary-hover); opacity: 1; }
+
+/* ── Header card ──────────────────────────────────────────────── */
+.ghost-content .kg-header-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: color-mix(in srgb, var(--primary) 10%, var(--background));
+}
+.ghost-content .kg-header-card.kg-width-full { border-radius: 0; }
+.ghost-content .kg-header-card-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.25;
+}
+.ghost-content .kg-header-card-content {
+  position: relative;
+  z-index: 1;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.875rem;
+  max-width: 680px;
+}
+.ghost-content .kg-header-card-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+.ghost-content .kg-header-card-heading {
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 700;
+  color: var(--foreground);
+  margin: 0;
+  line-height: 1.2;
+}
+.ghost-content .kg-header-card-subheading {
+  font-size: 1rem;
+  color: color-mix(in srgb, var(--foreground) 70%, transparent);
+  margin: 0;
+}
+.ghost-content .kg-header-card-button {
+  display: inline-flex;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  background: var(--primary);
+  color: #172719;
+  margin-top: 0.25rem;
+  transition: background 0.2s;
+}
+.ghost-content .kg-header-card-button:hover { background: var(--primary-hover); opacity: 1; }
+
+/* ── Product card ─────────────────────────────────────────────── */
+.ghost-content .kg-product-card {
+  border: 1px solid color-mix(in srgb, var(--primary) 20%, transparent);
+  border-radius: 16px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--primary) 4%, var(--background));
+}
+.ghost-content .kg-product-card-container {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+.ghost-content .kg-product-card-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 0;
+}
+.ghost-content .kg-product-card-title-container { margin: 0; }
+.ghost-content .kg-product-card-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin: 0;
+}
+.ghost-content .kg-product-card-rating {
+  display: flex;
+  gap: 3px;
+}
+.ghost-content .kg-product-card-rating-star {
+  font-size: 1.1rem;
+  color: color-mix(in srgb, var(--foreground) 25%, transparent);
+}
+.ghost-content .kg-product-card-rating-active { color: #f5c518; }
+.ghost-content .kg-product-card-description {
+  font-size: 0.9rem;
+  color: color-mix(in srgb, var(--foreground) 75%, transparent);
+  line-height: 1.6;
+}
+.ghost-content .kg-product-card-description p:last-child { margin-bottom: 0; }
+.ghost-content .kg-product-card-button {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.ghost-content .kg-product-card-btn-accent {
+  background: var(--primary);
+  color: #172719;
+}
+.ghost-content .kg-product-card-btn-accent:hover { background: var(--primary-hover); opacity: 1; }
+
+/* ── Audio card ───────────────────────────────────────────────── */
+.ghost-content .kg-audio-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1.25rem;
+  border: 1px solid color-mix(in srgb, var(--primary) 20%, transparent);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--primary) 5%, var(--background));
+}
+.ghost-content .kg-audio-thumbnail {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+  margin: 0;
+}
+.ghost-content .kg-audio-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+.ghost-content .kg-audio-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--foreground);
+}
+/* Hide Ghost's custom player — replaced by native controls via JS */
+.ghost-content .kg-audio-player-container { display: none; }
+.ghost-content .kg-audio-content audio {
+  width: 100%;
+  height: 36px;
+  accent-color: var(--primary);
+}
+
+/* ── File card ────────────────────────────────────────────────── */
+.ghost-content .kg-file-card-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid color-mix(in srgb, var(--primary) 20%, transparent);
+  border-radius: 12px;
+  text-decoration: none;
+  background: color-mix(in srgb, var(--primary) 4%, var(--background));
+  transition: border-color 0.2s, background 0.2s;
+}
+.ghost-content .kg-file-card-container:hover {
+  border-color: color-mix(in srgb, var(--primary) 50%, transparent);
+  background: color-mix(in srgb, var(--primary) 8%, var(--background));
+}
+.ghost-content .kg-file-card-contents { flex: 1; min-width: 0; }
+.ghost-content .kg-file-card-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--foreground);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ghost-content .kg-file-card-caption {
+  font-size: 0.8rem;
+  color: color-mix(in srgb, var(--foreground) 60%, transparent);
+  margin-top: 0.15rem;
+}
+.ghost-content .kg-file-card-metadata {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.35rem;
+  font-size: 0.75rem;
+  color: color-mix(in srgb, var(--foreground) 45%, transparent);
+}
+.ghost-content .kg-file-card-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--primary) 15%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+}
+.ghost-content .kg-file-card-icon svg { width: 20px; height: 20px; }
+
+/* ── Signup card ──────────────────────────────────────────────── */
+.ghost-content .kg-signup-card {
+  padding: 2rem;
+  border: 1px solid color-mix(in srgb, var(--primary) 20%, transparent);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--primary) 5%, var(--background));
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.ghost-content .kg-signup-card-image {
+  max-width: 120px;
+  border-radius: 8px;
+  margin: 0 auto;
+}
+.ghost-content .kg-signup-card-heading {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin: 0;
+}
+.ghost-content .kg-signup-card-subheading {
+  font-size: 0.9rem;
+  color: color-mix(in srgb, var(--foreground) 65%, transparent);
+  margin: 0;
+}
+.ghost-content .kg-signup-card form {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 420px;
+}
+.ghost-content .kg-signup-card input[type="email"] {
+  flex: 1;
+  background: color-mix(in srgb, var(--foreground) 5%, transparent);
+  border: 1px solid color-mix(in srgb, var(--primary) 25%, transparent);
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  color: var(--foreground);
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.ghost-content .kg-signup-card input[type="email"]:focus {
+  border-color: var(--primary);
+}
+.ghost-content .kg-signup-card button[type="submit"] {
+  padding: 0.6rem 1.25rem;
+  border-radius: 8px;
+  background: var(--primary);
+  color: #172719;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.ghost-content .kg-signup-card button[type="submit"]:hover {
+  background: var(--primary-hover);
+}
+@media (max-width: 480px) {
+  .ghost-content .kg-signup-card form { flex-direction: column; }
+}
+
+/* ── Public Preview card (paywall) ────────────────────────────── */
+.ghost-content .kg-public-preview-card {
+  position: relative;
+  padding: 2.5rem 2rem;
+  border: 1px solid color-mix(in srgb, var(--primary) 20%, transparent);
+  border-radius: 16px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--primary) 4%, var(--background));
+  text-align: center;
+}
+.ghost-content .kg-public-preview-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom,
+    transparent 0%,
+    color-mix(in srgb, var(--background) 70%, transparent) 50%,
+    var(--background) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+.ghost-content .kg-public-preview-card-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* ── CTA card ─────────────────────────────────────────────────── */
+.ghost-content .kg-cta-card {
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--primary) 20%, transparent);
+  background: color-mix(in srgb, var(--primary) 5%, var(--background));
+}
+.ghost-content .kg-cta-card.kg-cta-bg-grey {
+  background: color-mix(in srgb, #888 8%, var(--background));
+  border-color: color-mix(in srgb, #888 20%, transparent);
+}
+.ghost-content .kg-cta-sponsor-label-wrapper { margin-bottom: 0.75rem; }
+.ghost-content .kg-cta-sponsor-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--foreground) 45%, transparent);
+}
+.ghost-content .kg-cta-content-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.ghost-content .kg-cta-text {
+  flex: 1;
+  font-size: 0.9rem;
+  color: color-mix(in srgb, var(--foreground) 80%, transparent);
+}
+.ghost-content .kg-cta-text p:last-child { margin-bottom: 0; }
+.ghost-content .kg-cta-button {
+  display: inline-flex;
+  padding: 0.55rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
+  white-space: nowrap;
+  background: var(--primary);
+  color: #172719;
+  transition: background 0.2s;
+}
+.ghost-content .kg-cta-button:hover { background: var(--primary-hover); opacity: 1; }
+.ghost-content .kg-cta-card.kg-cta-minimal .kg-cta-content-inner { justify-content: flex-start; }

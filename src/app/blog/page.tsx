@@ -1,16 +1,17 @@
-"use client";
+import { BlogPageClient } from "../components/blog/BlogPageClient";
+import { getPosts, getFeaturedPost } from "@/lib/ghost";
 
-import { useState } from "react";
-import { BlogHeroSection } from "../components/blog/BlogHeroSection";
-import { BlogPostGrid } from "../components/blog/BlogPostGrid";
+export const revalidate = 60;
 
-export default function BlogPage() {
-    const [search, setSearch] = useState("");
+export default async function BlogPage() {
+    const [postsData, featuredPost] = await Promise.all([
+        getPosts({ limit: "all" }),
+        getFeaturedPost(),
+    ]);
 
     return (
         <div className="flex flex-col">
-            <BlogHeroSection search={search} onSearchChange={setSearch} />
-            <BlogPostGrid search={search} />
+            <BlogPageClient posts={postsData.posts} featuredPost={featuredPost} />
         </div>
     );
 }

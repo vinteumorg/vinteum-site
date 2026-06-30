@@ -29,11 +29,18 @@ export function ContactFormSection() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setStatus("sending");
-        // TODO: implement form submission
         try {
-            await new Promise((resolve) => setTimeout(resolve, 1000));
-            setStatus("success");
-            setForm({ name: "", email: "", subject: "", message: "" });
+            const res = await fetch("/api/contact/send", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(form),
+            });
+            if (res.ok) {
+                setStatus("success");
+                setForm({ name: "", email: "", subject: "", message: "" });
+            } else {
+                setStatus("error");
+            }
         } catch {
             setStatus("error");
         }
@@ -47,7 +54,6 @@ export function ContactFormSection() {
             <div className="max-w-7xl mx-auto px-8 md:px-14 lg:px-20">
                 <div className="flex flex-col lg:flex-row gap-5 lg:items-start">
 
-                    {/* Card esquerdo — formulário */}
                     <div className="lg:w-[62%] rounded-[30px] border border-primary/20 backdrop-blur-sm bg-[rgba(49,66,45,0.12)] shadow-[0_8px_32px_rgba(0,0,0,0.3)] p-8 md:p-10">
                         <SectionTitle className="mb-10">{t("contact.form.title")}</SectionTitle>
 

@@ -71,7 +71,7 @@ export function AboutTeamSection() {
                 </div>
             </div>
 
-            {/* Grid — desktop: 3 grandes + 4 pequenas se 7 membros, senão todos iguais */}
+            {/* Desktop grid: 3 large + 4 small when 7 members, uniform otherwise */}
             <div className="hidden lg:block max-w-7xl mx-auto px-20">
                 {TEAM_MEMBERS.length === 7 ? (
                     <>
