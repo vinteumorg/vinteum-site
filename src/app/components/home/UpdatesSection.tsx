@@ -69,7 +69,7 @@ export function UpdatesSection({ posts }: UpdatesSectionProps) {
                             href={`/blog/${post.slug}`}
                             className="group border border-border rounded-2xl overflow-hidden bg-background-surface transition-colors hover:border-primary/40"
                         >
-                            <div className="relative w-full aspect-[4/3] overflow-hidden bg-badge-bg">
+                            <div className="relative w-full aspect-[16/9] overflow-hidden bg-badge-bg">
                                 {post.feature_image ? (
                                     <Image
                                         src={post.feature_image}
@@ -115,7 +115,7 @@ export function UpdatesSection({ posts }: UpdatesSectionProps) {
                                 href={`/blog/${post.slug}`}
                                 className={`snap-center w-[82vw] flex-shrink-0 group border border-border rounded-2xl overflow-hidden bg-background-surface transition-transform duration-200 ease-[cubic-bezier(0.4,0,0.2,1)] ${isActive ? "-translate-y-6 scale-[1.02]" : "translate-y-0 scale-100"}`}
                             >
-                                <div className="relative w-full aspect-[4/3] overflow-hidden bg-badge-bg">
+                                <div className="relative w-full aspect-[16/9] overflow-hidden bg-badge-bg">
                                     {post.feature_image ? (
                                         <Image
                                             src={post.feature_image}
