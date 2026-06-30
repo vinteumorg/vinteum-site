@@ -49,7 +49,8 @@
             "subscribeBtn": "Inscrever-se",
             "success": "Inscrição realizada! Obrigado.",
             "duplicate": "Este e-mail já está inscrito.",
-            "error": "Algo deu errado. Tente novamente."
+            "error": "Algo deu errado. Tente novamente.",
+            "emailInvalid": "Por favor, insira um e-mail válido."
         },
         "contact": "Entre em contato",
         "brandkit": "Brandkit download",
