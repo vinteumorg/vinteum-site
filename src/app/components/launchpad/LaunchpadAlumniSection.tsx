@@ -285,6 +285,17 @@ const COHORT_2: AlumniEntry[] = [
             twitter: "https://x.com/jayrmotta",
         },
     },
+    {
+        nameKey: "fellowship.fellows.members.yan.name",
+        roleKey: "fellowship.fellows.members.yan.role",
+        image: "/assets/images/people/fellows/yan.jpeg",
+        fundedBy: "Vinteum",
+        links: {
+            github: "https://github.com/yan-pi",
+            twitter: "https://x.com/yamigake",
+            website: "https://indianboy.sh/",
+        },
+    },
 ];
 
 function CohortGrid({ members }: { members: AlumniEntry[] }) {
