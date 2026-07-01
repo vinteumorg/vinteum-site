@@ -60,7 +60,7 @@ const GRANTEES: AlumniMember[] = [
     {
         nameKey: "grants.grantees.members.chrisG.name",
         roleKey: "grants.grantees.members.chrisG.role",
-        image: "/assets/images/people/fellows/chrisg.jpg",
+        image: "/assets/images/people/grantees/chrisg.jpg",
         status: "current",
         links: {
             github: "https://github.com/csgui",
@@ -71,7 +71,7 @@ const GRANTEES: AlumniMember[] = [
     {
         nameKey: "grants.grantees.members.johnnySantos.name",
         roleKey: "grants.grantees.members.johnnySantos.role",
-        image: "/assets/images/people/fellows/johnnysantos.jpg",
+        image: "/assets/images/people/grantees/johnnysantos.jpg",
         status: "current",
         links: {
             github: "https://github.com/johnnyasantoss",

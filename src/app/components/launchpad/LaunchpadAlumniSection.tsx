@@ -160,7 +160,7 @@ const COHORT_2: AlumniEntry[] = [
     {
         nameKey: "fellowship.fellows.members.chrisG.name",
         roleKey: "fellowship.fellows.members.chrisG.role",
-        image: "/assets/images/people/fellows/chrisg.jpg",
+        image: "/assets/images/people/grantees/chrisg.jpg",
         fundedBy: "Vinteum",
         links: {
             github: "https://github.com/csgui",
@@ -171,7 +171,7 @@ const COHORT_2: AlumniEntry[] = [
     {
         nameKey: "fellowship.fellows.members.johnnySantos.name",
         roleKey: "fellowship.fellows.members.johnnySantos.role",
-        image: "/assets/images/people/fellows/johnnysantos.jpg",
+        image: "/assets/images/people/grantees/johnnysantos.jpg",
         fundedBy: "Vinteum",
         links: {
             github: "https://github.com/johnnyasantoss",
