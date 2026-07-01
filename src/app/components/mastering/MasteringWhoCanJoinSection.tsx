@@ -46,7 +46,7 @@ export function MasteringWhoCanJoinSection() {
                     {/* Right: title + CTA */}
                     <div className="flex flex-col items-start lg:items-end gap-6 lg:w-[40%]">
                         <SectionTitle className="lg:text-right">{t("mastering.whoCanJoin.title")}</SectionTitle>
-                        <CTAButton href="#">
+                        <CTAButton href="https://jobs.vinteum.org/mastering-seminars-lista-de-espera/pt/apply" target="_blank" rel="noopener noreferrer">
                             {t("mastering.whoCanJoin.cta")}
                         </CTAButton>
                     </div>

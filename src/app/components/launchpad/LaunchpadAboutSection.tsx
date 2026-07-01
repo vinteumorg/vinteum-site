@@ -24,7 +24,7 @@ export function LaunchpadAboutSection() {
                     {/* Right: title + CTA */}
                     <div className="lg:w-[45%] flex flex-col items-start lg:items-end gap-8">
                         <SectionTitle className="text-left lg:text-right">{t("launchpad.about.title")}</SectionTitle>
-                        <CTAButton href="https://bitcoindevlaunchpad.com" target="_blank" rel="noopener noreferrer">
+                        <CTAButton href="https://jobs.vinteum.org/bitcoin-dev-launchpad-lista-de-espera/pt/apply" target="_blank" rel="noopener noreferrer">
                             {t("launchpad.about.cta")}
                         </CTAButton>
                     </div>
