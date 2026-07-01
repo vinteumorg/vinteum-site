@@ -25,7 +25,7 @@ export function CommunitySection() {
         {
             titleKey: "community.cards.casa21.title",
             descKey: "community.cards.casa21.desc",
-            href: "/comunidade/casa21",
+            href: "https://casa21.vinteum.org/",
             target: "_self",
         },
     ];
