@@ -141,6 +141,9 @@ Content type: application/json
 Secret: value of GITHUB_WEBHOOK_SECRET from the server .env.local
 Events: Just the push event
 Active: yes
+
+`application/json` is preferred. The deploy route also accepts GitHub's
+`application/x-www-form-urlencoded` payload format for compatibility.
 ```
 
 The endpoint also works behind the apex redirect:
