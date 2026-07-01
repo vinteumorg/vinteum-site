@@ -122,7 +122,7 @@ export function LaunchpadTestimonialsSection() {
                             className={`flex gap-5 ${direction === "right" ? "alumni-enter-right" : "alumni-enter-left"}`}
                         >
                             {/* Current card */}
-                            <div className="min-w-[90%] md:min-w-[78%]">
+                            <div className="min-w-[90%] md:min-w-[78%] flex flex-col">
                                 <TestimonialCard
                                     quote={t(current.quoteKey)}
                                     name={t(current.nameKey)}
@@ -132,7 +132,7 @@ export function LaunchpadTestimonialsSection() {
                             </div>
 
                             {peek ? (
-                                <div className="min-w-[90%] md:min-w-[78%] opacity-40 pointer-events-none select-none">
+                                <div className="min-w-[90%] md:min-w-[78%] opacity-40 pointer-events-none select-none flex flex-col">
                                     <TestimonialCard
                                         quote={t(peek.quoteKey)}
                                         name={t(peek.nameKey)}
@@ -163,7 +163,7 @@ export function LaunchpadTestimonialsSection() {
                     style={{ scrollbarWidth: "none", scrollPaddingLeft: "2rem" }}
                 >
                     {TESTIMONIALS.map((item, i) => (
-                        <div key={i} data-card className="w-[90%] shrink-0 snap-start">
+                        <div key={i} data-card className="w-[90%] shrink-0 snap-start flex flex-col">
                             <TestimonialCard
                                 quote={t(item.quoteKey)}
                                 name={t(item.nameKey)}
@@ -214,11 +214,11 @@ function TestimonialCard({
         .toUpperCase();
 
     return (
-        <div className="rounded-2xl border border-[#31422D] bg-[#31422D]/[0.17] backdrop-blur-sm p-8 md:p-10 flex flex-col justify-between h-[400px]">
+        <div className="rounded-2xl border border-[#31422D] bg-[#31422D]/[0.17] backdrop-blur-sm p-8 md:p-10 flex flex-col gap-8 min-h-[400px] flex-1">
             <p className="font-space-mono text-base md:text-lg font-normal text-foreground leading-[1.7]">
                 {quote}
             </p>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 mt-auto">
                 <div className="relative w-14 h-14 shrink-0 rounded-xl overflow-hidden border border-[#31422D]">
                     {imgError ? (
                         <div className="w-full h-full bg-primary flex items-center justify-center">
