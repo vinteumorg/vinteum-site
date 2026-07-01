@@ -455,7 +455,8 @@
                 "joaozinho": { "name": "joaozinho", "role": "Krux" },
                 "caio": { "name": "Caio", "role": "Boltz" },
                 "lang": { "name": "Lang", "role": "Tether" },
-                "thgOO": { "name": "thgO-O", "role": "BtcPayServer" }
+                "thgOO": { "name": "thgO-O", "role": "BtcPayServer" },
+                "yan": { "name": "Yan", "role": "Bitcoin Dev Kit" }
             }
         }
     },
