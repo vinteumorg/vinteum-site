@@ -46,13 +46,14 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://vinteum.org"),
   title: "Vinteum",
   description: "Vinteum - Open Source Bitcoin Development",
   openGraph: {
     title: "Vinteum",
     description: "Vinteum - Open Source Bitcoin Development",
     type: "website",
-    images: ["/assets/images/og-image.png"],
+    images: [{ url: "/assets/images/og-image.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
