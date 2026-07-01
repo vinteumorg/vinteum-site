@@ -52,11 +52,13 @@ export const metadata: Metadata = {
     title: "Vinteum",
     description: "Vinteum - Open Source Bitcoin Development",
     type: "website",
+    images: ["/assets/images/og-image.png"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Vinteum",
     description: "Vinteum - Open Source Bitcoin Development",
+    images: ["/assets/images/og-image.png"],
   },
 };
 
