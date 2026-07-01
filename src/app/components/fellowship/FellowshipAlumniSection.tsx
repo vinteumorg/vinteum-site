@@ -130,6 +130,17 @@ const FELLOWS: AlumniMember[] = [
             twitter: "https://x.com/jayrmotta",
         },
     },
+    {
+        nameKey: "fellowship.fellows.members.yan.name",
+        roleKey: "fellowship.fellows.members.yan.role",
+        image: "/assets/images/people/fellows/yan.jpeg",
+        status: "current",
+        links: {
+            github: "https://github.com/yan-pi",
+            twitter: "https://x.com/yamigake",
+            website: "https://indianboy.sh/",
+        },
+    },
     // Past fellows — 1st cohort
     {
         nameKey: "fellowship.fellows.members.lucasBalieiro.name",
