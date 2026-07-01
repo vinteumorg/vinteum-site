@@ -26,29 +26,6 @@ const FELLOWS: AlumniMember[] = [
         },
     },
     {
-        nameKey: "fellowship.fellows.members.chrisG.name",
-        roleKey: "fellowship.fellows.members.chrisG.role",
-        image: "/assets/images/people/fellows/chrisg.jpg",
-        status: "current",
-        links: {
-            github: "https://github.com/csgui",
-            twitter: "https://x.com/csgui",
-            website: "https://imchris.me/",
-        },
-    },
-    {
-        nameKey: "fellowship.fellows.members.johnnySantos.name",
-        roleKey: "fellowship.fellows.members.johnnySantos.role",
-        image: "/assets/images/people/fellows/johnnysantos.jpg",
-        status: "current",
-        links: {
-            github: "https://github.com/johnnyasantoss",
-            twitter: "https://twitter.com/johnnyasantos",
-            nostr: "https://njump.me/npub1j0nyf54ndc6keq80xfyeqfumn2l23e3k79f33x5jsqxnut6a8dyqp74mu0",
-            website: "https://johnnyasantos.com/",
-        },
-    },
-    {
         nameKey: "fellowship.fellows.members.bc1cindy.name",
         roleKey: "fellowship.fellows.members.bc1cindy.role",
         image: "/assets/images/people/fellows/bc1cindy.jpg",
