@@ -31,7 +31,7 @@ export function BlogHeroSection({ search, onSearchChange }: BlogHeroSectionProps
             />
 
             <div className="relative z-10 flex flex-col items-center justify-center text-center px-8 md:px-14 lg:px-20 pt-52 pb-20 w-full max-w-7xl mx-auto gap-5">
-                <h1 className="font-sk-concretica text-[2rem] sm:text-[2.75rem] md:text-[3.5rem] lg:text-[4rem] font-normal text-foreground uppercase leading-[0.9] tracking-tight">
+                <h1 className="font-sk-concretica text-[2rem] sm:text-[2.75rem] md:text-[3.5rem] lg:text-[4rem] font-normal text-foreground uppercase leading-[0.9] tracking-[0.05em]">
                     {t("blog.hero.title")}
                 </h1>
 

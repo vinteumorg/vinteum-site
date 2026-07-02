@@ -14,7 +14,7 @@ type HeroContentProps = {
 export function HeroContent({ title, subtitle, subtitleNode, cta }: HeroContentProps) {
     return (
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-8 md:px-14 lg:px-20 pt-52 pb-24 w-full max-w-7xl mx-auto">
-            <h1 className="font-sk-concretica text-[2rem] sm:text-[2.75rem] md:text-[3.5rem] lg:text-[4rem] font-normal text-foreground uppercase leading-[0.9] tracking-tight mb-8 w-full max-w-3xl">
+            <h1 className="font-sk-concretica text-[2rem] sm:text-[2.75rem] md:text-[3.5rem] lg:text-[4rem] font-normal text-foreground uppercase tracking-[0.05em] leading-[0.9] mb-8 w-full max-w-3xl lg:max-w-[57.6rem]">
                 {title}
             </h1>
 
