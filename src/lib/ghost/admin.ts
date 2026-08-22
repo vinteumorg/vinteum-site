@@ -1,7 +1,7 @@
 import crypto from "node:crypto";
-import type { GhostNewsletter } from "./types";
+import type { GhostNewsletter, GhostPost } from "./types";
 
-function ghostAdminToken(adminApiKey: string): string {
+export function ghostAdminToken(adminApiKey: string): string {
     const [id, secret] = adminApiKey.split(":");
     const header = Buffer.from(
         JSON.stringify({ alg: "HS256", typ: "JWT", kid: id })
@@ -40,4 +40,33 @@ export async function getNewsletters(): Promise<GhostNewsletter[]> {
 
     const data = (await res.json()) as { newsletters: GhostNewsletter[] };
     return data.newsletters.filter((nl) => nl.status === "active");
+}
+
+// Ghost's "Preview" button in the editor links to `{siteUrl}/p/:uuid/` — the
+// uuid is the only identifier it passes, and the Admin API has no
+// `/posts/uuid/:uuid/` path endpoint, so we look it up via `filter` instead.
+export async function getPostByUuidAdmin(uuid: string): Promise<GhostPost | null> {
+    const ghostUrl = process.env.GHOST_URL;
+    const adminApiKey = process.env.GHOST_ADMIN_API_KEY;
+
+    if (!ghostUrl || !adminApiKey) return null;
+
+    const token = ghostAdminToken(adminApiKey);
+
+    const res = await fetch(
+        `${ghostUrl}/ghost/api/admin/posts/?filter=${encodeURIComponent(`uuid:${uuid}`)}&include=authors,tags&formats=html`,
+        {
+            headers: {
+                Authorization: `Ghost ${token}`,
+                "Content-Type": "application/json",
+            },
+            next: { revalidate: 0 },
+        }
+    );
+
+    if (!res.ok) throw new Error(`Ghost Admin API error ${res.status}: ${res.statusText}`);
+
+    const data = await res.json();
+    const post = data.posts?.[0] ?? null;
+    return post;
 }
