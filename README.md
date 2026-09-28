@@ -1,4 +1,4 @@
-# Vinteum Site
+# Vinteum Site (vinteum.org)
 
 Vinteum's public website, built with [Next.js](https://nextjs.org), React, TypeScript, and Tailwind CSS.
 
