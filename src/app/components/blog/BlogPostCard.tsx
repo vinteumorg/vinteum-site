@@ -14,7 +14,7 @@ interface BlogPostCardProps {
 export function BlogPostCard({ post, featured = false }: BlogPostCardProps) {
     const { t, locale } = useLanguage();
     const excerpt = post.custom_excerpt ?? post.excerpt ?? "";
-    const author = post.primary_author ?? post.authors?.[0];
+
 
     return (
         <Link
@@ -73,18 +73,6 @@ export function BlogPostCard({ post, featured = false }: BlogPostCardProps) {
                 <p className="font-poppins text-sm text-foreground/60 leading-relaxed flex-1">
                     {excerpt.length > 120 ? excerpt.slice(0, 120).trimEnd() + "…" : excerpt}
                 </p>
-
-                <div className="flex items-center justify-between gap-2 pt-3 border-t border-primary/10 mt-auto">
-                    <span className="font-poppins text-xs text-foreground/40 truncate">
-                        {author?.name}
-                    </span>
-                    <span className="font-space-mono text-xs text-foreground/40 flex items-center gap-1 shrink-0">
-                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                            <path d="M2 6.5C2 5.119 3.119 4 4.5 4H11v16H4.5A2.5 2.5 0 0 1 2 17.5v-11ZM13 4h6.5C20.881 4 22 5.119 22 6.5v11A2.5 2.5 0 0 1 19.5 20H13V4Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
-                        </svg>
-                        {post.reading_time} {t("blog.readingTime")}
-                    </span>
-                </div>
             </div>
         </Link>
     );
