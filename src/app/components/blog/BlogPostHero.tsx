@@ -58,34 +58,37 @@ export function BlogPostHero({ post }: BlogPostHeroProps) {
 
                 {/* Meta row */}
                 <div className="flex flex-wrap items-center gap-4 pt-2">
-                    <div className="flex items-center gap-2">
-                        {(() => {
-                            const author = post.primary_author ?? post.authors?.[0];
-                            if (!author) return null;
-                            return (
-                                <>
-                                    {author.profile_image ? (
-                                        <div className="relative w-8 h-8 rounded-full overflow-hidden">
-                                            <Image
-                                                src={author.profile_image}
-                                                alt={author.name}
-                                                fill
-                                                className="object-cover"
-                                            />
-                                        </div>
-                                    ) : (
-                                        <div className="w-8 h-8 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center shrink-0">
-                                            <span className="font-space-mono text-xs text-primary">
-                                                {author.name.charAt(0)}
-                                            </span>
-                                        </div>
-                                    )}
-                                    <span className="font-poppins text-sm text-foreground">
-                                        {author.name}
-                                    </span>
-                                </>
-                            );
-                        })()}
+                                    <div className="flex items-center gap-2">
+                        <div className="flex -space-x-2">
+                            {post.authors?.map((author) =>
+                                author.profile_image ? (
+                                    <div
+                                        key={author.id}
+                                        className="relative w-8 h-8 rounded-full overflow-hidden border-2 border-background"
+                                    >
+                                        <Image
+                                            src={author.profile_image}
+                                            alt={author.name}
+                                            fill
+                                            className="object-cover"
+                                        />
+                                    </div>
+                                ) : (
+                                    <div
+                                        key={author.id}
+                                        className="w-8 h-8 rounded-full bg-primary/20 border-2 border-background flex items-center justify-center shrink-0"
+                                    >
+                                        <span className="font-space-mono text-xs text-primary">
+                                            {author.name.charAt(0)}
+                                        </span>
+                                    </div>
+                                )
+                            )}
+                        </div>
+
+                        <span className="font-poppins text-sm text-foreground">
+                            {post.authors?.map((author) => author.name).join(" & ")}
+                        </span>
                     </div>
 
                     <div className="w-px h-4 bg-foreground/20" aria-hidden="true" />
