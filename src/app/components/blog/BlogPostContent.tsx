@@ -12,7 +12,7 @@ export function BlogPostContent({ html }: BlogPostContentProps) {
                 dangerouslySetInnerHTML={{ __html: html }}
                 aria-label="Post content"
             />
-            <BlogPostInteractivePatch />
+            <BlogPostInteractivePatch key={html} />
         </>
     );
 }
