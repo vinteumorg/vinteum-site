@@ -19,7 +19,7 @@ type FormState = "idle" | "sending" | "success" | "error";
 export function ContactFormSection() {
     const { t } = useLanguage();
 
-    const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+    const [form, setForm] = useState({ name: "", email: "", subject: "", message: "", company: "" });
     const [status, setStatus] = useState<FormState>("idle");
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -37,7 +37,7 @@ export function ContactFormSection() {
             });
             if (res.ok) {
                 setStatus("success");
-                setForm({ name: "", email: "", subject: "", message: "" });
+                setForm({ name: "", email: "", subject: "", message: "", company: "" });
             } else {
                 setStatus("error");
             }
@@ -68,6 +68,25 @@ export function ContactFormSection() {
                             </div>
                         ) : (
                             <form onSubmit={handleSubmit} className="flex flex-col gap-8">
+                                {/* Honeypot: positioned off-screen rather than display:none,
+                                    because bots skip fields they can detect as hidden but will
+                                    fill one that is merely out of view. A human never reaches
+                                    it, and the API drops any submission that arrives filled. */}
+                                <div
+                                    aria-hidden="true"
+                                    className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden"
+                                >
+                                    <label htmlFor="contact-company">Company</label>
+                                    <input
+                                        id="contact-company"
+                                        type="text"
+                                        name="company"
+                                        value={form.company}
+                                        onChange={handleChange}
+                                        tabIndex={-1}
+                                        autoComplete="off"
+                                    />
+                                </div>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                                     <div className="flex flex-col gap-2">
                                         <label className="font-poppins text-xs text-foreground/60 uppercase tracking-widest">
