@@ -23,7 +23,6 @@ export function OranjeLanding() {
                 variant="default"
                 title={text("title")}
                 subtitleNode={<><span className={eyebrow}>{text("eyebrow")}</span>{text("lead")}</>}
-                cta={{ label: text("results"), href: "#relatorio" }}
                 backgroundImage="/assets/backgrounds/hero-home.svg"
             />
             <div className="mx-auto -mt-10 mb-16 flex max-w-3xl flex-col items-center gap-5 px-6 text-center relative z-10">
