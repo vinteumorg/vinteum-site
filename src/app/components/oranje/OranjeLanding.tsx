@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Hero } from "../shared/Hero";
 import { CTAButton } from "../shared/CTAButton";
@@ -12,6 +11,9 @@ const REPORT_URL = "/assets/files/Vinteum-Year-Four-Report-2026.pdf";
 const WHATSAPP_NUMBER = "5511967333301";
 const focus = "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary";
 const eyebrow = "mb-5 block font-space-mono text-xs uppercase tracking-widest text-primary";
+
+const STATS = ["stat1", "stat2", "stat3", "stat4"] as const;
+const PEOPLE = ["p1", "p2", "p3", "p4"] as const;
 
 export function OranjeLanding() {
     const { t, locale } = useLanguage();
@@ -24,46 +26,47 @@ export function OranjeLanding() {
                 variant="default"
                 title={text("title")}
                 subtitleNode={<><span className={eyebrow}>{text("eyebrow")}</span>{text("lead")}</>}
-                cta={{ label: text("results"), href: "#relatorio" }}
+                cta={{ label: text("results"), href: "#resultados" }}
                 backgroundImage="/assets/backgrounds/hero-home.svg"
             />
             <div className="mx-auto -mt-10 mb-16 flex max-w-3xl flex-col items-center gap-5 px-6 text-center relative z-10">
                 <Button href="#apoie" variant="secondary" className={focus}>{text("supportLink")}</Button>
-                <p className="font-space-mono text-xs text-foreground-secondary">{text("note")}</p>
             </div>
             <div className="mx-auto max-w-7xl px-6 md:px-14 lg:px-20">
-                <section aria-labelledby="oranje-why" className="grid gap-8 border-b border-border-subtle py-12 md:grid-cols-2 md:gap-16 md:py-20">
-                    <div>
-                        <span className={eyebrow}>{text("whyLabel")}</span>
-                        <div id="oranje-why"><SectionTitle>{text("whyTitle")}</SectionTitle></div>
-                    </div>
-                    <div className="space-y-6 leading-relaxed text-foreground-secondary">
-                        <p>{text("whyBody")}</p>
-                        <p className="border-l-2 border-primary pl-6 text-xl text-foreground">{text("quote")}</p>
-                    </div>
-                </section>
-                <section aria-labelledby="oranje-work" className="py-12 md:py-20">
+                <section id="resultados" aria-labelledby="oranje-results" className="scroll-mt-24 border-b border-border-subtle py-12 md:py-20">
                     <div className="mb-12 grid gap-8 md:grid-cols-2 md:gap-16">
                         <div>
-                            <span className={eyebrow}>{text("workLabel")}</span>
-                            <div id="oranje-work"><SectionTitle>{text("workTitle")}</SectionTitle></div>
+                            <span className={eyebrow}>{text("resultsLabel")}</span>
+                            <div id="oranje-results"><SectionTitle>{text("resultsTitle")}</SectionTitle></div>
                         </div>
-                        <p className="self-end leading-relaxed text-foreground-secondary">{text("workBody")}</p>
+                        <p className="self-end leading-relaxed text-foreground-secondary">{text("resultsBody")}</p>
                     </div>
-                    <div className="grid gap-8 md:grid-cols-3">
-                        {(["security", "infra", "education"] as const).map((topic) => (
-                            <article key={topic} className="border-t border-border pt-6">
-                                <span className={eyebrow}>{text(`${topic}Label`)}</span>
-                                <h3 className="mb-4 text-xl text-foreground">{text(`${topic}Title`)}</h3>
-                                <p className="mb-6 text-sm leading-relaxed text-foreground-secondary">{text(`${topic}Body`)}</p>
-                                {topic === "education" ? (
-                                    <Link href="/programs/bitcoin-dev-launchpad" className={`${eyebrow} ${focus} underline underline-offset-4`}>{text(`${topic}Project`)}</Link>
-                                ) : <span className={eyebrow}>{text(`${topic}Project`)}</span>}
-                            </article>
+                    <dl className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+                        {STATS.map((stat) => (
+                            <div key={stat} className="border-t border-border pt-6">
+                                <dt className="text-5xl text-primary">{text(`${stat}Value`)}</dt>
+                                <dd className="mt-3 text-sm leading-relaxed text-foreground-secondary">{text(`${stat}Body`)}</dd>
+                            </div>
                         ))}
-                    </div>
+                    </dl>
+                    <p className="mt-10 font-space-mono text-xs text-foreground-secondary">{text("resultsSource")}</p>
                 </section>
-                <section id="relatorio" aria-labelledby="oranje-report" className="scroll-mt-24 grid items-center gap-10 rounded-3xl border border-border bg-background-secondary p-6 md:grid-cols-2 md:p-12">
+                <section aria-labelledby="oranje-people" className="grid gap-8 border-b border-border-subtle py-12 md:grid-cols-2 md:gap-16 md:py-20">
+                    <div>
+                        <span className={eyebrow}>{text("peopleLabel")}</span>
+                        <div id="oranje-people"><SectionTitle>{text("peopleTitle")}</SectionTitle></div>
+                        <p className="mt-6 leading-relaxed text-foreground-secondary">{text("peopleBody")}</p>
+                    </div>
+                    <ul className="divide-y divide-border-subtle">
+                        {PEOPLE.map((person) => (
+                            <li key={person} className="flex flex-col gap-1 py-4 first:pt-0 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
+                                <span className="text-foreground">{text(`${person}Name`)}</span>
+                                <span className="font-space-mono text-xs text-foreground-secondary">{text(`${person}Project`)}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </section>
+                <section id="relatorio" aria-labelledby="oranje-report" className="scroll-mt-24 my-12 grid items-center gap-10 rounded-3xl border border-border bg-background-secondary p-6 md:my-20 md:grid-cols-2 md:p-12">
                     <a href={REPORT_URL} target="_blank" rel="noopener noreferrer" className={`mx-auto ${focus}`}>
                         <Image src="/assets/images/oranje-report-cover.png" alt={text("reportAlt")} width={745} height={1053} className="h-auto w-full max-w-[245px] -rotate-3 rounded-sm shadow-xl" />
                     </a>
@@ -83,8 +86,6 @@ export function OranjeLanding() {
                         <CTAButton href={whatsappUrl} target="_blank" rel="noopener noreferrer" className={focus}>{text("whatsapp")}</CTAButton>
                         <Button href="/donate" variant="secondary" className={focus}>{text("donate")}</Button>
                     </div>
-                    <p className="mb-4 mt-10 text-sm leading-relaxed text-foreground-secondary">{text("casaBody")}</p>
-                    <a href="https://casa21.vinteum.org/" target="_blank" rel="noopener noreferrer" className={`text-sm text-primary underline underline-offset-4 ${focus}`}>{text("casaLink")}</a>
                 </section>
             </div>
         </div>
