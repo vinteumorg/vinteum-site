@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useContext, useState, useEffect, useCallback, startTransition, ReactNode } from "react";
+import { usePathname } from "next/navigation";
 import pt from "@/i18n/locales/pt.json";
 import en from "@/i18n/locales/en.json";
 
@@ -23,10 +24,18 @@ function getNestedValue(obj: Translations, path: string): string {
     return typeof current === "string" ? current : path;
 }
 
-function detectLocale(): Locale {
+/** Pages whose audience is mostly Brazilian default to pt-BR instead of following the browser. */
+const PAGE_DEFAULT_LOCALE: Record<string, Locale> = {
+    "/oranje": "BR",
+};
+
+function detectLocale(pathname: string): Locale {
     try {
         const saved = localStorage.getItem(STORAGE_KEY) as Locale | null;
         if (saved && SUPPORTED_LOCALES.includes(saved)) return saved;
+
+        const pageDefault = PAGE_DEFAULT_LOCALE[pathname];
+        if (pageDefault) return pageDefault;
 
         const browserLang = navigator.language || "";
         if (browserLang.toLowerCase().startsWith("pt")) return "BR";
@@ -45,11 +54,12 @@ interface LanguageContextValue {
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
+    const pathname = usePathname();
     const [locale, setLocaleState] = useState<Locale>("EN");
 
     useEffect(() => {
-        startTransition(() => setLocaleState(detectLocale()));
-    }, []);
+        startTransition(() => setLocaleState(detectLocale(pathname)));
+    }, [pathname]);
 
     const setLocale = useCallback((next: Locale) => {
         try {
