@@ -13,7 +13,7 @@ const focus = "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visi
 const eyebrow = "mb-5 block font-space-mono text-xs uppercase tracking-widest text-primary";
 
 const STATS = ["stat1", "stat2", "stat3", "stat4"] as const;
-const PEOPLE = ["p1", "p2", "p3", "p4"] as const;
+const PEOPLE = ["p1", "p2", "p3"] as const;
 
 export function OranjeLanding() {
     const { t, locale } = useLanguage();
