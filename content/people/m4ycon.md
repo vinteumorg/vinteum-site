@@ -1,6 +1,7 @@
 ---
 name: m4ycon
-image: /assets/images/people/fellows/m4ycon.jpg
+image: /assets/images/people/illustrations/m4ycon.png
+illustration: true
 programs:
   - program: fellowship
     name: Fellowship

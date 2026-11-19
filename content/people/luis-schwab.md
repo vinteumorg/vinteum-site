@@ -1,6 +1,7 @@
 ---
 name: Luis Schwab
-image: /assets/images/people/fellows/luis.png
+image: /assets/images/people/illustrations/luis-schwab.png
+illustration: true
 programs:
   - program: fellowship
     name: Fellowship

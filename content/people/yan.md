@@ -1,6 +1,7 @@
 ---
 name: Yan
-image: /assets/images/people/fellows/yan.jpeg
+image: /assets/images/people/illustrations/yan.png
+illustration: true
 programs:
   - program: fellowship
     name: Fellowship

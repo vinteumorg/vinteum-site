@@ -469,6 +469,18 @@ test("provides local image thumbnails for Bruno's media cards", () => {
     }
 });
 
+test("flags every illustration portrait so the avatar keeps its colour", () => {
+    const illustrated = readPeople().filter((person) => person.image?.includes("/illustrations/"));
+    assert.ok(illustrated.length >= 25, "expected the illustration set to replace the photographs");
+    for (const person of illustrated) {
+        assert.equal(person.illustration, true, `${person.slug} needs illustration: true`);
+    }
+    const photos = readPeople().filter((person) => person.image && !person.image.includes("/illustrations/"));
+    for (const person of photos) {
+        assert.equal(person.illustration, undefined, `${person.slug} still uses a photograph`);
+    }
+});
+
 test("keeps Optech podcast cards tied to their edition, date and episode link", () => {
     const episodes = readPeople().flatMap((person) =>
         person.media

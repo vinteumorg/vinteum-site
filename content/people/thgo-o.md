@@ -1,6 +1,7 @@
 ---
 name: thgO-O
-image: /assets/images/people/fellows/thgoo.jpg
+image: /assets/images/people/illustrations/thgo-o.png
+illustration: true
 programs:
   - program: fellowship
     name: Fellowship

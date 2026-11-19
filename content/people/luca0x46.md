@@ -1,6 +1,7 @@
 ---
 name: Luca0x46
-image: /assets/images/people/fellows/luca0x46.jpg
+image: /assets/images/people/illustrations/luca0x46.png
+illustration: true
 programs:
   - program: fellowship
     name: Fellowship

@@ -1,6 +1,7 @@
 ---
 name: Gustavo Stingelin
-image: /assets/images/people/fellows/gustavostingelin.jpg
+image: /assets/images/people/illustrations/gustavo-stingelin.png
+illustration: true
 programs:
   - program: fellowship
     name: Fellowship

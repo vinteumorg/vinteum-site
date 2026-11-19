@@ -1,6 +1,7 @@
 ---
 name: Octavio Lucca
-image: /assets/images/people/fellows/octaviolucca.jpg
+image: /assets/images/people/illustrations/octavio-lucca.png
+illustration: true
 programs:
   - program: fellowship
     name: Fellowship

@@ -1,6 +1,7 @@
 ---
 name: Lucas Balieiro
-image: /assets/images/people/fellows/lucasbalieiro.jpg
+image: /assets/images/people/illustrations/lucas-balieiro.png
+illustration: true
 location:
   EN: Brazil
   BR: Brasil

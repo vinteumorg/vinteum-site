@@ -1,6 +1,7 @@
 ---
 name: Isaque Franklin
-image: /assets/images/people/fellows/isaquefranklin.jpg
+image: /assets/images/people/illustrations/isaque-franklin.png
+illustration: true
 programs:
   - program: fellowship
     name: Fellowship

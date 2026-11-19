@@ -1,6 +1,7 @@
 ---
 name: joaozinho
-image: /assets/images/people/fellows/joaozinho.jpg
+image: /assets/images/people/illustrations/joaozinho.png
+illustration: true
 programs:
   - program: bitcoin-dev-launchpad
     name: Bitcoin Dev Launchpad

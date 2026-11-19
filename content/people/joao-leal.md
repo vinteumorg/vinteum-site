@@ -1,6 +1,7 @@
 ---
 name: João Leal
-image: /assets/images/people/fellows/joao.jpg
+image: /assets/images/people/illustrations/joao-leal.png
+illustration: true
 programs:
   - program: fellowship
     name: Fellowship

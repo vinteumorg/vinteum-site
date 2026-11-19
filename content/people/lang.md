@@ -1,6 +1,7 @@
 ---
 name: Lang
-image: /assets/images/people/fellows/lang.jpg
+image: /assets/images/people/illustrations/lang.png
+illustration: true
 programs:
   - program: bitcoin-dev-launchpad
     name: Bitcoin Dev Launchpad

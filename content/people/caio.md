@@ -1,6 +1,7 @@
 ---
 name: Caio
-image: /assets/images/people/fellows/caio.jpg
+image: /assets/images/people/illustrations/caio.png
+illustration: true
 programs:
   - program: bitcoin-dev-launchpad
     name: Bitcoin Dev Launchpad

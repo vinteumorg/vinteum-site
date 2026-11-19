@@ -116,6 +116,14 @@ alone does not imply a fellowship. Keep pseudonymous contributors under their
 chosen public identity, and confirm permission for biographies, photos and
 personal links before publication.
 
+Portraits are illustrations, not photographs. Store them under
+`public/assets/images/people/illustrations/<slug>.png` at 720x720, cropped from
+the 16:9 original with the face centred, and set `illustration: true` in the
+frontmatter so the avatar renders in colour instead of the grayscale photo
+treatment. Only publish an illustration the person has approved, and confirm it
+belongs to that person before replacing a portrait; the source files and approval
+status live in the community register, not in this repository.
+
 Keep biographies to one short paragraph per language, without links or source
 attribution such as "according to the report". Put technical detail in project
 summaries, selected-contribution descriptions, publications and programme history.

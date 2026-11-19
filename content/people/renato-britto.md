@@ -1,6 +1,7 @@
 ---
 name: Renato Britto (satsfy)
-image: /assets/images/people/fellows/renatobritto.jpg
+image: /assets/images/people/illustrations/renato-britto.png
+illustration: true
 alternateImage: /assets/images/people/fellows/bukele.jpg
 programs:
   - program: fellowship
