@@ -1,6 +1,7 @@
 ---
 name: Carlos Santos
-image: /assets/images/people/github/carlos-santos.jpg
+image: /assets/images/people/illustrations/carlos-santos.png
+illustration: true
 links:
   - label: GitHub
     href: 'https://github.com/caarloshenriq'

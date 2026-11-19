@@ -1,6 +1,7 @@
 ---
 name: Davidson Souza
-image: /assets/images/people/grantees/davidsonsouza.jpg
+image: /assets/images/people/illustrations/davidson-souza.png
+illustration: true
 location:
   EN: Brazil
   BR: Brasil

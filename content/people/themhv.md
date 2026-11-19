@@ -1,6 +1,7 @@
 ---
 name: TheMhv
-image: /assets/images/people/fellows/themhv.jpg
+image: /assets/images/people/illustrations/themhv.png
+illustration: true
 programs:
   - program: fellowship
     name: Fellowship

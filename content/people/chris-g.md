@@ -1,6 +1,7 @@
 ---
 name: Chris G.
-image: /assets/images/people/grantees/chrisg.jpg
+image: /assets/images/people/illustrations/chris-g.png
+illustration: true
 programs:
   - program: grants
     name: Grants

@@ -1,6 +1,7 @@
 ---
 name: plebhash
-image: /assets/images/people/grantees/plebhash.png
+image: /assets/images/people/illustrations/plebhash.png
+illustration: true
 programs:
   - program: grants
     name: Grants

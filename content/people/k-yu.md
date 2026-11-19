@@ -1,6 +1,7 @@
 ---
 name: K-YU
-image: /assets/images/people/fellows/caioueda.jpg
+image: /assets/images/people/illustrations/k-yu.png
+illustration: true
 programs:
   - program: fellowship
     name: Fellowship

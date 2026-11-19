@@ -1,6 +1,7 @@
 ---
 name: Leonardo Lima
-image: /assets/images/people/grantees/leonardolima.jpg
+image: /assets/images/people/illustrations/leonardo-lima.png
+illustration: true
 programs:
   - program: grants
     name: Grants

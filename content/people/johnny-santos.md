@@ -1,6 +1,7 @@
 ---
 name: Johnny Santos
-image: /assets/images/people/grantees/johnnysantos.jpg
+image: /assets/images/people/illustrations/johnny-santos.png
+illustration: true
 programs:
   - program: grants
     name: Grants
