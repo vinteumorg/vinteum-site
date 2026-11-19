@@ -42,6 +42,7 @@ const mainItems = [
     { key: "blog", href: "/blog", hasSubmenu: false },
     { key: "contact", href: "/contact", hasSubmenu: false },
     { key: "donate", href: "/donate", hasSubmenu: false },
+    { key: "people", href: "/people", hasSubmenu: false },
 ];
 
 export function MenuModal({ isOpen, onClose }: MenuModalProps) {

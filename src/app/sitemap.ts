@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getPosts } from "@/lib/ghost";
+import { getPeople } from "@/lib/people";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://vinteum.org";
 
@@ -13,6 +14,7 @@ const STATIC_ROUTES: {
     { path: "/", changeFrequency: "weekly", priority: 1 },
     { path: "/oranje", changeFrequency: "yearly", priority: 0.6 },
     { path: "/about", changeFrequency: "monthly", priority: 0.9 },
+    { path: "/people", changeFrequency: "monthly", priority: 0.8 },
     { path: "/blog", changeFrequency: "daily", priority: 0.8 },
     { path: "/programs/grants", changeFrequency: "monthly", priority: 0.8 },
     { path: "/programs/fellowship", changeFrequency: "monthly", priority: 0.8 },
@@ -50,5 +52,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         console.warn("sitemap: could not load blog posts, using static routes only", error);
     }
 
-    return [...staticEntries, ...postEntries];
+    const profileEntries = getPeople().map(({ slug }) => ({ url: `${SITE_URL}/people/${slug}` }));
+    return [...staticEntries, ...postEntries, ...profileEntries];
 }

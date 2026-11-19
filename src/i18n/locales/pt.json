@@ -38,7 +38,8 @@
             "hackerhouse": "Casa21 hackhouse",
             "grants": "Grants Program",
             "contact": "Contato"
-        }
+        },
+        "people": "Pessoas"
     },
     "footer": {
         "newsletter": {
@@ -803,5 +804,89 @@
       "whatsapp": "Falar pelo WhatsApp",
       "whatsappMessage": "Olá! Conheci a Vinteum no Oranje Summit e gostaria de saber como apoiar o trabalho de vocês.",
       "donate": "Fazer uma doação"
-  }
+  },
+    "people": {
+        "roles": {
+            "grantee": "Grantee",
+            "fellow": "Fellow",
+            "alumni": "Alumnus",
+            "team": "Equipe"
+        },
+        "directory": "Pessoas",
+        "description": "Os desenvolvedores e pesquisadores que a Vinteum forma, orienta e financia, e suas contribuições open source para o Bitcoin.",
+        "filterRole": "Filtrar por vínculo",
+        "filters": {
+            "all": "Todos",
+            "grantee": "Grantees",
+            "fellow": "Fellows",
+            "alumni": "Alumni",
+            "team": "Equipe"
+        },
+        "focus": "Áreas de atuação",
+        "allFocus": "Todas as áreas",
+        "search": "Buscar nome, projeto ou tema",
+        "count": "pessoas",
+        "countSingular": "pessoa",
+        "empty": "Nenhuma pessoa encontrada com esses filtros.",
+        "clearFilters": "Limpar filtros",
+        "profileDetails": "Detalhes do perfil",
+        "affiliations": "Vínculos",
+        "present": "Atual",
+        "programs": "Comunidade e programas",
+        "by": "Por",
+        "updated": "Perfil atualizado em",
+        "connections": "Pessoas relacionadas",
+        "profileNavigation": "Seções do perfil",
+        "pseudonymous": "pseudônimo",
+        "mediaVideo": "Vídeo",
+        "mediaArticle": "Matéria",
+        "viewAllMedia": "Ver todas as participações",
+        "featuredContribution": "Contribuição em destaque",
+        "viewAll": "Ver todos",
+        "current": "Atual",
+        "past": "Anterior",
+        "noContributions": "Nenhuma contribuição deste tipo.",
+        "contributionType": "Filtrar contribuições por tipo",
+        "contributionTypes": {
+            "PR": "PR",
+            "Code Review": "Revisão de código",
+            "Research": "Pesquisa",
+            "Tooling": "Ferramentas",
+            "Documentation": "Documentação",
+            "Protocol Specification": "Especificação de protocolo"
+        },
+        "publicationTypes": {
+            "paper": "Artigo acadêmico",
+            "conference-abstract": "Resumo de congresso",
+            "preprint": "Preprint",
+            "masters-thesis": "Dissertação de mestrado",
+            "doctoral-thesis": "Tese de doutorado"
+        },
+        "tabs": {
+            "overview": "Visão geral",
+            "projects": "Projetos",
+            "contributions": "Contribuições",
+            "discussions": "Discussões",
+            "writing": "Textos",
+            "publications": "Publicações acadêmicas",
+            "courses": "Cursos",
+            "media": "Mídia"
+        },
+        "headings": {
+            "projects": "Projetos",
+            "contributions": "Contribuições selecionadas",
+            "discussions": "Discussões técnicas",
+            "writing": "Artigos e textos",
+            "publications": "Publicações acadêmicas",
+            "courses": "Cursos",
+            "media": "Palestras, podcasts e mídia"
+        },
+        "supportTitle": "Apoie o trabalho open source em Bitcoin",
+        "supportDescription": "Grants e fellowships da Vinteum são financiados por pessoas e empresas que acreditam que o Bitcoin precisa de mais desenvolvedores independentes.",
+        "supportAction": "Apoie a Vinteum",
+        "title": "Proof of work",
+        "cohort": "Turma",
+        "fundedBy": "Financiado por",
+        "affiliationEnd": "Encerrado em"
+    }
 }

@@ -1,0 +1,264 @@
+.people {
+    --people-primary: #59ffa9;
+    --people-muted: #a0a3a0;
+    --people-dim: #858a85;
+    --people-line: #252a25;
+    font-family: var(--font-poppins), sans-serif;
+    color: var(--foreground);
+}
+.container {
+    width: min(1100px, calc(100% - 40px));
+    margin-inline: auto;
+}
+.people h1,
+.people h2,
+.people h3,
+.people p {
+    margin: 0;
+}
+.people a {
+    transition:
+        color 0.15s,
+        border-color 0.15s;
+}
+.people a:hover {
+    color: var(--people-primary, var(--primary));
+}
+.people :is(a, button, input, select):focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 5px;
+}
+.hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background-image:
+        linear-gradient(#1d211d66 1px, transparent 1px),
+        linear-gradient(90deg, #1d211d66 1px, transparent 1px);
+    background-size: 96px 96px;
+}
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background: linear-gradient(var(--background) 0, transparent 35%, transparent 90%);
+    pointer-events: none;
+}
+.heroArt {
+    position: absolute;
+    bottom: -110px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1200px, 160vw);
+    height: 180px;
+    z-index: -1;
+    pointer-events: none;
+}
+.heroArt::before {
+    content: "";
+    position: absolute;
+    inset: -18px 0 0;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #3b9a1d, #b0e527 22%, #00f166 50%, #d5ce00 78%, #2d7e27);
+    filter: blur(20px);
+}
+.heroArt > div {
+    position: absolute;
+    inset: 12px -30px -50px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #122a19, #0b6232 47%, #686b0c 72%, #152619);
+}
+.directoryHero {
+    height: 510px;
+    text-align: center;
+    padding-top: 207px;
+}
+.hero h1 {
+    font-family: "SK Concretica", var(--font-space-mono), monospace;
+    font-size: clamp(44px, 5.7vw, 84px);
+    line-height: 1.05;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.015em;
+}
+.directoryHero p {
+    color: var(--people-muted);
+    max-width: 650px;
+    font-size: 18px;
+    line-height: 1.65;
+    margin: 30px auto 0;
+}
+.directoryHero h1 {
+    font-size: clamp(48px, 6.7vw, 96px);
+    letter-spacing: 0.04em;
+}
+.filterBar {
+    position: relative;
+    background: var(--background);
+    border-bottom: 1px solid var(--people-line);
+    padding: 14px 0;
+}
+.filters {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+.roleFilters {
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    border: 1px solid #24462e;
+    border-radius: 50px;
+    gap: 2px;
+    flex-shrink: 0;
+}
+.roleFilters button {
+    border-radius: 40px;
+    padding: 10px 16px;
+    color: var(--people-muted);
+    font-size: 13px;
+    background: transparent;
+    cursor: pointer;
+}
+.roleFilters button[aria-pressed="true"] {
+    background: var(--people-primary);
+    color: var(--background);
+}
+.focusFilter {
+    position: relative;
+    min-width: 176px;
+    max-width: 230px;
+}
+.focusFilter::after {
+    content: "";
+    position: absolute;
+    inset-inline-end: 18px;
+    top: 50%;
+    width: 7px;
+    height: 7px;
+    border-right: 2px solid var(--people-primary);
+    border-bottom: 2px solid var(--people-primary);
+    transform: translateY(-70%) rotate(45deg);
+    pointer-events: none;
+}
+.focusFilter select {
+    appearance: none;
+    width: 100%;
+    text-overflow: ellipsis;
+    border: 1px solid var(--people-line);
+    border-radius: 40px;
+    padding: 12px 38px 12px 16px;
+    font-size: 13px;
+    background: var(--background);
+    color: var(--foreground);
+    color-scheme: dark;
+    cursor: pointer;
+}
+.search {
+    position: relative;
+    flex: 1;
+    min-width: 130px;
+}
+.search input {
+    width: 100%;
+    min-width: 0;
+    border: 1px solid var(--people-line);
+    border-radius: 40px;
+    background: transparent;
+    padding: 12px 16px;
+    font-size: 13px;
+}
+.search input::placeholder {
+    color: var(--people-dim);
+}
+.directoryBody {
+    padding-block: 40px 140px;
+}
+.peopleGrid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 40px 24px;
+    padding: 0;
+}
+.personCard {
+    display: block;
+    height: 100%;
+    border-radius: 16px;
+}
+.avatar {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 16px;
+    overflow: hidden;
+    background: radial-gradient(
+        ellipse at 50% 25%,
+        #143c27 0%,
+        #28593e 30%,
+        #234733 62%,
+        #101610 85%
+    );
+    display: grid;
+    place-items: center;
+}
+.avatar img {
+    object-fit: cover;
+    filter: grayscale(1);
+}
+.avatar[data-illustration="true"] img {
+    filter: none;
+}
+.initial {
+    font:
+        28px var(--font-space-mono),
+        monospace;
+    color: var(--people-primary, var(--primary));
+}
+.personCard h2 {
+    font:
+        18px/1.4 var(--font-space-mono),
+        monospace;
+    margin-top: 18px;
+    overflow-wrap: anywhere;
+}
+.personCard p {
+    color: var(--people-muted);
+    font-size: 13px;
+    margin-top: 4px;
+}
+.personCard:hover .avatar {
+    box-shadow: 0 0 0 1px var(--primary);
+}
+.role {
+    display: block;
+    margin-top: 15px;
+    color: var(--people-primary);
+    font:
+        10px/1.5 var(--font-space-mono),
+        monospace;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+.role[data-role="fellow"] {
+    color: #e7b435;
+}
+.role[data-role="team"] {
+    color: #c6b1ff;
+}
+.role[data-role="alumni"] {
+    color: #73d9d1;
+}
+.emptyState {
+    padding: 48px 0;
+    color: var(--people-muted);
+}
+.emptyState button {
+    border: 1px solid var(--primary);
+    padding: 10px 20px;
+    border-radius: 40px;
+    margin-top: 20px;
+    cursor: pointer;
+    color: var(--primary);
+}
