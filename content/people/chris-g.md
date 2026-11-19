@@ -116,7 +116,7 @@ writing:
     date: '2026-06-02'
     source: imchris.me
     href: 'https://www.imchris.me/article-p-adics'
-updatedAt: '2026-11-18'
+updatedAt: '2026-11-19'
 ---
 ## EN
 
@@ -124,4 +124,4 @@ Chris G. is a software engineer with extensive experience in software architectu
 
 ## PT
 
-Chris G. é engenheiro de software com ampla experiência em arquitetura de software e sistemas distribuídos. Como mantenedor do Floresta, dedica-se à evolução arquitetural, à compatibilidade com o Bitcoin e à infraestrutura de nós embarcáveis. Seus interesses de pesquisa incluem acumuladores criptográficos, verificação formal e interoperabilidade de protocolos, incluindo o desenvolvimento de uma implementação independente do Utreexo.
+Chris G. é engenheiro de software com ampla experiência em arquitetura e sistemas distribuídos. Como mantenedor do Floresta, dedica-se à evolução arquitetural, à compatibilidade com o Bitcoin e à infraestrutura de nós embarcáveis. Pesquisa acumuladores criptográficos, verificação formal e interoperabilidade de protocolos, incluindo uma implementação independente do Utreexo.
