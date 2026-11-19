@@ -1,6 +1,6 @@
 ---
 name: bc1cindy
-image: /assets/images/people/illustrations/bc1cindy.png
+image: /assets/images/people/illustrations/bc1cindy.webp
 illustration: true
 programs:
   - program: fellowship

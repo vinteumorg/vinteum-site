@@ -1,6 +1,6 @@
 ---
 name: Renato Britto (satsfy)
-image: /assets/images/people/illustrations/renato-britto.png
+image: /assets/images/people/illustrations/renato-britto.webp
 illustration: true
 alternateImage: /assets/images/people/fellows/bukele.jpg
 programs:

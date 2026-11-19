@@ -1,6 +1,6 @@
 ---
 name: Edil Medeiros
-image: /assets/images/people/illustrations/edil-medeiros.png
+image: /assets/images/people/illustrations/edil-medeiros.webp
 illustration: true
 updatedAt: '2026-11-18'
 focus:

@@ -1,6 +1,6 @@
 ---
 name: Guilherme Martins
-image: /assets/images/people/illustrations/guilherme-martins.png
+image: /assets/images/people/illustrations/guilherme-martins.webp
 illustration: true
 programs:
   - program: fellowship

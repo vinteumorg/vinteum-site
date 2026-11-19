@@ -1,6 +1,6 @@
 ---
 name: Lucas Lima
-image: /assets/images/people/illustrations/lucas-lima.png
+image: /assets/images/people/illustrations/lucas-lima.webp
 illustration: true
 programs:
   - program: fellowship

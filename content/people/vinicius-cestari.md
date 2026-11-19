@@ -1,6 +1,6 @@
 ---
 name: Vinicius Cestari
-image: /assets/images/people/illustrations/vinicius-cestari.png
+image: /assets/images/people/illustrations/vinicius-cestari.webp
 illustration: true
 programs:
   - program: fellowship

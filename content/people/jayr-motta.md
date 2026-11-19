@@ -1,6 +1,6 @@
 ---
 name: Jayr Motta
-image: /assets/images/people/illustrations/jayr-motta.png
+image: /assets/images/people/illustrations/jayr-motta.webp
 illustration: true
 programs:
   - program: fellowship

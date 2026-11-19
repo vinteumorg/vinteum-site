@@ -1,6 +1,6 @@
 ---
 name: Caio
-image: /assets/images/people/illustrations/caio.png
+image: /assets/images/people/illustrations/caio.webp
 illustration: true
 programs:
   - program: bitcoin-dev-launchpad

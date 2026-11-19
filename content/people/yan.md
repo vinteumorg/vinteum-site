@@ -1,6 +1,6 @@
 ---
 name: Yan
-image: /assets/images/people/illustrations/yan.png
+image: /assets/images/people/illustrations/yan.webp
 illustration: true
 programs:
   - program: fellowship

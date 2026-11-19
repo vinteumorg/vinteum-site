@@ -1,6 +1,6 @@
 ---
 name: jaonoctus
-image: /assets/images/people/illustrations/jaonoctus.png
+image: /assets/images/people/illustrations/jaonoctus.webp
 illustration: true
 updatedAt: '2026-11-18'
 focus:

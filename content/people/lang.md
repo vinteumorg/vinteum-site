@@ -1,6 +1,6 @@
 ---
 name: Lang
-image: /assets/images/people/illustrations/lang.png
+image: /assets/images/people/illustrations/lang.webp
 illustration: true
 programs:
   - program: bitcoin-dev-launchpad

@@ -1,6 +1,6 @@
 ---
 name: Moises Pompilio
-image: /assets/images/people/illustrations/moises-pompilio.png
+image: /assets/images/people/illustrations/moises-pompilio.webp
 illustration: true
 programs:
   - program: fellowship

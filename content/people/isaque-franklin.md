@@ -1,6 +1,6 @@
 ---
 name: Isaque Franklin
-image: /assets/images/people/illustrations/isaque-franklin.png
+image: /assets/images/people/illustrations/isaque-franklin.webp
 illustration: true
 programs:
   - program: fellowship

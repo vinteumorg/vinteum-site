@@ -1,6 +1,6 @@
 ---
 name: Carlos Santos
-image: /assets/images/people/illustrations/carlos-santos.png
+image: /assets/images/people/illustrations/carlos-santos.webp
 illustration: true
 links:
   - label: GitHub

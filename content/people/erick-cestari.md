@@ -1,6 +1,6 @@
 ---
 name: Erick Cestari
-image: /assets/images/people/illustrations/erick-cestari.png
+image: /assets/images/people/illustrations/erick-cestari.webp
 illustration: true
 programs:
   - program: fellowship

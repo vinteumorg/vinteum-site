@@ -1,7 +1,7 @@
 ---
 name: Allocz
 pseudonymous: true
-image: /assets/images/people/illustrations/allocz.png
+image: /assets/images/people/illustrations/allocz.webp
 illustration: true
 programs:
   - program: fellowship
