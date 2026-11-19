@@ -1,6 +1,6 @@
 ---
 name: Bruno Garcia
-image: /assets/images/people/illustrations/bruno-garcia.webp
+image: /assets/images/people/illustrations/bruno-garcia.png
 illustration: true
 updatedAt: '2026-11-18'
 focus:

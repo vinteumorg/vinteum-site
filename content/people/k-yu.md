@@ -1,6 +1,6 @@
 ---
 name: K-YU
-image: /assets/images/people/illustrations/k-yu.webp
+image: /assets/images/people/illustrations/k-yu.png
 illustration: true
 programs:
   - program: fellowship

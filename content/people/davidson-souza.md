@@ -1,6 +1,6 @@
 ---
 name: Davidson Souza
-image: /assets/images/people/illustrations/davidson-souza.webp
+image: /assets/images/people/illustrations/davidson-souza.png
 illustration: true
 location:
   EN: Brazil

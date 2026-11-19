@@ -1,6 +1,6 @@
 ---
 name: Luca0x46
-image: /assets/images/people/illustrations/luca0x46.webp
+image: /assets/images/people/illustrations/luca0x46.png
 illustration: true
 programs:
   - program: fellowship

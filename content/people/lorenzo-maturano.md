@@ -1,6 +1,6 @@
 ---
 name: Lorenzo Maturano
-image: /assets/images/people/illustrations/lorenzo-maturano.webp
+image: /assets/images/people/illustrations/lorenzo-maturano.png
 illustration: true
 handle: lorenzolfm
 updatedAt: '2026-11-18'

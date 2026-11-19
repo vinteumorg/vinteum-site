@@ -1,6 +1,6 @@
 ---
 name: Pins
-image: /assets/images/people/illustrations/pins.webp
+image: /assets/images/people/illustrations/pins.png
 illustration: true
 programs:
   - program: grants

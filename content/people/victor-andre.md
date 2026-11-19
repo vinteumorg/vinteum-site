@@ -1,6 +1,6 @@
 ---
 name: Victor André
-image: /assets/images/people/illustrations/victor-andre.webp
+image: /assets/images/people/illustrations/victor-andre.png
 illustration: true
 programs:
   - program: fellowship

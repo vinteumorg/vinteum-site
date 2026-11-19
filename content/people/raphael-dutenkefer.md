@@ -1,6 +1,6 @@
 ---
 name: Raphael Dutenkefer
-image: /assets/images/people/illustrations/raphael-dutenkefer.webp
+image: /assets/images/people/illustrations/raphael-dutenkefer.png
 illustration: true
 updatedAt: '2026-11-18'
 focus:
