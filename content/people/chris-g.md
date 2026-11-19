@@ -28,6 +28,7 @@ programs:
     fundedBy: Vinteum
 focus:
   - Bitcoin Nodes
+  - Utreexo
   - Consensus
   - Rust
 links:
@@ -52,36 +53,62 @@ projects:
     contribution:
       EN: "Maintains Floresta and contributes to consensus validation and integration of contributor work."
       BR: "Atua na manutenção do Floresta e contribui para a validação de consenso e a integração do trabalho de outros contribuidores."
-  - name: hintsfile
-    href: 'https://github.com/2140-dev/hintsfile'
+  - name: guile-utreexo
+    href: https://git.sr.ht/~csgui/guile-utreexo
     description:
-      EN: Concise representation of UTXO positions
-      BR: Representação compacta de posições de UTXOs.
+      EN: A Guile (Scheme Lisp) implementation of the Utreexo accumulator.
+      BR: Uma implementação do acumulador Utreexo em Guile.
     contribution:
-      EN: "Contributed to robust hintsfile parsing and regression testing, improving how malformed input is handled."
-      BR: "Contribuiu para a robustez do parsing de hintsfiles e os testes de regressão, melhorando o tratamento de entradas malformadas."
+      EN: Developed the Utreexo library and a client that reads Bitcoin Core block files.
+      BR: Desenvolveu a biblioteca Utreexo e um cliente que lê arquivos de blocos do Bitcoin Core.
+  - name: guile-btc
+    href: https://git.sr.ht/~csgui/guile-btc
+    description:
+      EN: A Guile (Scheme Lisp) library for Bitcoin data structures.
+      BR: Uma biblioteca Guile para estruturas de dados Bitcoin.
+    contribution:
+      EN: Built tools to represent and decode Bitcoin transactions.
+      BR: Desenvolveu ferramentas para representar e decodificar transações Bitcoin.
 contributions:
+  - id: github-getfloresta-Floresta-1057
+    title:
+      EN: Introduce domain abstractions and decouple the mempool interface
+      BR: Introduce domain abstractions and decouple the mempool interface
+    date: '2026-06-17'
+    source: 'getfloresta/Floresta · #1057'
+    type: PR
+    href: 'https://github.com/getfloresta/Floresta/pull/1057'
+  - id: sourcehut-guile-utreexo-d2e6e2a9
+    title:
+      EN: Integrate guile-btc for Bitcoin decoding
+      BR: Integrate guile-btc for Bitcoin decoding
+    date: '2026-11-18'
+    source: 'csgui/guile-utreexo · d2e6e2a9'
+    type: Tooling
+    href: 'https://git.sr.ht/~csgui/guile-utreexo/commit/d2e6e2a93e932ad37334e854cf921b7a16d8bcd5'
   - id: github-getfloresta-Floresta-1410
     title:
-      EN: >-
-        feat(consensus): enforce BIP68 relative lock-time during block
-        validation
-      BR: >-
-        feat(consensus): enforce BIP68 relative lock-time during block
-        validation
+      EN: Enforce BIP68 relative lock-time during block validation
+      BR: Enforce BIP68 relative lock-time during block validation
     date: '2026-10-22'
     source: 'getfloresta/Floresta · #1410'
     type: PR
     href: 'https://github.com/getfloresta/Floresta/pull/1410'
-  - id: github-2140-dev-hintsfile-11
-    title:
-      EN: malformed hintsfile parsing
-      BR: malformed hintsfile parsing
-    date: '2026-10-14'
-    source: '2140-dev/hintsfile · #11'
-    type: PR
-    href: 'https://github.com/2140-dev/hintsfile/pull/11'
 writing:
+  - id: personal-blog-article-simplex
+    title:
+      EN: 'Counting Rounds, Counting Bits: Simplex Through Two Complexity Lenses'
+      BR: 'Counting Rounds, Counting Bits: Simplex Through Two Complexity Lenses'
+    date: '2026-11-19'
+    source: imchris.me
+    href: 'https://imchris.me/article-simplex.html'
+  - id: personal-blog-article-hilbert
+    title:
+      EN: "Hilbert's Program and the Entscheidungsproblem"
+      BR: "Hilbert's Program and the Entscheidungsproblem"
+    date: '2026-11-06'
+    source: imchris.me
+    href: 'https://imchris.me/article-hilbert.html'
   - id: personal-blog-article-p-adics
     title:
       EN: p-adic Numbers and the Geometry of Binary Trees
@@ -93,8 +120,8 @@ updatedAt: '2026-11-18'
 ---
 ## EN
 
-Chris G. maintains Floresta, working on its architecture, consensus validation and use as an embeddable Bitcoin backend. He also contributes to defensive parsing in hintsfile, and his research includes an independent Utreexo implementation.
+Chris G. is a software engineer with extensive experience in software architecture and distributed systems. As a Floresta maintainer, he focuses on architectural evolution, Bitcoin compatibility, and embeddable node infrastructure. His research interests include cryptographic accumulators, formal verification, and protocol interoperability, including the development of an independent Utreexo implementation.
 
 ## PT
 
-Chris G. atua na manutenção do Floresta, trabalhando em arquitetura, validação de consenso e uso como backend Bitcoin integrável em outras aplicações. Também contribui para o parsing defensivo em hintsfile, e sua pesquisa inclui uma implementação independente de Utreexo.
+Chris G. é engenheiro de software com ampla experiência em arquitetura de software e sistemas distribuídos. Como mantenedor do Floresta, dedica-se à evolução arquitetural, à compatibilidade com o Bitcoin e à infraestrutura de nós embarcáveis. Seus interesses de pesquisa incluem acumuladores criptográficos, verificação formal e interoperabilidade de protocolos, incluindo o desenvolvimento de uma implementação independente do Utreexo.
