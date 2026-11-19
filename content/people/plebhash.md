@@ -29,6 +29,24 @@ links:
     href: 'https://plebhash.github.io'
     icon: website
 projects:
+  - name: Stratum V2
+    href: 'https://github.com/stratum-mining/stratum'
+    current: true
+    description:
+      EN: Reference implementation libraries for the Stratum V2 mining protocol.
+      BR: Bibliotecas da implementação de referência do protocolo de mineração Stratum V2.
+    contribution:
+      EN: Works on the protocol libraries behind the reference implementation, covering channels, the Noise handshake and job declaration, and reviews protocol changes.
+      BR: Trabalha nas bibliotecas de protocolo por trás da implementação de referência, cobrindo canais, o handshake Noise e a declaração de jobs, e revisa mudanças de protocolo.
+  - name: Stratum V2 Specification
+    href: 'https://github.com/stratum-mining/sv2-spec'
+    current: true
+    description:
+      EN: Specification of the Stratum V2 protocol.
+      BR: Especificação do protocolo Stratum V2.
+    contribution:
+      EN: Proposes and reviews specification changes for job negotiation, coinbase handling and share accounting.
+      BR: Propõe e revisa mudanças na especificação de negociação de jobs, tratamento de coinbase e contabilização de shares.
   - name: Stratum V2 Apps
     href: 'https://github.com/stratum-mining/sv2-apps'
     description:
@@ -101,12 +119,16 @@ contributions:
         Merged pull request.
       BR: Adiciona geração de bindings C++, testes e exemplos ao lado dos bindings Python existentes.
         Pull request integrado.
-updatedAt: '2026-11-18'
+updatedAt: '2026-11-19'
 affiliations:
   - organization: Btrust
     role: { EN: Grantee, BR: Grantee }
     status: current
     start: '2026-09'
+  - organization: Spiral
+    role: { EN: Grantee, BR: Grantee }
+    status: past
+    start: '2024'
 ---
 ## EN
 
