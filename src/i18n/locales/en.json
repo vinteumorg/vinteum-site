@@ -38,7 +38,8 @@
             "hackerhouse": "Casa21 hackerhouse",
             "grants": "Grants Program",
             "contact": "Contact"
-        }
+        },
+        "people": "People"
     },
     "footer": {
         "newsletter": {
@@ -803,5 +804,89 @@
       "whatsapp": "Chat on WhatsApp",
       "whatsappMessage": "Hi! I learned about Vinteum at Oranje Summit and would like to know how to support your work.",
       "donate": "Make a donation"
-  }
+  },
+    "people": {
+        "roles": {
+            "grantee": "Grantee",
+            "fellow": "Fellow",
+            "alumni": "Alumnus",
+            "team": "Team"
+        },
+        "directory": "People",
+        "description": "The developers and researchers Vinteum funds, trains and mentors, and the open-source work they ship for Bitcoin.",
+        "filterRole": "Filter by relationship",
+        "filters": {
+            "all": "All",
+            "grantee": "Grantees",
+            "fellow": "Fellows",
+            "alumni": "Alumni",
+            "team": "Team"
+        },
+        "focus": "Areas of focus",
+        "allFocus": "All focus areas",
+        "search": "Search name, project, topic",
+        "count": "people",
+        "countSingular": "person",
+        "empty": "No people match these filters.",
+        "clearFilters": "Clear filters",
+        "profileDetails": "Profile details",
+        "affiliations": "Affiliations",
+        "present": "Present",
+        "programs": "Community & programs",
+        "by": "By",
+        "updated": "Profile updated",
+        "connections": "Connected people",
+        "profileNavigation": "Profile sections",
+        "pseudonymous": "pseudonymous",
+        "mediaVideo": "Video",
+        "mediaArticle": "Article",
+        "viewAllMedia": "View all appearances",
+        "featuredContribution": "Featured contribution",
+        "viewAll": "View all",
+        "current": "Current",
+        "past": "Past",
+        "noContributions": "No contributions match this type.",
+        "contributionType": "Filter contributions by type",
+        "contributionTypes": {
+            "PR": "PR",
+            "Code Review": "Code Review",
+            "Research": "Research",
+            "Tooling": "Tooling",
+            "Documentation": "Documentation",
+            "Protocol Specification": "Protocol Specification"
+        },
+        "publicationTypes": {
+            "paper": "Paper",
+            "conference-abstract": "Conference abstract",
+            "preprint": "Preprint",
+            "masters-thesis": "Master’s dissertation",
+            "doctoral-thesis": "Doctoral thesis"
+        },
+        "tabs": {
+            "overview": "Overview",
+            "projects": "Projects",
+            "contributions": "Contributions",
+            "discussions": "Discussions",
+            "writing": "Writing",
+            "publications": "Academic publications",
+            "courses": "Courses",
+            "media": "Media"
+        },
+        "headings": {
+            "projects": "Projects",
+            "contributions": "Selected contributions",
+            "discussions": "Technical discussions",
+            "writing": "Articles & writing",
+            "publications": "Academic publications",
+            "courses": "Courses",
+            "media": "Talks, podcasts & media"
+        },
+        "supportTitle": "Fund open-source Bitcoin work",
+        "supportDescription": "Vinteum grants and fellowships are funded by people and companies who believe Bitcoin needs more independent developers.",
+        "supportAction": "Support Vinteum",
+        "title": "Proof of work",
+        "cohort": "Cohort",
+        "fundedBy": "Funded by",
+        "affiliationEnd": "Ended"
+    }
 }

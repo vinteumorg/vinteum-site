@@ -187,6 +187,7 @@ export function Footer({ newsletters }: FooterProps) {
                                 <ul className="space-y-3">
                                     <li><Link href="/" className="text-foreground hover:text-primary transition-colors text-lg">{t("footer.home.title")}</Link></li>
                                     <li><Link href="/about" className="text-foreground hover:text-primary transition-colors text-lg">{t("footer.home.about")}</Link></li>
+                                    <li><Link href="/people" className="text-foreground hover:text-primary transition-colors text-lg">{t("people.directory")}</Link></li>
                                     <li><Link href="/about#supporters" className="text-foreground hover:text-primary transition-colors text-lg">{t("footer.home.supporters")}</Link></li>
                                     <li>
                                         <Link href="/donate" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors inline-flex items-center gap-2 text-lg">
