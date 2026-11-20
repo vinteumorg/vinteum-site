@@ -121,8 +121,8 @@ export default async function RootLayout({
         />
         <Script
           defer
-          src="https://analytics.seven.sx/script.js"
-          data-website-id="466bc9e9-a42f-4148-982e-a86342049f79"
+          src="https://analytics.vinteum.org/script.js"
+          data-website-id="66e443a2-5ffb-4ede-99ea-a1e03646eb27"
           strategy="afterInteractive"
         />
         <LanguageProvider>
