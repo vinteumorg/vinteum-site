@@ -178,7 +178,7 @@ export function getProjectLabel(person: Person, locale: "EN" | "BR") {
     const namesAnAffiliation = work && person.affiliations.some(({ organization }) =>
         normalizeSearch(organization) === normalizeSearch(work),
     );
-    return (namesAnAffiliation ? undefined : work) ?? person.projectLabel ?? person.projects[0]?.name
+    return person.projectLabel ?? (namesAnAffiliation ? undefined : work) ?? person.projects[0]?.name
         ?? person.affiliations.find(({ directoryRole }) => directoryRole === "team")?.role[locale];
 }
 

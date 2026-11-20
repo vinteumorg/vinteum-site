@@ -2,6 +2,7 @@
 name: Caio
 image: /assets/images/people/illustrations/caio.png
 illustration: true
+projectLabel: PPQ
 programs:
   - program: bitcoin-dev-launchpad
     name: Bitcoin Dev Launchpad

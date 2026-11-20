@@ -2,6 +2,7 @@
 name: Luca0x46
 image: /assets/images/people/illustrations/luca0x46.png
 illustration: true
+projectLabel: Second
 programs:
   - program: fellowship
     name: Fellowship
@@ -49,15 +50,6 @@ links:
     href: 'https://x.com/luca0x46'
     icon: twitter
 projects:
-  - name: Floresta
-    href: 'https://github.com/getfloresta/Floresta'
-    current: false
-    description:
-      EN: 'A lightweight and embeddable Bitcoin client, built for sovereignty.'
-      BR: Cliente Bitcoin compacto e integrável em outras aplicações.
-    contribution:
-      EN: "Contributed to Floresta’s Utreexo peer verification and accumulator-selection reliability, with validation logic and tests for conflicting or unresponsive peers."
-      BR: "Contribuiu para a verificação de peers Utreexo e a confiabilidade da seleção de acumuladores no Floresta, com lógica de validação e testes para peers divergentes ou sem resposta."
   - name: Bark
     href: https://gitlab.com/ark-bitcoin/bark
     current: true
@@ -67,6 +59,15 @@ projects:
     contribution:
       EN: "Works on Bark quality assurance and wallet reliability through fuzzing, integration and differential testing, covering VTXO handling, persistence, wallet synchronization and daemon exit behavior."
       BR: "Trabalha na garantia de qualidade e na confiabilidade de carteiras no Bark por meio de fuzzing e testes de integração e diferenciais, abrangendo VTXOs, persistência, sincronização de carteiras e comportamento de saídas do daemon."
+  - name: Floresta
+    href: 'https://github.com/getfloresta/Floresta'
+    current: false
+    description:
+      EN: 'A lightweight and embeddable Bitcoin client, built for sovereignty.'
+      BR: Cliente Bitcoin compacto e integrável em outras aplicações.
+    contribution:
+      EN: "Contributed to Floresta’s Utreexo peer verification and accumulator-selection reliability, with validation logic and tests for conflicting or unresponsive peers."
+      BR: "Contribuiu para a verificação de peers Utreexo e a confiabilidade da seleção de acumuladores no Floresta, com lógica de validação e testes para peers divergentes ou sem resposta."
 contributions:
   - id: bark-persistence-differential-testing
     title:
