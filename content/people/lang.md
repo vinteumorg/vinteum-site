@@ -2,6 +2,7 @@
 name: Lang
 image: /assets/images/people/illustrations/lang.png
 illustration: true
+projectLabel: Tether
 programs:
   - program: bitcoin-dev-launchpad
     name: Bitcoin Dev Launchpad

@@ -2,6 +2,7 @@
 name: Gustavo Stingelin
 image: /assets/images/people/illustrations/gustavo-stingelin.png
 illustration: true
+projectLabel: Lightning Labs
 programs:
   - program: fellowship
     name: Fellowship
