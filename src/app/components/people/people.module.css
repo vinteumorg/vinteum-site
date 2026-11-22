@@ -228,6 +228,13 @@
     font-size: 13px;
     margin-top: 4px;
 }
+/* Keeps the role line on the same baseline across a row, with or without a project. */
+.projectLabel {
+    min-height: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 .avatarBadge {
     position: absolute;
     top: 10px;
