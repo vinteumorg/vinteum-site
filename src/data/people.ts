@@ -164,8 +164,12 @@ const organizationLogos: Readonly<Record<string, OrganizationLogo>> = {
     "OpenSats": { src: "/assets/logos/affiliations/opensats.png" },
     "PPQ": { src: "/assets/logos/affiliations/ppq.png", background: "#111111" },
     "Second": { src: "/assets/logos/affiliations/second.png", background: "#ffffff" },
+    "Satsconf": { src: "/assets/logos/affiliations/satsconf.png" },
     "Spiral": { src: "/assets/logos/affiliations/spiral.svg", background: "#ffffff" },
     "Tether": { src: "/assets/logos/affiliations/tether.png" },
+    "Ripio": { src: "/assets/logos/affiliations/ripio.png", background: "#ffffff" },
+    "Students For Liberty Brasil": { src: "/assets/logos/affiliations/students-for-liberty.png", background: "#ffffff" },
+    "Instituto Mises Brasil": { src: "/assets/logos/affiliations/mises-brasil.png", background: "#ffffff" },
     "ZBD": { src: "/assets/logos/affiliations/zbd.png" },
 };
 
@@ -178,8 +182,7 @@ export function getProjectLabel(person: Person, locale: "EN" | "BR") {
     const namesAnAffiliation = work && person.affiliations.some(({ organization }) =>
         normalizeSearch(organization) === normalizeSearch(work),
     );
-    return person.projectLabel ?? (namesAnAffiliation ? undefined : work) ?? person.projects[0]?.name
-        ?? person.affiliations.find(({ directoryRole }) => directoryRole === "team")?.role[locale];
+    return person.projectLabel ?? (namesAnAffiliation ? undefined : work) ?? person.projects[0]?.name;
 }
 
 export function formatPersonDate(date: string, locale: "EN" | "BR", full = false): string {

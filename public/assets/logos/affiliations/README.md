@@ -92,6 +92,30 @@ for organizations without a registered asset.
 - Display background: `#ffffff`.
 - Lossless PNG extraction of the official 32×32 favicon; rendered at 25×25.
 
+### Ripio
+
+- File: `ripio.png`
+- Official source: https://www.ripio.com/pt (apple-touch-icon)
+- Site: https://www.ripio.com/
+
+### Satsconf
+
+- File: `satsconf.png`
+- Official source: https://satsconf.com.br/wp-content/uploads/2025/09/cropped-icon-192x192.png
+- Site: https://satsconf.com.br/
+
+### Students For Liberty Brasil
+
+- File: `students-for-liberty.png`
+- Official source: https://studentsforliberty.org/wp-content/uploads/2022/11/cropped-favicon-192x192.png
+- Site: https://studentsforliberty.org/
+
+### Instituto Mises Brasil
+
+- File: `mises-brasil.png`
+- Official source: https://mises.org.br/wp-content/uploads/2025/09/cropped-favicon-1-192x192.png
+- Site: https://www.mises.org.br/
+
 ### Spiral
 
 - File: `spiral.svg`
