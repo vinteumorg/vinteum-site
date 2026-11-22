@@ -93,6 +93,11 @@ export function PeopleDirectory({ people, filters = "" }: { people: Person[]; fi
                     </span>
                 </div>
             </div>
+            {role === "alumni" && (
+                <div className={`${styles.container} ${styles.filterNote}`}>
+                    <p>{t("people.alumniNote")}</p>
+                </div>
+            )}
             <div className={`${styles.container} ${styles.directoryBody}`}>
                 {filtered.length === 0 ? (
                     <div className={styles.emptyState}>

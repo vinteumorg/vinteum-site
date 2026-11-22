@@ -815,6 +815,7 @@
         },
         "directory": "Pessoas",
         "description": "Os desenvolvedores e pesquisadores que a Vinteum forma, orienta e financia, e suas contribuições open source para o Bitcoin.",
+        "alumniNote": "Ex-fellows e grantees da Vinteum, e alumni do Bitcoin Dev Launchpad.",
         "filterRole": "Filtrar por vínculo",
         "filters": {
             "all": "Todos",

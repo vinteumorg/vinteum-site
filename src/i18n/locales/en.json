@@ -815,6 +815,7 @@
         },
         "directory": "People",
         "description": "The developers and researchers Vinteum funds, trains and mentors, and the open-source work they ship for Bitcoin.",
+        "alumniNote": "Former Vinteum fellows and grantees, and Bitcoin Dev Launchpad alumni.",
         "filterRole": "Filter by relationship",
         "filters": {
             "all": "All",
