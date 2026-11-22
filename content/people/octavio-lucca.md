@@ -2,6 +2,7 @@
 name: Octavio Lucca
 image: /assets/images/people/illustrations/octavio-lucca.png
 illustration: true
+projectLabel: Peer Observer / BNOC
 programs:
   - program: fellowship
     name: Fellowship

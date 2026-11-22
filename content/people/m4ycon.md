@@ -2,6 +2,7 @@
 name: m4ycon
 image: /assets/images/people/illustrations/m4ycon.png
 illustration: true
+projectLabel: Peer Observer / BNOC
 programs:
   - program: fellowship
     name: Fellowship
