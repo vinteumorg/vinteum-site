@@ -499,6 +499,17 @@ test("keeps Optech podcast cards tied to their edition, date and episode link", 
     }
 });
 
+test("shuffles the directory per visit without losing or duplicating anyone", () => {
+    const people = readPeople();
+    const seedA = profileData.shufflePeople(people, "visit-a");
+    const seedB = profileData.shufflePeople(people, "visit-b");
+    assert.equal(seedA.length, people.length);
+    assert.deepEqual(new Set(seedA.map(({ slug }) => slug)), new Set(people.map(({ slug }) => slug)));
+    assert.deepEqual(profileData.shufflePeople(people, "visit-a").map(({ slug }) => slug), seedA.map(({ slug }) => slug));
+    assert.notDeepEqual(seedA.map(({ slug }) => slug), people.map(({ slug }) => slug));
+    assert.notDeepEqual(seedA.map(({ slug }) => slug), seedB.map(({ slug }) => slug));
+});
+
 test("shows Fungi as Cindy's current project while retaining historical Payjoin pull requests", () => {
     const cindy = getPerson("bc1cindy");
     assert.equal(cindy.projects[0]?.name, "Fungi Protocol");

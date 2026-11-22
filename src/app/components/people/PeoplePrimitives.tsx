@@ -7,10 +7,11 @@ import type { Person } from "@/data/people";
 import { Button } from "../shared/Button";
 import styles from "./people.module.css";
 
-export function PersonAvatar({ person, priority = false }: { person: Person; priority?: boolean }) {
+export function PersonAvatar({ person, priority = false, badge }: { person: Person; priority?: boolean; badge?: string }) {
     const [failedImage, setFailedImage] = useState<string>();
     return (
         <div className={styles.avatar} data-illustration={person.illustration ? "true" : undefined}>
+            {badge && <span className={styles.avatarBadge}>{badge}</span>}
             {person.image && failedImage !== person.image ? (
                 <Image
                     src={person.image}

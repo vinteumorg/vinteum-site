@@ -207,6 +207,33 @@ function normalizeSearch(value: string) {
     return value.normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase();
 }
 
+function hashSeed(seed: string) {
+    let h = 1779033703 ^ seed.length;
+    for (let i = 0; i < seed.length; i += 1) {
+        h = Math.imul(h ^ seed.charCodeAt(i), 3432918353);
+        h = (h << 13) | (h >>> 19);
+    }
+    return () => {
+        h = Math.imul(h ^ (h >>> 16), 2246822507);
+        h = Math.imul(h ^ (h >>> 13), 3266489909);
+        return (h ^= h >>> 16) >>> 0;
+    };
+}
+
+/**
+ * Shuffles the directory for one visit. The same seed always yields the same
+ * order, so filtering or changing tabs inside a visit does not reshuffle.
+ */
+export function shufflePeople(people: Person[], seed: string) {
+    const random = hashSeed(seed);
+    const next = [...people];
+    for (let i = next.length - 1; i > 0; i -= 1) {
+        const j = Math.floor((random() / 4294967296) * (i + 1));
+        [next[i], next[j]] = [next[j], next[i]];
+    }
+    return next;
+}
+
 export function filterPeople(
     people: Person[],
     { role, focus, query, locale }: {
