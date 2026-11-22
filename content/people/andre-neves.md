@@ -8,8 +8,8 @@ focus:
 affiliations:
   - organization: Vinteum
     role:
-      EN: Co-founder and Head of Partnerships
-      BR: Cofundador e Head de Parcerias
+      EN: Head of Partnerships
+      BR: Head de Parcerias
     href: 'https://www.vinteum.org/about'
     directoryRole: team
     status: current
