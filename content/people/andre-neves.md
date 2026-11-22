@@ -2,13 +2,14 @@
 name: André Neves
 image: /assets/images/people/illustrations/andre-neves.png
 illustration: true
+board: true
 focus:
   - Payments
 affiliations:
   - organization: Vinteum
     role:
-      EN: Head of Partnerships
-      BR: Head de Parcerias
+      EN: Co-founder and Head of Partnerships
+      BR: Cofundador e Head de Parcerias
     href: 'https://www.vinteum.org/about'
     directoryRole: team
     status: current

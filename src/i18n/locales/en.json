@@ -810,6 +810,7 @@
             "grantee": "Grantee",
             "fellow": "Fellow",
             "alumni": "Alumnus",
+            "board": "Board member",
             "team": "Team"
         },
         "directory": "People",

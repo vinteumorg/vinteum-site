@@ -60,6 +60,7 @@ export interface Person {
     image?: string;
     alternateImage?: string;
     illustration?: boolean;
+    board?: boolean;
     pseudonymous?: boolean;
     location?: LocalizedText;
     bio?: LocalizedText;

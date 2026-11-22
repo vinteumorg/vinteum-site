@@ -302,6 +302,7 @@ export function PersonProfile({
                         {primary && (
                             <p className={styles.eyebrow}>
                                 {primary.organization} · {primary.status === "past" ? t("people.roles.alumni") : primary.role[locale]}
+                                {person.board && <span className={styles.boardTag}>{t("people.roles.board")}</span>}
                             </p>
                         )}
                         <h1 id="person-title">{person.name}</h1>

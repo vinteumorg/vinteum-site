@@ -228,6 +228,18 @@
     font-size: 13px;
     margin-top: 4px;
 }
+.boardTag {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 3px 7px;
+    border: 1px solid var(--people-border, #315139);
+    border-radius: 999px;
+    color: var(--people-primary);
+    font: 9px/1 var(--font-space-mono), monospace;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
 .personCard:hover .avatar {
     box-shadow: 0 0 0 1px var(--primary);
 }

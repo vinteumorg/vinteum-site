@@ -51,6 +51,7 @@ const schema: z.ZodType<Person> = z.object({
     image: image.optional(),
     alternateImage: image.optional(),
     illustration: z.boolean().optional(),
+    board: z.boolean().optional(),
     handle: z.string().trim().min(1).optional(),
     pseudonymous: z.boolean().optional(),
     location: localized.optional(),

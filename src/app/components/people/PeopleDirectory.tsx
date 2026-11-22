@@ -95,6 +95,7 @@ export function PeopleDirectory({ people, filters = "" }: { people: Person[]; fi
                                         {personRole && (
                                             <span className={styles.role} data-role={personRole}>
                                                 {title ?? t(`people.roles.${personRole}`)}
+                                                {person.board && <span className={styles.boardTag}>{t("people.roles.board")}</span>}
                                             </span>
                                         )}
                                     </Link>

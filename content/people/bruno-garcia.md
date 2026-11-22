@@ -2,6 +2,7 @@
 name: Bruno Garcia
 image: /assets/images/people/illustrations/bruno-garcia.png
 illustration: true
+board: true
 updatedAt: '2026-11-18'
 focus:
   - Bitcoin Core
@@ -392,8 +393,8 @@ contributions:
 ---
 ## EN
 
-Bruno Garcia is Head of Engineering at Vinteum and a Bitcoin Core contributor focused on software testing. He created Bitcoinfuzz and mentors developers entering Bitcoin open source.
+Bruno Garcia is a co-founder and Head of Engineering at Vinteum, and a Bitcoin Core contributor focused on software testing. He created Bitcoinfuzz and mentors developers entering Bitcoin open source.
 
 ## PT
 
-Bruno Garcia é Head of Engineering da Vinteum e contribuidor do Bitcoin Core, com foco em testes de software. Criou o Bitcoinfuzz e orienta desenvolvedores que estão entrando no Bitcoin open source.
+Bruno Garcia é cofundador e Head de Engenharia da Vinteum e contribuidor do Bitcoin Core, com foco em testes de software. Criou o Bitcoinfuzz e orienta desenvolvedores que estão entrando no Bitcoin open source.
