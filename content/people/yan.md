@@ -34,9 +34,6 @@ focus:
   - Bitcoin Analysis
   - Testing
 links:
-  - label: GitHub
-    href: 'https://github.com/yan-pi'
-    icon: github
   - label: X
     href: 'https://x.com/yanfsb'
     icon: twitter

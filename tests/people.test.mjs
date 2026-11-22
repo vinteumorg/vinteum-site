@@ -159,7 +159,8 @@ test("keeps the four additional prototype profiles discoverable with their edito
         }
     }
     const githubLinks = getPerson("yan").links.filter(({ icon }) => icon === "github");
-    assert.ok(githubLinks.some(({ href }) => href === "https://github.com/yan-pi"));
+    assert.equal(githubLinks.length, 1, "a single GitHub account per profile");
+    assert.ok(githubLinks.some(({ href }) => href === "https://github.com/yanfsb"));
     assert.ok(githubLinks.some(({ href }) => href === "https://github.com/yanfsb"));
 });
 
