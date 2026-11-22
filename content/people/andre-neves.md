@@ -33,8 +33,8 @@ updatedAt: '2026-11-22'
 ---
 ## EN
 
-André Neves is a co-founder of Vinteum and its Head of Partnerships. He also co-founded ZBD, where he is CTO, and works on bringing Bitcoin payments and open-source development closer in Brazil.
+André Neves is a co-founder of Vinteum, where he leads partnerships and serves on the board. He is also co-founder and CTO of ZBD, working on Bitcoin and Lightning payment infrastructure.
 
 ## PT
 
-André Neves é cofundador da Vinteum e seu Head de Parcerias. Também cofundou a ZBD, onde é CTO, e trabalha para aproximar pagamentos com Bitcoin e o desenvolvimento open source no Brasil.
+André Neves é cofundador da Vinteum, onde lidera parcerias e atua no board. Também é cofundador e CTO da ZBD, trabalhando em infraestrutura de pagamentos com Bitcoin e Lightning.

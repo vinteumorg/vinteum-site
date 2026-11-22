@@ -203,8 +203,8 @@ updatedAt: '2026-11-22'
 ---
 ## EN
 
-Lucas Ferreira is a co-founder and the Executive Director of Vinteum, the Brazilian non-profit that funds, trains and mentors open-source Bitcoin developers. He founded Satsconf, Brazil's Bitcoin conference, and worked on Lightning adoption and developer relations at Lightning Labs before Vinteum.
+Lucas Ferreira is co-founder and Executive Director of Vinteum, a Bitcoin research and development center. His work spans strategy, fundraising and building the technical community. He also founded Satsconf and previously worked on Lightning adoption and developer relations at Lightning Labs.
 
 ## PT
 
-Lucas Ferreira é cofundador e diretor executivo da Vinteum, a organização sem fins lucrativos brasileira que financia, forma e orienta desenvolvedores open source de Bitcoin. Fundou a Satsconf, conferência de Bitcoin do Brasil, e trabalhou com adoção de Lightning e relações com desenvolvedores na Lightning Labs antes da Vinteum.
+Lucas Ferreira é cofundador e diretor executivo da Vinteum, um centro de pesquisa e desenvolvimento em Bitcoin. Seu trabalho abrange estratégia, captação de recursos e a construção da comunidade técnica. Também fundou a Satsconf e trabalhou com adoção de Lightning e relações com desenvolvedores na Lightning Labs.
