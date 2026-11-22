@@ -50,6 +50,7 @@ media:
     title:
       EN: "IA e Computação Quântica: Como o Bitcoin se protege das novas ameaças?"
       BR: "IA e Computação Quântica: Como o Bitcoin se protege das novas ameaças?"
+    date: '2026-11-11'
     source: "Future of Money"
     href: "https://www.youtube.com/watch?v=ZO69BrzZa3M"
     mediaType: video
@@ -58,6 +59,7 @@ media:
     title:
       EN: "Lucas Ferreira: Construindo o Futuro do Bitcoin no Brasil com a Satsconf e a Vinteum"
       BR: "Lucas Ferreira: Construindo o Futuro do Bitcoin no Brasil com a Satsconf e a Vinteum"
+    date: '2025-07-28'
     source: "BetterMoney"
     href: "https://www.youtube.com/watch?v=SmQ0F7zOJpU"
     mediaType: video
@@ -66,6 +68,7 @@ media:
     title:
       EN: "Btrust in Focus: Lucas Ferreira on Building Bitcoin Open Source in Latin America"
       BR: "Btrust in Focus: Lucas Ferreira on Building Bitcoin Open Source in Latin America"
+    date: '2026-08-07'
     source: "Btrust"
     href: "https://www.youtube.com/watch?v=tex9l7ZoDAw"
     mediaType: video
@@ -74,6 +77,7 @@ media:
     title:
       EN: "BITCOIN PIZZA DAY: O QUE VAI ACONTECER COM O PREÇO DO BITCOIN? | Os Sócios 191"
       BR: "BITCOIN PIZZA DAY: O QUE VAI ACONTECER COM O PREÇO DO BITCOIN? | Os Sócios 191"
+    date: '2024-05-23'
     source: "Os Sócios Podcast"
     href: "https://www.youtube.com/watch?v=JoQUy_uU7Vo"
     mediaType: video
@@ -82,6 +86,7 @@ media:
     title:
       EN: "Bitcoin in Brazil (Em português e inglês): Fedi Community Chat w/ Lucas Ferreira of Vinteum"
       BR: "Bitcoin in Brazil (Em português e inglês): Fedi Community Chat w/ Lucas Ferreira of Vinteum"
+    date: '2026-06-29'
     source: "Fedi"
     href: "https://www.youtube.com/watch?v=XXOJ2JJZ38Y"
     mediaType: video
@@ -90,6 +95,7 @@ media:
     title:
       EN: "Treinamento e financiamento de Bitcoin em código aberto"
       BR: "Treinamento e financiamento de Bitcoin em código aberto"
+    date: '2025-04-20'
     source: "Satsconf"
     href: "https://www.youtube.com/watch?v=5e06Ebizo3k"
     mediaType: video
@@ -98,6 +104,7 @@ media:
     title:
       EN: "Vinteum | Lucas Ferreira"
       BR: "Vinteum | Lucas Ferreira"
+    date: '2025-05-27'
     source: "Connect The World"
     href: "https://www.youtube.com/watch?v=hRro4eYwH7U"
     mediaType: video
@@ -106,6 +113,7 @@ media:
     title:
       EN: "Evangelista Lightning - Convidado Lucas Ferreira"
       BR: "Evangelista Lightning - Convidado Lucas Ferreira"
+    date: '2021-09-16'
     source: "Bitcoinheiros"
     href: "https://www.youtube.com/watch?v=Y9BEA_H6n_8"
     mediaType: video
@@ -114,6 +122,7 @@ media:
     title:
       EN: "✍️ Financiando Pesquisas Com Bitcoin | PARADIGMA CAST #6"
       BR: "✍️ Financiando Pesquisas Com Bitcoin | PARADIGMA CAST #6"
+    date: '2024-03-22'
     source: "Paradigma Education"
     href: "https://www.youtube.com/watch?v=0byZl80uZZM"
     mediaType: video
@@ -122,6 +131,7 @@ media:
     title:
       EN: "O Ecossistema Nacional, a SatsConf e a Vinteum - Lucas Ferreira - Bipa Cast 39 parte 1"
       BR: "O Ecossistema Nacional, a SatsConf e a Vinteum - Lucas Ferreira - Bipa Cast 39 parte 1"
+    date: '2024-11-30'
     source: "Bipa"
     href: "https://www.youtube.com/watch?v=XANkQRbvZWY"
     mediaType: video
@@ -130,6 +140,7 @@ media:
     title:
       EN: "Como Lucas Criou a Maior Conferência Bitcoin do Brasil"
       BR: "Como Lucas Criou a Maior Conferência Bitcoin do Brasil"
+    date: '2025-11-26'
     source: "BetterMoney"
     href: "https://www.youtube.com/watch?v=3PkH4sCrkw0"
     mediaType: video
@@ -138,6 +149,7 @@ media:
     title:
       EN: "Vinteum - Educação e funding de core developers - Convidados Lucas Ferreira e Bruno Garcia"
       BR: "Vinteum - Educação e funding de core developers - Convidados Lucas Ferreira e Bruno Garcia"
+    date: '2022-08-11'
     source: "Bitcoinheiros"
     href: "https://www.youtube.com/watch?v=I2XaEyrDGqo"
     mediaType: video
@@ -146,6 +158,7 @@ media:
     title:
       EN: "Eventos de Bitcoin no Brasil: trajetória e evolução do mercado | BM&C CRYPTOCAST"
       BR: "Eventos de Bitcoin no Brasil: trajetória e evolução do mercado | BM&C CRYPTOCAST"
+    date: '2025-10-21'
     source: "BM&C "
     href: "https://www.youtube.com/watch?v=TrCaGDv39xc"
     mediaType: video
@@ -154,6 +167,7 @@ media:
     title:
       EN: "Oportunidades y desafíos para Bitcoin en LATAM: el caso Brasil, con Lucas Ferrerira"
       BR: "Oportunidades y desafíos para Bitcoin en LATAM: el caso Brasil, con Lucas Ferrerira"
+    date: '2021-08-30'
     source: "Swan Bitcoin"
     href: "https://www.youtube.com/watch?v=k5dqj9xhxNk"
     mediaType: video
@@ -162,6 +176,7 @@ media:
     title:
       EN: "Lucas Ferreira - 21 Milhões Podcast #50"
       BR: "Lucas Ferreira - 21 Milhões Podcast #50"
+    date: '2022-09-14'
     source: "21 Milhões Podcast"
     href: "https://www.youtube.com/watch?v=REV_s5JSf3A"
     mediaType: video
@@ -170,6 +185,7 @@ media:
     title:
       EN: "Lucas Ferreira – Bitcoin Is Not Inevitable: It Needs You | BTC Prague 2025"
       BR: "Lucas Ferreira – Bitcoin Is Not Inevitable: It Needs You | BTC Prague 2025"
+    date: '2025-08-01'
     source: "BTCPrague"
     href: "https://www.youtube.com/watch?v=63SO_5i8HiU"
     mediaType: video
