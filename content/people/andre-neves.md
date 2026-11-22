@@ -2,6 +2,7 @@
 name: André Neves
 image: /assets/images/people/illustrations/andre-neves.png
 illustration: true
+projectLabel: ZBD
 board: true
 focus:
   - Payments

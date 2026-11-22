@@ -115,8 +115,8 @@ export function PeopleDirectory({ people, filters = "" }: { people: Person[]; fi
                                             badge={person.board ? t("people.roles.board") : undefined}
                                         />
                                         <h2>{person.name}</h2>
-                                        <p className={styles.projectLabel} aria-hidden={project || person.focus[0] ? undefined : true}>
-                                            {project ?? person.focus[0]}
+                                        <p className={styles.projectLabel} aria-hidden={project ? undefined : true}>
+                                            {project}
                                         </p>
                                         {personRole && (
                                             <span className={styles.role} data-role={personRole}>
