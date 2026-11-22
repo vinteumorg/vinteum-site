@@ -289,7 +289,7 @@ export function PersonProfile({
     }
 
     return (
-        <div className={styles.people} ref={rootRef}>
+        <div className={`${styles.people}${availableSections.length === 0 ? ` ${styles.compact}` : ""}`} ref={rootRef}>
             <section
                 className={`${styles.hero} ${styles.profileHero}`}
                 aria-labelledby="person-title"

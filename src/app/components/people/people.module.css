@@ -1082,6 +1082,33 @@
     }
 }
 
+/* Institutional profiles have no sections to show, so the sidebar carries the page. */
+.filterNote {
+    padding-top: 18px;
+}
+
+.filterNote p {
+    color: var(--people-muted);
+    font-size: 13px;
+}
+
+.compact .profileBody {
+    padding-bottom: 56px;
+}
+
+@media (min-width: 900px) {
+    .compact .sidebar {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 32px 64px;
+        align-items: start;
+    }
+
+    .compact .sidebar section + section {
+        margin-top: 0;
+    }
+}
+
 /* Scroll reveal: elements below the fold fade in as they enter the viewport. */
 @media (prefers-reduced-motion: no-preference) {
     .revealHidden {
