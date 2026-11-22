@@ -120,9 +120,7 @@ export function PeopleDirectory({ people, filters = "" }: { people: Person[]; fi
                                             badge={person.board ? t("people.roles.board") : undefined}
                                         />
                                         <h2>{person.name}</h2>
-                                        <p className={styles.projectLabel} aria-hidden={project ? undefined : true}>
-                                            {project}
-                                        </p>
+                                        {project && <p>{project}</p>}
                                         {personRole && (
                                             <span className={styles.role} data-role={personRole}>
                                                 {title ?? t(`people.roles.${personRole}`)}

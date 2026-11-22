@@ -2,7 +2,6 @@
 name: Thaiz Batista
 image: /assets/images/people/illustrations/thaiz-batista.png
 illustration: true
-projectLabel: Vinteum
 focus:
   - Operations
   - Education

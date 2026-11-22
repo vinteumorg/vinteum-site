@@ -183,8 +183,13 @@
     gap: 40px 24px;
     padding: 0;
 }
+.peopleGrid > li {
+    display: flex;
+    flex-direction: column;
+}
 .personCard {
-    display: block;
+    display: flex;
+    flex-direction: column;
     height: 100%;
     border-radius: 16px;
 }
@@ -228,13 +233,7 @@
     font-size: 13px;
     margin-top: 4px;
 }
-/* Keeps the role line on the same baseline across a row, with or without a project. */
-.projectLabel {
-    min-height: 18px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
+
 .avatarBadge {
     position: absolute;
     top: 10px;
@@ -267,7 +266,8 @@
 }
 .role {
     display: block;
-    margin-top: 15px;
+    margin-top: auto;
+    padding-top: 15px;
     color: var(--people-primary);
     font:
         10px/1.5 var(--font-space-mono),
@@ -954,7 +954,7 @@
     }
     .role {
         font-size: 10px;
-        margin-top: 12px;
+        padding-top: 12px;
     }
     .profileHero {
         padding-top: 120px;

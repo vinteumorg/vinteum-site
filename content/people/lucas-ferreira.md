@@ -3,7 +3,6 @@ name: Lucas Ferreira
 image: /assets/images/people/illustrations/lucas-ferreira.png
 illustration: true
 board: true
-projectLabel: Vinteum/Satsconf
 focus:
   - Education
   - Funding
