@@ -80,6 +80,15 @@ contributions:
       BR: Permite consultar informações da mint sem fornecer explicitamente sua URL.
 updatedAt: '2026-11-18'
 media:
+  - id: youtube-klMnMYjjtuc
+    title:
+      EN: 'Creating a Cashu Wallet with CDK — TheMhv | bitcoin++ Berlin, payments edition'
+      BR: 'Creating a Cashu Wallet with CDK — TheMhv | bitcoin++ Berlin, payments edition'
+    date: '2026-11-02'
+    source: bitcoin++
+    href: 'https://www.youtube.com/watch?v=klMnMYjjtuc'
+    mediaType: video
+    thumbnail: /assets/images/people/media/themhv-klMnMYjjtuc.jpg
   - id: themhv-alumni-outlook-2026
     title:
       EN: From Launchpad to CDK and cryptography

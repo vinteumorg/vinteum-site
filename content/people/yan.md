@@ -44,6 +44,15 @@ links:
     href: 'https://github.com/yanfsb'
     icon: github
 projects:
+  - name: BDK descriptor metadata
+    href: 'https://github.com/yanfsb/bdk_wallet'
+    current: true
+    description:
+      EN: Research on carrying wallet descriptors with metadata, built on a fork of bdk_wallet.
+      BR: Pesquisa sobre descritores de carteira com metadados, em um fork do bdk_wallet.
+    contribution:
+      EN: Explores how descriptors can carry their own metadata and how to validate and encode it, with work kept in research branches of his fork.
+      BR: Explora como descritores podem carregar seus próprios metadados e como validá-los e codificá-los, com o trabalho em branches de pesquisa do seu fork.
   - name: bdk-cli
     href: 'https://github.com/bitcoindevkit/bdk-cli'
     description:

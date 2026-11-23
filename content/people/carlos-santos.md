@@ -45,6 +45,28 @@ focus:
   - Rust
 updatedAt: '2026-11-18'
 contributions:
+  - id: github-payjoin-bitcoin_uri-17-review
+    title:
+      EN: Review of the owned Uri parser for BIP 321
+      BR: Revisão do parser de Uri próprio para BIP 321
+    date: '2026-11-09'
+    source: 'payjoin/bitcoin_uri · #17'
+    type: Code Review
+    href: 'https://github.com/payjoin/bitcoin_uri/pull/17#pullrequestreview-5830314432'
+    description:
+      EN: Approved the 0.2 parser that returns an owned URI and treats the body address as optional, after commenting on the implementation.
+      BR: Aprovou o parser 0.2 que devolve um URI próprio e trata o endereço no corpo como opcional, depois de comentar a implementação.
+  - id: github-payjoin-rust-payjoin-1975
+    title:
+      EN: Migrate URI parsing to bitcoin_uri 0.2
+      BR: Migrate URI parsing to bitcoin_uri 0.2
+    date: '2026-10-13'
+    source: 'payjoin/rust-payjoin · #1975'
+    type: PR
+    href: 'https://github.com/payjoin/rust-payjoin/pull/1975'
+    description:
+      EN: Replaces the local URI parsing with the bitcoin_uri crate. Open for review.
+      BR: Substitui o parsing local de URI pelo crate bitcoin_uri. Aberto para revisão.
   - id: github-payjoin-rust-payjoin-2022
     title:
       EN: Add FFI receiver checklists fuzz target
