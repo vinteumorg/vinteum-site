@@ -85,6 +85,19 @@ projects:
       EN: "Contributes fuzzing scenarios and protocol-message generators for testing Bitcoin node behavior and compact-block relay."
       BR: "Contribui com cenários de fuzzing e geradores de mensagens de protocolo para testar o comportamento de nós Bitcoin e a retransmissão de blocos compactos."
 media:
+  - id: papinho-tech-202
+    title:
+      EN: What it's like to program Bitcoin
+      BR: Como é programar o Bitcoin
+    date: '2026-11-23'
+    source: Papinho Tech
+    badge: '#202'
+    href: 'https://www.youtube.com/watch?v=nFUKUJZ9AkI'
+    mediaType: video
+    thumbnail: /assets/images/people/media/bruno-papinho-tech.jpg
+    description:
+      EN: Conversation with Gustavo Caetano about what day-to-day work on the Bitcoin codebase looks like.
+      BR: Conversa com Gustavo Caetano sobre como é o trabalho do dia a dia no código do Bitcoin.
   - id: optech-podcast-2026-01-20
     title:
       EN: 'Bitcoin Optech Newsletter #388 Recap Podcast'
