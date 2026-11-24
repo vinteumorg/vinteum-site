@@ -1,0 +1,11 @@
+[Unit]
+Description=Run the Vinteum donations jobs tick every fifteen minutes
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=15min
+AccuracySec=30s
+Unit=vinteum-donations-jobs.service
+
+[Install]
+WantedBy=timers.target

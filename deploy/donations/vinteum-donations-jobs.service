@@ -1,0 +1,14 @@
+[Unit]
+Description=Vinteum donations jobs tick (reconciliation and outbox)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/vinteum-donations-jobs.env
+ExecStart=/usr/local/bin/vinteum-donations-jobs.sh
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+MemoryMax=64M
