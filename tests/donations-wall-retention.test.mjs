@@ -44,3 +44,10 @@ test('a missing e-mail transport parks the message instead of burning its attemp
   assert.equal(isTransportGap(new Error('Email delivery failed')), false);
   assert.equal(isTransportGap(new Error('Invalid management capability')), false);
 });
+
+test('donation mail keeps its own sender and falls back to the site sender', async () => {
+  const { mailFrom } = await import('../src/lib/donations/jobs.mjs');
+  assert.equal(mailFrom({ RESEND_FROM_EMAIL: 'site@vinteum.org', DONATIONS_FROM_EMAIL: 'donations@mail.vinteum.org' }), 'donations@mail.vinteum.org');
+  assert.equal(mailFrom({ RESEND_FROM_EMAIL: 'site@vinteum.org' }), 'site@vinteum.org');
+  assert.equal(mailFrom({}), '');
+});

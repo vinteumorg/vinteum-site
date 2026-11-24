@@ -39,7 +39,7 @@ The schema is in `migrations/001_donations.sql`. Use a separate database and lea
 - Official Stripe server and browser SDKs.
 - PostgreSQL through `pg`.
 - Sharp for decoding and re-encoding uploaded avatars, with a persistent PostgreSQL image store. No image hosting subscription is required.
-- Existing Resend account for transactional mail.
+- Existing Resend account for transactional mail. `DONATIONS_FROM_EMAIL` sets the donation sender (`donations@mail.vinteum.org` in production) and falls back to `RESEND_FROM_EMAIL`, which stays the contact-form sender.
 - Existing Ghost membership store for explicitly opted-in newsletter enrollment. This is not a new subscriber database.
 - A scheduler invoking the authenticated donations jobs endpoint for reconciliation and outbox delivery. Nothing schedules it in staging today: webhooks are the primary path and a missed webhook is only repaired when something calls the endpoint.
 

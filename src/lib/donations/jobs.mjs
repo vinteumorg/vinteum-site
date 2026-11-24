@@ -107,11 +107,8 @@ export async function deliverOutbox(row) {
       content += `\n\n${p.locale === "pt" ? "Gerenciar contribuição" : "Manage contribution"}: ${origin}/donate/manage#id=${row.donation_id}&token=${manageToken}`;
     }
   }
-  check(
-    process.env.RESEND_API_KEY && process.env.RESEND_FROM_EMAIL && to,
-    "Email unavailable",
-    503,
-  );
+  const from = mailFrom();
+  check(process.env.RESEND_API_KEY && from && to, "Email unavailable", 503);
   const r = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: {
@@ -120,7 +117,7 @@ export async function deliverOutbox(row) {
       "Idempotency-Key": `donations/${row.dedupe_key}`,
     },
     body: JSON.stringify({
-      from: process.env.RESEND_FROM_EMAIL,
+      from,
       to: [to],
       subject,
       text: content,
@@ -129,6 +126,12 @@ export async function deliverOutbox(row) {
     signal: AbortSignal.timeout(12000),
   });
   check(r.ok, "Email delivery failed", 503);
+}
+/** Donations mail gets its own sender so the site's contact form keeps the
+ * address it already uses. Falls back to the site sender when unset.
+ */
+export function mailFrom(env = process.env) {
+  return env.DONATIONS_FROM_EMAIL || env.RESEND_FROM_EMAIL || "";
 }
 /** True when delivery failed because the transport is not configured at all. */
 export function isTransportGap(error) {
