@@ -5,6 +5,7 @@ import "./globals.css";
 import { Footer, Navbar } from "./components/layout";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { getNewsletters } from "@/lib/ghost/admin";
+import { analyticsPrivacyScript } from "@/lib/analytics-privacy";
 
 const barlowCondensed = Barlow_Condensed({
   variable: "--font-barlow-condensed",
@@ -119,9 +120,13 @@ export default async function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
+        <Script id="donations-analytics-privacy" strategy="beforeInteractive">
+          {analyticsPrivacyScript}
+        </Script>
         <Script
           defer
           src="https://analytics.vinteum.org/script.js"
+          data-before-send="vinteumAnalyticsBeforeSend"
           data-website-id="66e443a2-5ffb-4ede-99ea-a1e03646eb27"
           strategy="afterInteractive"
         />

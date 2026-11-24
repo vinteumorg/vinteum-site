@@ -1,0 +1,163 @@
+/* Inline Bitcoin payment panel. Scoped to .donations so it inherits the page tokens. */
+.donations .pay-inline {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+.donations .pay-total {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+  font: 400 13px var(--font-mono);
+  color: var(--muted);
+}
+.donations .pay-total b {
+  font: 500 18px var(--font-head);
+  color: var(--white);
+}
+.donations .pay-rail {
+  display: flex;
+  gap: 6px;
+  padding: 4px;
+  border: 1px solid var(--line-2);
+  border-radius: 999px;
+  background: var(--surface-2);
+}
+.donations .pay-rail button {
+  flex: 1 1 0;
+  min-height: 44px;
+  padding: 0 12px;
+  border-radius: 999px;
+  font: 500 13px var(--font-head);
+  color: var(--muted);
+  transition:
+    background 0.18s ease,
+    color 0.18s ease;
+}
+.donations .pay-rail button.active {
+  background: var(--deep);
+  color: var(--mint);
+  box-shadow: inset 0 0 0 1px var(--line-mint);
+}
+.donations .pay-qr {
+  display: flex;
+  justify-content: center;
+  padding: 12px;
+  border-radius: 16px;
+  background: #fff;
+  max-width: 240px;
+  width: 100%;
+  margin: 0 auto;
+}
+.donations .pay-qr svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.donations .pay-btc {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  font: 400 13px var(--font-mono);
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+.donations .pay-address {
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+.donations .pay-request {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  min-width: 0;
+}
+.donations .pay-request code {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-height: 92px;
+  overflow-y: auto;
+  padding: 10px 12px;
+  border: 1px solid var(--line-2);
+  border-radius: 12px;
+  background: var(--surface-2);
+  font: 400 11px/1.5 var(--font-mono);
+  color: var(--text);
+  overflow-wrap: anywhere;
+  word-break: break-all;
+  user-select: all;
+}
+.donations .pay-copy {
+  flex: 0 0 auto;
+  min-height: 44px;
+  min-width: 88px;
+  padding: 0 14px;
+  border: 1px solid var(--line-2);
+  border-radius: 12px;
+  background: var(--surface);
+  font: 500 13px var(--font-head);
+  color: var(--text);
+  transition:
+    border-color 0.18s ease,
+    color 0.18s ease;
+}
+.donations .pay-copy:hover {
+  border-color: var(--line-mint);
+  color: var(--mint);
+}
+.donations .pay-hint {
+  font: 400 12px var(--font-mono);
+  color: var(--danger);
+}
+.donations .pay-expires {
+  text-align: center;
+  font: 400 12px var(--font-mono);
+  color: var(--muted);
+}
+.donations .pay-monthly {
+  font: 400 12px/1.6 var(--font-body);
+  color: var(--muted);
+}
+.donations .pay-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+.donations .pay-actions .btn {
+  min-height: 44px;
+}
+.donations .pay-fallback {
+  font: 400 12px var(--font-mono);
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  padding: 10px 2px;
+}
+.donations .pay-fallback:hover {
+  color: var(--mint);
+}
+@media (max-width: 640px) {
+  .donations .pay-request {
+    flex-wrap: wrap;
+  }
+  .donations .pay-copy {
+    width: 100%;
+  }
+  .donations .pay-qr {
+    max-width: 210px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .donations .pay-rail button,
+  .donations .pay-copy {
+    transition: none;
+  }
+}

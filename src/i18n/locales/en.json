@@ -803,5 +803,301 @@
       "whatsapp": "Chat on WhatsApp",
       "whatsappMessage": "Hi! I learned about Vinteum at Oranje Summit and would like to know how to support your work.",
       "donate": "Make a donation"
+  },
+  "donations": {
+    "manage": {
+      "title": "Manage your support",
+      "lede": "Manage your monthly contribution and your optional public recognition.",
+      "linkRequired": "Open the private management link from your donation confirmation. Need help?",
+      "providerNote": "Use the provider portal to manage your payment method, receipts or monthly support. Bitcoin commitments are paid manually, not automatically.",
+      "profile": "Public profile",
+    "confirmRemove": "Remove my profile and withdraw public recognition consent. This does not cancel monthly support.",
+    "confirmCancel": "Request cancellation of my monthly card contribution or manual Bitcoin commitment and reminders. This does not remove my public profile.",
+    "removed": "Your public profile has been removed. Contact our team if you want to request recognition again.",
+    "avatarRemoval": "The saved avatar will be removed when you submit profile changes.",
+      "update": "Submit profile changes",
+      "review": "Changes, including avatar updates, require a new review before publication.",
+      "confirm": "I understand that these actions affect my public profile or recurring support.",
+      "remove": "Remove my public profile",
+      "cancel": "Cancel monthly support",
+      "cancelRequested": "Cancellation requested. Check the provider portal or confirmation email for the effective date.",
+      "removeRequested": "Public recognition consent withdrawn. Your profile is no longer public.",
+      "updateRequested": "Profile changes submitted for review."
+    },
+    "hero": {
+      "title": "Fund the people <em>building Bitcoin</em>",
+      "lede": "Your donation supports independent developers and researchers working on the security, resilience and long-term development of Bitcoin.",
+      "t1": "Funds open-source work on Bitcoin Core, Lightning and critical infrastructure",
+      "t2": "Advances long-term research in security, privacy and post-quantum cryptography",
+      "t3": "Trains the next generation of contributors in Brazil and Latin America",
+      "private": {
+        "title": "Prefer to give privately?",
+        "sub": "Send Bitcoin directly. No form, no email."
+      }
+    },
+    "panel": {
+      "title": "Make a donation",
+      "secure": "Secure checkout"
+    },
+    "step": {
+      "amount": "Amount",
+      "details": "Details",
+      "payment": "Payment"
+    },
+    "amount": {
+      "frequency": "Frequency",
+      "label": "Amount",
+      "other": "Other amount",
+      "error": "Enter an amount greater than zero.",
+      "renewNote": "Card donations renew automatically. Bitcoin sends a new invoice each month."
+    },
+    "freq": {
+      "once": "One-time",
+      "monthly": "Monthly"
+    },
+    "nudge": {
+      "text": "Steady support lets us commit to developers for months at a time.",
+      "cta": "Make it monthly"
+    },
+    "btn": {
+      "continue": "Continue",
+      "back": "Back"
+    },
+    "details": {
+      "you": "Your details",
+      "first": "First name",
+      "last": "Last name",
+      "email": "Email for your receipt",
+      "emailError": "Enter a valid email address.",
+      "org": "Give on behalf of an organization",
+      "orgSub": "Your organization's name appears on the receipt.",
+      "orgName": "Organization name",
+      "ack": "Show me on the supporters wall",
+      "wallMonthly": "Monthly supporters can appear on the supporters wall.",
+      "wallMonthlyCta": "Give monthly",
+      "ackSub": "Optional. Appears only after review. We never publish amounts or emails.",
+      "publicName": "Name on the wall",
+      "link": "Website or profile (optional)",
+      "linkError": "Use an address like x.com/you, or leave it empty.",
+      "avatar": "Upload avatar",
+      "avatarRemove": "Remove",
+      "avatarError": "Use a PNG, JPG or WebP image up to 2 MB.",
+      "preview": "Preview",
+      "newsletter": "Get Vinteum updates by email",
+      "newsletterSub": "A few emails a year about programs and research.",
+      "message": "Leave a message (optional)",
+      "messagePh": "Your message to the Vinteum team",
+      "linkHint": "Example: x.com/you"
+    },
+    "pay": {
+      "title": "Payment method",
+      "card": "Card",
+      "cardSub": "Cards and compatible wallets, where available",
+      "btc": "Bitcoin",
+      "btcSub": "Lightning or on-chain, you choose next",
+      "monthlyBtc": "Monthly Bitcoin gifts are paid manually: you get a reminder and a new invoice every month.",
+      "cta": "Donate {amount}",
+      "ctaMonthly": "Donate {amount}/month",
+      "disclaimer": "Your information is never made public without your permission. Payment providers process only what is needed to complete the donation."
+    },
+    "sum": {
+      "donation": "Donation",
+      "frequency": "Frequency",
+      "wall": "Supporters wall",
+      "yes": "Yes, after review",
+      "no": "No",
+      "total": "Total"
+    },
+    "card": {
+      "number": "Card number",
+      "expiry": "MM / YY",
+      "cvc": "CVC",
+      "name": "Name on card",
+      "error": "Check your card details.",
+      "secure": "Payments are processed securely by Stripe",
+      "title": "Card details",
+      "sub": "Your card details go straight to Stripe and are never stored by Vinteum."
+    },
+    "btc": {
+      "title": "Pay with Bitcoin",
+      "sub": "Scan with your wallet or copy the payment request.",
+      "ln": "Lightning",
+      "chain": "On-chain",
+      "waiting": "Waiting for payment",
+      "expires": "Expires in",
+      "newAddress": "A new address is generated for every donation",
+      "copy": "Copy",
+      "copied": "Copied",
+      "paid": "I've sent the payment",
+      "loading": "Preparing the Bitcoin payment…",
+      "unavailable": "The payment details could not be loaded. You can still pay on the secure BTCPay page.",
+      "copyFailed": "Select the payment request and copy it manually.",
+      "expiredNow": "This invoice expired. Create a new one to continue.",
+      "monthlyNote": "Your monthly support is confirmed when the first payment settles. Renewals keep the reminder and the Pay Now link from BTCPay.",
+      "fallback": "Or open the secure BTCPay checkout"
+    },
+    "done": {
+      "title": "Thank you for supporting Bitcoin development",
+      "sub": "Your contribution makes independent, open-source Bitcoin research possible.",
+      "receipt": "A receipt was sent to {email}.",
+      "ackTitle": "Supporters wall: pending review",
+      "ackText": "Your profile will appear publicly only after the team approves it.",
+      "wall": "See the wall",
+      "again": "Make another donation"
+    },
+    "fail": {
+      "title": "The payment did not go through",
+      "sub": "Nothing was charged. Try again or choose another payment method.",
+      "retry": "Try again"
+    },
+    "direct": {
+      "title": "Donate Bitcoin directly",
+      "sub": "No name, email or form. Just send.",
+      "lnAddr": "Lightning address",
+      "chainAddr": "On-chain address",
+      "note": "We do not ask for your name or e-mail here. That is the whole promise: Bitcoin transactions can still be traced on-chain, so this is more private, not anonymous.",
+      "backForm": "Back to the donation form",
+      "deepDive": "How private are Bitcoin transactions?"
+    },
+    "wall": {
+      "strip": "Join the people supporting open-source Bitcoin development every month.",
+      "see": "Meet our community supporters"
+    },
+    "major": {
+      "title": "Planning a larger gift?",
+      "text": "Talk to us about bank transfers, donation documentation, or supporting a specific area of research.",
+      "cta": "Talk to our team",
+      "existing": "See who already supports Vinteum"
+    },
+    "faq": {
+      "title": "Questions",
+      "lede": "Anything else? Write to us through the contact page.",
+      "q1": "Will my donation be public?",
+      "a1": "Only if you give monthly and choose to appear on the supporters wall. Even then, we show your public name, link and avatar, never the amount or your email. Every profile is reviewed before it goes live.",
+      "q2": "Can I donate anonymously?",
+      "a2": "The direct Bitcoin option does not require a name or email. This does not guarantee anonymity: on-chain transactions are public and payment providers may process technical data.",
+      "q3": "How do monthly Bitcoin donations work?",
+      "a3": "Bitcoin doesn't support automatic recurring charges, so monthly Bitcoin supporters receive a reminder with a new invoice each month.",
+      "q4": "Can my company or foundation donate?",
+      "a4": "Yes. Choose \"Give on behalf of an organization\" in the form, or talk to our team for larger gifts and custom arrangements.",
+      "q5": "Which currencies do you accept?",
+      "a5": "Card payments in US dollars or Brazilian reais, and Bitcoin over Lightning or on-chain."
+    },
+    "modal": {
+      "title": "Larger contributions",
+      "sub": "Tell us a bit about your plans and the team will get back to you.",
+      "name": "Full name",
+      "email": "Work email",
+      "org": "Organization (optional)",
+      "msg": "What would you like to discuss?",
+      "msgPh": "Interests, payment method or timeline",
+      "send": "Send inquiry",
+      "doneTitle": "Thanks for reaching out",
+      "doneText": "The Vinteum team will get in touch with you directly.",
+      "close": "Close"
+    },
+    "wallp": {
+      "title": "Community supporters",
+      "lede": "Thank you to the monthly supporters who help sustain independent Bitcoin research and development and have chosen to be listed here.",
+      "all": "All",
+      "people": "Individuals",
+      "orgs": "Organizations",
+      "count": "{n} supporters",
+      "org": "Organization",
+      "person": "Supporter",
+      "new": "Just approved",
+      "note": "Amounts and emails are never displayed.",
+      "ctaTitle": "Join the wall",
+      "ctaText": "Become a monthly supporter and choose whether you'd like to be recognized here.",
+      "cta": "Give monthly",
+      "institutional": "Meet our founding donors and program supporters",
+      "countOne": "1 supporter"
+    },
+    "toast": {
+      "copied": "Copied to clipboard"
+    },
+    "ui": {
+      "avatarPending": "Your payment checkout is ready, but the avatar could not be saved. You can upload it later using your management link.",
+      "checking": "Payment setup is awaiting provider confirmation. Refresh the status before creating another donation.",
+      "loading": "Loading…",
+      "unavailable": "Payments are not configured. No payment has been created. Please contact our team.",
+      "test": "Test integration — no live donations.",
+      "error": "We could not complete this request. Please try again.",
+      "retry": "Try again",
+      "currency": "Currency",
+      "range": "Allowed amount: {min} – {max}.",
+      "openCheckout": "Open secure Bitcoin checkout",
+      "refresh": "Refresh payment status",
+      "status": "Payment status",
+      "cancel": "Cancel checkout",
+      "empty": "No public supporters yet.",
+      "wallError": "The supporters wall is temporarily unavailable.",
+      "manage": "Manage or cancel monthly support",
+      "profileHelp": "To change or remove your public profile, contact our team.",
+      "past": "Past supporter",
+      "providerUnavailable": "This payment method is not configured. Choose another method or contact our team.",
+      "monthlyUnavailable": "Monthly Bitcoin reminders are not configured. Choose a one-time gift or card.",
+      "newInvoice": "Create a new invoice",
+      "pendingReceipt": "Payment confirmed. Receipt and subscription information will be delivered by the payment provider.",
+      "failedSafe": "Payment is not confirmed. Check the provider status before trying again."
+    },
+    "validation": {
+      "organization": "Enter the organization name.",
+      "publicName": "Enter a public name or pseudonym.",
+      "avatar": "Use PNG, JPG or WebP up to 2 MB, between 32 and 4096 pixels."
+    },
+    "status": {
+      "pending": "Waiting for payment",
+      "processing": "Processing payment",
+      "confirming": "Awaiting network confirmations",
+      "partial": "Partial payment received. Follow the provider instructions.",
+      "late": "Payment received after expiry. Awaiting review.",
+      "expired": "Invoice expired",
+      "cancelled": "Payment cancelled",
+      "failed": "Payment failed",
+      "paid": "Payment confirmed"
+    },
+    "admin": {
+      "title": "Supporter review",
+      "intro": "Authorized Vinteum administrators only.",
+      "username": "Username",
+      "password": "Password",
+      "login": "Sign in",
+      "logout": "Sign out",
+      "signedIn": "Signed in as",
+      "working": "Please wait…",
+      "error": "Unable to complete the request. Please try again.",
+      "invalid": "Sign-in failed. Check your credentials.",
+      "forbidden": "Request blocked. Open the configured secure site and try again.",
+      "limited": "Too many sign-in attempts. Please wait 15 minutes.",
+      "unavailable": "Administration is not configured or temporarily unavailable.",
+      "expired": "Your session has expired. Sign in again.",
+      "pending": "Pending",
+      "approved": "Approved",
+      "rejected": "Rejected",
+      "removed": "Removed",
+      "refresh": "Refresh",
+      "empty": "No profiles in this queue.",
+      "approve": "Approve",
+      "reject": "Reject",
+      "remove": "Remove from public wall",
+      "reason": "Review note (optional)",
+      "note": "Do not include financial or unnecessary personal information.",
+      "active": "Active monthly supporter",
+      "past": "Past monthly supporter",
+      "open": "Open submitted link",
+      "confirmRemove": "Remove this profile from the public wall?",
+      "saved": "Review saved.",
+      "policy": "Only monthly supporters with explicit consent and a processor-confirmed initial payment can be approved. Profile changes require a new review. Past commitments are labelled separately; removal is always available.",
+      "viewProfiles": "Profiles",
+      "viewMessages": "Messages",
+      "openAvatar": "Open full size",
+      "avatarSent": "Sent image",
+      "messagesEmpty": "No messages yet.",
+      "messagesNote": "Donor messages appear only here and are never published.",
+      "reply": "Reply by e-mail",
+      "more": "Load more",      "oneTime": "One-time donation",
+      "monthlyDonation": "Monthly donation"
+    }
   }
 }
