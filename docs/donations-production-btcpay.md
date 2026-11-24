@@ -6,7 +6,9 @@ this document is code: the application reads everything from its environment.
 
 ## 1. Store-scoped API key
 
-Store **Donations** → API Keys → Generate Key.
+API keys belong to the user account, not to the store menu: **Manage account → API keys**
+(`https://pay.vinteum.org/account`) → Generate Key. The store comes in through the
+permission scope.
 
 - Label: `vinteum-site-donations` (scoped, no spending).
 - Permissions, scoped to this store only:
@@ -22,7 +24,8 @@ Store **Donations** → API Keys → Generate Key.
 
 ## 2. Webhook
 
-Store **Donations** → Webhooks → Create.
+Store **Donations** → Webhooks → Create
+(`https://pay.vinteum.org/stores/CACCZjm2Cd9bXcXf3EBxHAKoSAtHCuTQsS5AoYE5MpeM/webhooks`).
 
 - Payload URL: `https://www.vinteum.org/api/donations/webhooks/btcpay`
 - Secret: let BTCPay generate it and copy it.
@@ -35,8 +38,9 @@ Store **Donations** → Webhooks → Create.
 
 ## 3. Monthly offering (only for Bitcoin monthly in production)
 
-Store **Donations** → Offerings → Create, name it for donors (for example
-`Vinteum monthly`). The site creates and repairs the per-currency plans inside an
+Store **Donations** → Offerings → Create
+(`https://pay.vinteum.org/stores/CACCZjm2Cd9bXcXf3EBxHAKoSAtHCuTQsS5AoYE5MpeM/offerings`),
+named for donors (for example `Vinteum monthly`). The site creates and repairs the per-currency plans inside an
 existing offering; it does not create offerings.
 
 Note the offering id from its page. Leave `BTCPAY_MONTHLY_PLANS` empty unless a plan
@@ -69,7 +73,7 @@ real payments.
 ## 5. Reminders
 
 BTCPay sends the renewal reminder for manual monthly plans itself, from its own SMTP
-settings (Server → Email). Use `smtp.resend.com`, port 465, user `resend`, password equal
+settings (Server → Emails, `https://pay.vinteum.org/server/emails`). Use `smtp.resend.com`, port 465, user `resend`, password equal
 to the Resend API key, sender `donations@mail.vinteum.org`, then send a test message.
 Without this, a Bitcoin monthly donor is never reminded and the plan simply lapses.
 
