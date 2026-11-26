@@ -803,5 +803,301 @@
       "whatsapp": "Falar pelo WhatsApp",
       "whatsappMessage": "Olá! Conheci a Vinteum no Oranje Summit e gostaria de saber como apoiar o trabalho de vocês.",
       "donate": "Fazer uma doação"
+  },
+  "donations": {
+    "manage": {
+      "title": "Gerencie seu apoio",
+      "lede": "Gerencie sua contribuição mensal e seu reconhecimento público opcional.",
+      "linkRequired": "Abra o link privado de gerenciamento na confirmação da sua doação. Precisa de ajuda?",
+      "providerNote": "Use o portal do provedor para gerenciar a forma de pagamento, recibos ou apoio mensal. Compromissos Bitcoin são pagos manualmente, nunca automaticamente.",
+      "profile": "Perfil público",
+    "confirmRemove": "Remover meu perfil e retirar o consentimento de reconhecimento público. Isso não cancela o apoio mensal.",
+    "confirmCancel": "Solicitar cancelamento da contribuição mensal no cartão ou do compromisso manual Bitcoin e seus lembretes. Isso não remove meu perfil público.",
+    "removed": "Seu perfil público foi removido. Fale com o time se quiser solicitar reconhecimento novamente.",
+    "avatarRemoval": "O avatar salvo será removido ao enviar as alterações do perfil.",
+      "update": "Enviar alterações do perfil",
+      "review": "Alterações, incluindo o avatar, passam por nova revisão antes da publicação.",
+      "confirm": "Entendo que estas ações afetam meu perfil público ou apoio recorrente.",
+      "remove": "Remover meu perfil público",
+      "cancel": "Cancelar apoio mensal",
+      "cancelRequested": "Cancelamento solicitado. Confira a data efetiva no portal do provedor ou no e-mail de confirmação.",
+      "removeRequested": "Consentimento de reconhecimento público retirado. Seu perfil não está mais público.",
+      "updateRequested": "Alterações do perfil enviadas para revisão."
+    },
+    "hero": {
+      "title": "Apoie quem <em>constrói o Bitcoin</em>",
+      "lede": "Sua doação apoia desenvolvedores e pesquisadores independentes que trabalham na segurança, na resiliência e no desenvolvimento de longo prazo do Bitcoin.",
+      "t1": "Financia trabalho open-source no Bitcoin Core, na Lightning e em infraestrutura crítica",
+      "t2": "Impulsiona pesquisa de longo prazo em segurança, privacidade e criptografia pós-quântica",
+      "t3": "Forma a próxima geração de contribuidores no Brasil e na América Latina",
+      "private": {
+        "title": "Prefere doar com privacidade?",
+        "sub": "Envie Bitcoin direto. Sem formulário, sem e-mail."
+      }
+    },
+    "panel": {
+      "title": "Faça uma doação",
+      "secure": "Pagamento seguro"
+    },
+    "step": {
+      "amount": "Valor",
+      "details": "Dados",
+      "payment": "Pagamento"
+    },
+    "amount": {
+      "frequency": "Frequência",
+      "label": "Valor",
+      "other": "Outro valor",
+      "error": "Informe um valor maior que zero.",
+      "renewNote": "Doações no cartão renovam automaticamente. Em Bitcoin você recebe uma fatura nova a cada mês."
+    },
+    "freq": {
+      "once": "Única",
+      "monthly": "Mensal"
+    },
+    "nudge": {
+      "text": "Apoio contínuo nos permite manter desenvolvedores por meses seguidos.",
+      "cta": "Tornar mensal"
+    },
+    "btn": {
+      "continue": "Continuar",
+      "back": "Voltar"
+    },
+    "details": {
+      "you": "Seus dados",
+      "first": "Nome",
+      "last": "Sobrenome",
+      "email": "E-mail para o recibo",
+      "emailError": "Informe um e-mail válido.",
+      "org": "Doar em nome de uma organização",
+      "orgSub": "O nome da organização aparece no recibo.",
+      "orgName": "Nome da organização",
+      "ack": "Aparecer no mural de apoiadores",
+      "wallMonthly": "Apoiadores mensais podem aparecer no mural de apoiadores.",
+      "wallMonthlyCta": "Apoiar todo mês",
+      "ackSub": "Opcional. Só aparece após revisão. Nunca publicamos valores ou e-mails.",
+      "publicName": "Nome no mural",
+      "link": "Site ou perfil (opcional)",
+      "linkError": "Use um endereço como x.com/voce, ou deixe em branco.",
+      "avatar": "Enviar avatar",
+      "avatarRemove": "Remover",
+      "avatarError": "Use uma imagem PNG, JPG ou WebP de até 2 MB.",
+      "preview": "Prévia",
+      "newsletter": "Receber novidades da Vinteum",
+      "newsletterSub": "Poucos e-mails por ano sobre programas e pesquisa.",
+      "message": "Deixe uma mensagem (opcional)",
+      "messagePh": "Sua mensagem para o time da Vinteum",
+      "linkHint": "Exemplo: x.com/voce"
+    },
+    "pay": {
+      "title": "Forma de pagamento",
+      "card": "Cartão",
+      "cardSub": "Cartões e carteiras compatíveis, quando disponíveis",
+      "btc": "Bitcoin",
+      "btcSub": "Lightning ou on-chain, você escolhe a seguir",
+      "monthlyBtc": "Doações mensais em Bitcoin são pagas manualmente: você recebe um lembrete e uma nova cobrança todo mês.",
+      "cta": "Doar {amount}",
+      "ctaMonthly": "Doar {amount}/mês",
+      "disclaimer": "Seus dados nunca são publicados sem sua permissão. Os provedores de pagamento processam apenas o necessário para concluir a doação."
+    },
+    "sum": {
+      "donation": "Doação",
+      "frequency": "Frequência",
+      "wall": "Mural de apoiadores",
+      "yes": "Sim, após revisão",
+      "no": "Não",
+      "total": "Total"
+    },
+    "card": {
+      "number": "Número do cartão",
+      "expiry": "MM / AA",
+      "cvc": "CVC",
+      "name": "Nome no cartão",
+      "error": "Confira os dados do cartão.",
+      "secure": "Pagamento processado com segurança pela Stripe",
+      "title": "Dados do cartão",
+      "sub": "Os dados do cartão vão direto para a Stripe e nunca ficam salvos na Vinteum."
+    },
+    "btc": {
+      "title": "Pagar com Bitcoin",
+      "sub": "Escaneie com sua carteira ou copie a cobrança.",
+      "ln": "Lightning",
+      "chain": "On-chain",
+      "waiting": "Aguardando pagamento",
+      "expires": "Expira em",
+      "newAddress": "Um novo endereço é gerado a cada doação",
+      "copy": "Copiar",
+      "copied": "Copiado",
+      "paid": "Já enviei o pagamento",
+      "loading": "Preparando o pagamento em Bitcoin…",
+      "unavailable": "Não foi possível carregar os dados do pagamento. Você ainda pode pagar na página segura do BTCPay.",
+      "copyFailed": "Selecione a cobrança e copie manualmente.",
+      "expiredNow": "Esta cobrança expirou. Crie uma nova para continuar.",
+      "monthlyNote": "Seu apoio mensal é confirmado quando o primeiro pagamento é liquidado. As renovações seguem o lembrete e o link Pagar agora do BTCPay.",
+      "fallback": "Ou abrir o checkout BTCPay seguro"
+    },
+    "done": {
+      "title": "Obrigado por apoiar o desenvolvimento do Bitcoin",
+      "sub": "Sua contribuição torna possível a pesquisa independente e open-source em Bitcoin.",
+      "receipt": "Enviamos um recibo para {email}.",
+      "ackTitle": "Mural de apoiadores: em revisão",
+      "ackText": "Seu perfil só aparece publicamente depois que o time aprovar.",
+      "wall": "Ver o mural",
+      "again": "Fazer outra doação"
+    },
+    "fail": {
+      "title": "O pagamento não foi concluído",
+      "sub": "Nada foi cobrado. Tente de novo ou escolha outra forma de pagamento.",
+      "retry": "Tentar de novo"
+    },
+    "direct": {
+      "title": "Doe Bitcoin direto",
+      "sub": "Sem nome, e-mail ou formulário. É só enviar.",
+      "lnAddr": "Endereço Lightning",
+      "chainAddr": "Endereço on-chain",
+      "note": "Aqui não pedimos seu nome nem seu e-mail. É essa a garantia: transações em Bitcoin ainda podem ser rastreadas on-chain, então esta opção é mais privada, não anônima.",
+      "backForm": "Voltar ao formulário",
+      "deepDive": "Quão privadas são as transações em Bitcoin? (em inglês)"
+    },
+    "wall": {
+      "strip": "Junte-se a quem apoia mensalmente o desenvolvimento aberto do Bitcoin.",
+      "see": "Conheça os apoiadores da comunidade"
+    },
+    "major": {
+      "title": "Pensando em uma doação maior?",
+      "text": "Fale com o time sobre transferência bancária, documentação de doação ou apoio a uma área específica de pesquisa.",
+      "cta": "Falar com o time",
+      "existing": "Veja quem já apoia a Vinteum"
+    },
+    "faq": {
+      "title": "Dúvidas",
+      "lede": "Mais alguma pergunta? Escreva para nós pela página de contato.",
+      "q1": "Minha doação será pública?",
+      "a1": "Só se você apoiar todo mês e escolher aparecer no mural de apoiadores. Mesmo assim, mostramos apenas nome público, link e avatar, nunca o valor ou o seu e-mail. Todo perfil é revisado antes de ir ao ar.",
+      "q2": "Posso doar de forma anônima?",
+      "a2": "A opção Bitcoin direto não exige nome ou e-mail. Isso não garante anonimato: transações on-chain são públicas e provedores podem processar dados técnicos.",
+      "q3": "Como funcionam as doações mensais em Bitcoin?",
+      "a3": "O Bitcoin não permite cobranças recorrentes automáticas, então quem apoia mensalmente em Bitcoin recebe um lembrete com uma nova cobrança a cada mês.",
+      "q4": "Minha empresa ou fundação pode doar?",
+      "a4": "Sim. Marque \"Doar em nome de uma organização\" no formulário ou fale com o nosso time para doações maiores e acordos específicos.",
+      "q5": "Quais moedas vocês aceitam?",
+      "a5": "Cartão em dólares ou reais, e Bitcoin via Lightning ou on-chain."
+    },
+    "modal": {
+      "title": "Grandes contribuições",
+      "sub": "Conte um pouco sobre seus planos e o time entra em contato.",
+      "name": "Nome completo",
+      "email": "E-mail profissional",
+      "org": "Organização (opcional)",
+      "msg": "Sobre o que gostaria de conversar?",
+      "msgPh": "Interesses, forma de pagamento ou prazos",
+      "send": "Enviar",
+      "doneTitle": "Obrigado pelo contato",
+      "doneText": "O time da Vinteum vai entrar em contato com você diretamente.",
+      "close": "Fechar"
+    },
+    "wallp": {
+      "title": "Apoiadores da comunidade",
+      "lede": "Obrigado aos apoiadores mensais que ajudam a sustentar pesquisa e desenvolvimento independentes em Bitcoin e escolheram aparecer aqui.",
+      "all": "Todos",
+      "people": "Pessoas",
+      "orgs": "Organizações",
+      "count": "{n} apoiadores",
+      "org": "Organização",
+      "person": "Apoiador",
+      "new": "Recém-aprovado",
+      "note": "Valores e e-mails nunca são mostrados.",
+      "ctaTitle": "Entre para o mural",
+      "ctaText": "Apoie todo mês e escolha se quer ser reconhecido aqui.",
+      "cta": "Apoiar todo mês",
+      "institutional": "Conheça os doadores fundadores e apoiadores de programas",
+      "countOne": "1 apoiador"
+    },
+    "toast": {
+      "copied": "Copiado"
+    },
+    "ui": {
+      "avatarPending": "O checkout está pronto, mas não foi possível salvar o avatar. Envie-o depois pelo link de gerenciamento.",
+      "checking": "A configuração do pagamento aguarda confirmação do provedor. Atualize o status antes de criar outra doação.",
+      "loading": "Carregando…",
+      "unavailable": "Os pagamentos ainda não estão configurados. Nenhum pagamento foi criado. Fale com o nosso time.",
+      "test": "Integração de teste — sem doações reais.",
+      "error": "Não foi possível concluir a solicitação. Tente novamente.",
+      "retry": "Tentar novamente",
+      "currency": "Moeda",
+      "range": "Valor permitido: {min} – {max}.",
+      "openCheckout": "Abrir checkout seguro Bitcoin",
+      "refresh": "Atualizar status do pagamento",
+      "status": "Status do pagamento",
+      "cancel": "Cancelar checkout",
+      "empty": "Ainda não há apoiadores públicos.",
+      "wallError": "O mural está temporariamente indisponível.",
+      "manage": "Gerenciar ou cancelar apoio mensal",
+      "profileHelp": "Para alterar ou remover seu perfil público, fale com o nosso time.",
+      "past": "Apoiador anterior",
+      "providerUnavailable": "Esta forma de pagamento não está configurada. Escolha outra ou fale com o time.",
+      "monthlyUnavailable": "Os lembretes mensais Bitcoin não estão configurados. Escolha uma doação única ou cartão.",
+      "newInvoice": "Gerar nova invoice",
+      "pendingReceipt": "Pagamento confirmado. O provedor enviará as informações de recibo e assinatura.",
+      "failedSafe": "O pagamento não foi confirmado. Confira o status no provedor antes de tentar novamente."
+    },
+    "validation": {
+      "organization": "Informe o nome da organização.",
+      "publicName": "Informe um nome público ou pseudônimo.",
+      "avatar": "Use PNG, JPG ou WebP de até 2 MB, entre 32 e 4096 pixels."
+    },
+    "status": {
+      "pending": "Aguardando pagamento",
+      "processing": "Processando pagamento",
+      "confirming": "Aguardando confirmações na rede",
+      "partial": "Pagamento parcial recebido. Siga as instruções do provedor.",
+      "late": "Pagamento após vencimento. Aguardando revisão.",
+      "expired": "Invoice expirada",
+      "cancelled": "Pagamento cancelado",
+      "failed": "Falha no pagamento",
+      "paid": "Pagamento confirmado"
+    },
+    "admin": {
+      "title": "Revisão de apoiadores",
+      "intro": "Acesso exclusivo para administradores autorizados da Vinteum.",
+      "username": "Usuário",
+      "password": "Senha",
+      "login": "Entrar",
+      "logout": "Sair",
+      "signedIn": "Conectado como",
+      "working": "Aguarde…",
+      "error": "Não foi possível concluir a solicitação. Tente novamente.",
+      "invalid": "Não foi possível entrar. Verifique suas credenciais.",
+      "forbidden": "Solicitação bloqueada. Abra o site seguro configurado e tente novamente.",
+      "limited": "Muitas tentativas de acesso. Aguarde 15 minutos.",
+      "unavailable": "A administração não está configurada ou está temporariamente indisponível.",
+      "expired": "Sua sessão expirou. Entre novamente.",
+      "pending": "Pendentes",
+      "approved": "Aprovados",
+      "rejected": "Rejeitados",
+      "removed": "Removidos",
+      "refresh": "Atualizar",
+      "empty": "Nenhum perfil nesta fila.",
+      "approve": "Aprovar",
+      "reject": "Rejeitar",
+      "remove": "Remover do mural público",
+      "reason": "Nota da revisão (opcional)",
+      "note": "Não inclua informações financeiras ou dados pessoais desnecessários.",
+      "active": "Apoiador mensal ativo",
+      "past": "Apoiador mensal anterior",
+      "open": "Abrir link enviado",
+      "confirmRemove": "Remover este perfil do mural público?",
+      "saved": "Revisão salva.",
+      "policy": "Apenas apoiadores mensais com consentimento explícito e pagamento inicial confirmado pelo processador podem ser aprovados. Alterações no perfil exigem nova revisão. Compromissos anteriores são identificados separadamente; a remoção está sempre disponível.",
+      "viewProfiles": "Perfis",
+      "viewMessages": "Mensagens",
+      "openAvatar": "Abrir em tamanho real",
+      "avatarSent": "Imagem enviada",
+      "messagesEmpty": "Nenhuma mensagem recebida.",
+      "messagesNote": "As mensagens dos doadores aparecem apenas aqui e nunca são publicadas.",
+      "reply": "Responder por e-mail",
+      "more": "Carregar mais",      "oneTime": "Doação única",
+      "monthlyDonation": "Doação mensal"
+    }
   }
 }

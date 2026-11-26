@@ -1,0 +1,188 @@
+.console {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 160px 24px 96px;
+  color: var(--foreground, #f6f6f6);
+}
+.console h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+.console p {
+  margin: 12px 0;
+  line-height: 1.6;
+}
+.login {
+  display: grid;
+  gap: 12px;
+  max-width: 400px;
+  margin-top: 32px;
+}
+.console input,
+.console textarea,
+.console select {
+  background: #161616;
+  border: 1px solid #666;
+  color: #fff;
+  border-radius: 6px;
+  padding: 12px;
+  font: inherit;
+  max-width: 100%;
+}
+.console button {
+  border: 1px solid #797979;
+  background: #232323;
+  color: #fff;
+  border-radius: 6px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font: inherit;
+}
+.console button:hover {
+  border-color: #fa6c2e;
+}
+.console button:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+.console :focus-visible {
+  outline: 3px solid #ff8a4c;
+  outline-offset: 3px;
+}
+.toolbar {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 28px 0;
+}
+.cards {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 20px;
+}
+.card {
+  border: 1px solid #555;
+  border-radius: 12px;
+  padding: 24px;
+  overflow-wrap: anywhere;
+}
+.card h2 {
+  font-size: 1.5rem;
+  margin: 0 0 8px;
+}
+.card form {
+  display: grid;
+  gap: 10px;
+  margin-top: 20px;
+}
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.policy {
+  font-size: 0.875rem;
+  color: #bbb;
+  max-width: 75ch;
+}
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin: 28px 0 8px;
+  flex-wrap: wrap;
+}
+.tabs button {
+  min-height: 44px;
+}
+.tabActive {
+  border-color: #fa6c2e !important;
+  background: #2a1c14 !important;
+}
+.avatarBlock {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.avatar {
+  display: block;
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #555;
+  background: #111;
+}
+.avatarMeta {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+.avatarLink {
+  color: #ff8a4c;
+  min-height: 24px;
+}
+.avatarNote {
+  color: #bbb;
+}
+.messages {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+  margin: 20px 0;
+}
+.message {
+  border: 1px solid #555;
+  border-radius: 12px;
+  padding: 20px;
+}
+.messageHead {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+.messageHead span {
+  color: #bbb;
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+}
+.messageText {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  margin: 12px 0;
+}
+.messageFoot {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.badge {
+  font-size: 0.75rem;
+  border: 1px solid #666;
+  border-radius: 999px;
+  padding: 4px 10px;
+  color: #ddd;
+}
+.messageFoot a {
+  color: #ff8a4c;
+  min-height: 24px;
+}
+@media (max-width: 600px) {
+  .console {
+    padding: 120px 18px 64px;
+  }
+  .card {
+    padding: 18px;
+  }
+  .actions button {
+    width: 100%;
+  }
+}
