@@ -47,7 +47,7 @@
             "submit": "Submit",
             "chooseLabel": "Choose newsletters",
             "subscribeBtn": "Subscribe",
-            "success": "You're subscribed! Thank you.",
+            "success": "Almost there! Check your email to confirm your subscription.",
             "duplicate": "You're already subscribed.",
             "error": "Something went wrong. Please try again.",
             "emailInvalid": "Please enter a valid email address."
@@ -760,6 +760,11 @@
         "empty": "No posts found. Try a different search or category."
     },
     "newsletter": {
+        "confirmed": {
+            "title": "Subscription confirmed",
+            "body": "You are all set. The Vinteum newsletter will arrive in your inbox. Every issue carries an unsubscribe link, in case you change your mind.",
+            "back": "Read the blog"
+        },
         "hero": {
             "badge": "Newsletter",
             "title": "Stay updated on Bitcoin development",
@@ -775,7 +780,7 @@
             "emailPlaceholder": "your@email.com",
             "cta": "Subscribe",
             "sending": "Sending...",
-            "success": "You're subscribed! Thank you for joining.",
+            "success": "Almost there! Check your email to confirm your subscription.",
             "error": "Something went wrong. Please try again."
         },
         "benefits": {

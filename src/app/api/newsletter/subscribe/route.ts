@@ -1,123 +1,142 @@
 import { NextRequest, NextResponse } from "next/server";
-import crypto from "node:crypto";
+import { Resend } from "resend";
+import { ensureMember } from "@/lib/ghost/members";
+import { signConfirmation } from "@/lib/newsletter/confirm-token";
+import { allowHit } from "@/lib/rate-limit";
 
-function ghostAdminToken(adminApiKey: string): string {
-    const [id, secret] = adminApiKey.split(":");
+// Newsletter signup creates a member record only; the subscription starts when
+// the address owner opens the link we mail. A public endpoint that subscribes on
+// request lets anyone add someone else's address to the list.
+const LIMITS = { name: 120, email: 254, newsletters: 5 };
 
-    const header = Buffer.from(
-        JSON.stringify({ alg: "HS256", typ: "JWT", kid: id })
-    ).toString("base64url");
+// Deliberately permissive: rejects only what is obviously not an address.
+const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const NEWSLETTER_ID = /^[a-f0-9]{24}$/i;
 
-    const now = Math.floor(Date.now() / 1000);
-    const payload = Buffer.from(
-        JSON.stringify({ iat: now, exp: now + 300, aud: "/admin/" })
-    ).toString("base64url");
+const IP_WINDOW_MS = 15 * 60 * 1000;
+const IP_MAX = 5;
+// A confirmation mail is sent before anyone proves they own the address, so the
+// per-address cap is what keeps the form from being used to mail-bomb a person.
+const EMAIL_WINDOW_MS = 24 * 60 * 60 * 1000;
+const EMAIL_MAX = 3;
 
-    const signature = crypto
-        .createHmac("sha256", Buffer.from(secret, "hex"))
-        .update(`${header}.${payload}`)
-        .digest("base64url");
+const asText = (value: unknown, max: number) =>
+    typeof value === "string" ? value.replace(/[\r\n]+/g, " ").trim().slice(0, max) : "";
 
-    return `${header}.${payload}.${signature}`;
-}
+const escapeHtml = (value: string) =>
+    value
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
 
-async function ghostAdminFetch(
-    url: string,
-    token: string,
-    options: RequestInit = {}
-): Promise<Response> {
-    return fetch(url, {
-        ...options,
-        headers: {
-            "Content-Type": "application/json",
-            Authorization: `Ghost ${token}`,
-            ...(options.headers as Record<string, string>),
-        },
-        cache: "no-store",
-    });
+function clientIp(req: NextRequest): string {
+    const forwarded = req.headers.get("x-forwarded-for");
+    if (forwarded) return forwarded.split(",")[0].trim();
+    return req.headers.get("x-real-ip")?.trim() || "unknown";
 }
 
 export async function POST(req: NextRequest) {
     const ghostUrl = process.env.GHOST_URL;
     const adminApiKey = process.env.GHOST_ADMIN_API_KEY;
+    const resendApiKey = process.env.RESEND_API_KEY;
+    const fromEmail = process.env.RESEND_FROM_EMAIL;
+    const confirmSecret = process.env.NEWSLETTER_CONFIRM_SECRET;
 
-    if (!ghostUrl || !adminApiKey) {
+    if (!ghostUrl || !adminApiKey || !resendApiKey || !fromEmail || !confirmSecret) {
         return NextResponse.json({ error: "Server configuration error" }, { status: 500 });
     }
 
-    let body: { name?: string; email?: string; newsletters?: string[] };
+    let body: Record<string, unknown>;
     try {
         body = await req.json();
     } catch {
         return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
     }
 
-    const { name, email, newsletters = [] } = body;
-
-    if (!email || typeof email !== "string") {
-        return NextResponse.json({ error: "Email is required" }, { status: 400 });
-    }
-
-    const token = ghostAdminToken(adminApiKey);
-    const apiBase = `${ghostUrl}/ghost/api/admin`;
-
-    // newsletters[] now contains Ghost newsletter IDs directly — no name mapping needed
-    const newsletterIds = newsletters.map((id) => ({ id }));
-
-    const memberPayload = {
-        members: [
-            {
-                email,
-                ...(name ? { name } : {}),
-                newsletters: newsletterIds,
-            },
-        ],
-    };
-
-    const createRes = await ghostAdminFetch(
-        `${apiBase}/members/`,
-        token,
-        { method: "POST", body: JSON.stringify(memberPayload) }
-    );
-
-    if (createRes.ok) {
+    // Honeypot: rendered off-screen and never filled by a human. Answer with
+    // success so a bot cannot probe for the rule and retry without the field.
+    if (asText(body.company, 1) !== "") {
         return NextResponse.json({ success: true });
     }
 
-    // Member already exists — update their newsletters
-    if (createRes.status === 422) {
-        const encoded = encodeURIComponent(`email:'${email}'`);
-        const findRes = await ghostAdminFetch(
-            `${apiBase}/members/?filter=${encoded}`,
-            token
-        );
-
-        if (!findRes.ok) {
-            return NextResponse.json({ error: "Member lookup failed" }, { status: 500 });
-        }
-
-        const findData = (await findRes.json()) as { members: { id: string }[] };
-        const existing = findData.members[0];
-
-        if (!existing) {
-            return NextResponse.json({ error: "Member not found" }, { status: 500 });
-        }
-
-        const updateRes = await ghostAdminFetch(
-            `${apiBase}/members/${existing.id}/`,
-            token,
-            {
-                method: "PUT",
-                body: JSON.stringify({ members: [{ newsletters: newsletterIds }] }),
-            }
-        );
-
-        if (updateRes.ok) {
-            return NextResponse.json({ success: true, updated: true });
-        }
-
-        return NextResponse.json({ error: "Failed to update member" }, { status: 500 });
+    if (!allowHit(`newsletter:ip:${clientIp(req)}`, IP_MAX, IP_WINDOW_MS)) {
+        return NextResponse.json({ error: "Too many requests" }, { status: 429 });
     }
 
-    return NextResponse.json({ error: "Subscription failed" }, { status: 500 });
+    const email = asText(body.email, LIMITS.email).toLowerCase();
+    const name = asText(body.name, LIMITS.name);
+
+    if (!EMAIL.test(email)) {
+        return NextResponse.json({ error: "Invalid email address" }, { status: 400 });
+    }
+
+    const requested = Array.isArray(body.newsletters) ? body.newsletters : [];
+    const newsletters = [
+        ...new Set(
+            requested.filter(
+                (id): id is string => typeof id === "string" && NEWSLETTER_ID.test(id)
+            )
+        ),
+    ].slice(0, LIMITS.newsletters);
+
+    if (newsletters.length === 0) {
+        return NextResponse.json({ error: "No newsletter selected" }, { status: 400 });
+    }
+
+    // Silently accept instead of reporting the cap: telling a caller that an
+    // address is throttled also tells them the address reached us before.
+    if (!allowHit(`newsletter:email:${email}`, EMAIL_MAX, EMAIL_WINDOW_MS)) {
+        return NextResponse.json({ success: true, pendingConfirmation: true });
+    }
+
+    const member = await ensureMember(email, name);
+    if (!member) {
+        return NextResponse.json({ error: "Subscription failed" }, { status: 500 });
+    }
+
+    const token = signConfirmation({ memberId: member.id, email, newsletters });
+    const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.vinteum.org").replace(/\/+$/, "");
+    const confirmUrl = `${siteUrl}/api/newsletter/confirm?token=${encodeURIComponent(token)}`;
+
+    const resend = new Resend(resendApiKey);
+    const { error } = await resend.emails.send({
+        from: fromEmail,
+        to: email,
+        replyTo: "newsletter@vinteum.org",
+        subject: "Confirme sua inscrição na newsletter da Vinteum",
+        text: [
+            "Falta um passo para você receber a newsletter da Vinteum.",
+            "",
+            "Confirme sua inscrição abrindo este link:",
+            confirmUrl,
+            "",
+            "Se você não pediu essa inscrição, ignore este e-mail: o endereço não será adicionado à lista.",
+            "",
+            "---",
+            "",
+            "One step left to receive the Vinteum newsletter.",
+            "",
+            "Confirm your subscription by opening this link:",
+            confirmUrl,
+            "",
+            "If you did not request this, ignore this email and the address will not be added to the list.",
+        ].join("\n"),
+        html: [
+            "<p>Falta um passo para você receber a newsletter da Vinteum.</p>",
+            `<p><a href="${escapeHtml(confirmUrl)}">Confirmar inscrição</a></p>`,
+            '<p style="color:#666">Se você não pediu essa inscrição, ignore este e-mail: o endereço não será adicionado à lista.</p>',
+            "<hr/>",
+            "<p>One step left to receive the Vinteum newsletter.</p>",
+            `<p><a href="${escapeHtml(confirmUrl)}">Confirm subscription</a></p>`,
+            '<p style="color:#666">If you did not request this, ignore this email and the address will not be added to the list.</p>',
+        ].join(""),
+    });
+
+    if (error) {
+        return NextResponse.json({ error: "Failed to send confirmation" }, { status: 500 });
+    }
+
+    return NextResponse.json({ success: true, pendingConfirmation: true });
 }
