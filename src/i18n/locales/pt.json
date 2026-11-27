@@ -47,7 +47,7 @@
             "submit": "Enviar",
             "chooseLabel": "Escolha as newsletters",
             "subscribeBtn": "Inscrever-se",
-            "success": "Inscrição realizada! Obrigado.",
+            "success": "Quase lá! Confira seu e-mail para confirmar a inscrição.",
             "duplicate": "Este e-mail já está inscrito.",
             "error": "Algo deu errado. Tente novamente.",
             "emailInvalid": "Por favor, insira um e-mail válido."
@@ -760,6 +760,11 @@
         "empty": "Nenhum post encontrado. Tente outro termo ou categoria."
     },
     "newsletter": {
+        "confirmed": {
+            "title": "Inscrição confirmada",
+            "body": "Pronto. Você vai receber a newsletter da Vinteum no seu e-mail. Se quiser sair da lista depois, todo envio traz o link de descadastro.",
+            "back": "Ler o blog"
+        },
         "hero": {
             "badge": "Newsletter",
             "title": "Fique por dentro do desenvolvimento Bitcoin",
@@ -775,7 +780,7 @@
             "emailPlaceholder": "seu@email.com",
             "cta": "Inscrever-se",
             "sending": "Enviando...",
-            "success": "Inscrição realizada! Obrigado por se juntar a nós.",
+            "success": "Quase lá! Confira seu e-mail para confirmar a inscrição.",
             "error": "Algo deu errado. Por favor, tente novamente."
         },
         "benefits": {

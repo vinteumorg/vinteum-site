@@ -17,6 +17,7 @@ export function Footer({ newsletters }: FooterProps) {
 
     const [step, setStep] = useState<FooterNewsletterStep>("email");
     const [email, setEmail] = useState("");
+    const [company, setCompany] = useState("");
     const [emailError, setEmailError] = useState("");
     const [selected, setSelected] = useState<string[]>(() => newsletters.map((nl) => nl.id));
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -50,7 +51,7 @@ export function Footer({ newsletters }: FooterProps) {
             const res = await fetch("/api/newsletter/subscribe", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email, newsletters: selected }),
+                body: JSON.stringify({ email, newsletters: selected, company }),
             });
             setStep(res.ok ? "success" : "error");
         } catch {
@@ -104,6 +105,18 @@ export function Footer({ newsletters }: FooterProps) {
 
             {step === "newsletters" && (
                 <form onSubmit={handleSubscribe} className="flex flex-col gap-5 mt-auto">
+                    {/* Honeypot: off-screen so a human never reaches it, filled by
+                        bots that parse the form. The API drops those submissions. */}
+                    <div aria-hidden="true" className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden">
+                        <input
+                            type="text"
+                            name="company"
+                            value={company}
+                            onChange={(e) => setCompany(e.target.value)}
+                            tabIndex={-1}
+                            autoComplete="off"
+                        />
+                    </div>
                     <div className="flex items-center gap-2">
                         <p className="font-poppins text-xs text-foreground/50 truncate">{email}</p>
                         <button

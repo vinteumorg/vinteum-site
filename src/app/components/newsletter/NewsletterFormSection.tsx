@@ -21,7 +21,7 @@ interface NewsletterFormSectionProps {
 export function NewsletterFormSection({ newsletters }: NewsletterFormSectionProps) {
     const { t } = useLanguage();
 
-    const [form, setForm] = useState({ name: "", email: "" });
+    const [form, setForm] = useState({ name: "", email: "", company: "" });
     const [selected, setSelected] = useState<string[]>(() => newsletters.map((nl) => nl.id));
     const [status, setStatus] = useState<FormState>("idle");
 
@@ -43,11 +43,11 @@ export function NewsletterFormSection({ newsletters }: NewsletterFormSectionProp
             const res = await fetch("/api/newsletter/subscribe", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ name: form.name, email: form.email, newsletters: selected }),
+                body: JSON.stringify({ name: form.name, email: form.email, newsletters: selected, company: form.company }),
             });
             if (res.ok) {
                 setStatus("success");
-                setForm({ name: "", email: "" });
+                setForm({ name: "", email: "", company: "" });
             } else {
                 setStatus("error");
             }
@@ -104,6 +104,25 @@ export function NewsletterFormSection({ newsletters }: NewsletterFormSectionProp
                             </div>
                         ) : (
                             <form onSubmit={handleSubmit} className="flex flex-col gap-8">
+                                {/* Honeypot: positioned off-screen rather than display:none,
+                                    because bots skip fields they can detect as hidden but will
+                                    fill one that is merely out of view. A human never reaches
+                                    it, and the API drops any submission that arrives filled. */}
+                                <div
+                                    aria-hidden="true"
+                                    className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden"
+                                >
+                                    <label htmlFor="newsletter-page-company">Company</label>
+                                    <input
+                                        id="newsletter-page-company"
+                                        type="text"
+                                        name="company"
+                                        value={form.company}
+                                        onChange={handleChange}
+                                        tabIndex={-1}
+                                        autoComplete="off"
+                                    />
+                                </div>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                                     <div className="flex flex-col gap-2">
                                         <label className="font-poppins text-xs text-foreground/60 uppercase tracking-widest">
